@@ -1,0 +1,14 @@
+{
+  "manifestVersion": 1,
+  "id": "example-pack",
+  "name": "Example Kokoro Voice Pack",
+  "engine": "kokoro",
+  "voices": [
+    {
+      "id": "bf_example",
+      "displayName": "Example Voice",
+      "gender": "female",
+      "file": "voices/bf_example.pt"
+    }
+  ]
+}

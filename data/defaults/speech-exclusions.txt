@@ -1,0 +1,4 @@
+# Exact speech exclusions. Use * to match any speaker or any text.
+# Format: speaker => spoken text
+
+Doorphone => Bzzzz!

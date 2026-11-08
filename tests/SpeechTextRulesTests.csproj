@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="SpeechTextRulesTests.cs" />
+    <Compile Include="..\src\plugin\SpeechTextRules.cs" Link="SpeechTextRules.cs" />
+    <Compile Include="..\src\plugin\EditableSpeechRules.cs" Link="EditableSpeechRules.cs" />
+  </ItemGroup>
+</Project>

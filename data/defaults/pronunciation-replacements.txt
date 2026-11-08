@@ -1,0 +1,9 @@
+# Obenseuer Dialogue TTS speech-only pronunciation replacements
+# Format: source => spoken replacement
+# Matching is case-insensitive and respects word boundaries.
+# The original subtitle shown by the game is never changed.
+
+Hmh => Hmm
+
+# Add personal rules below, for example:
+# Dr. Pepper => Doctor Pepper

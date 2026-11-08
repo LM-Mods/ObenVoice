@@ -1,0 +1,57 @@
+# Build output
+artifacts/
+**/bin/
+**/obj/
+*.pdb
+*.dll
+*.exe
+
+# Local build references (README remains tracked)
+dependencies/*
+!dependencies/README.md
+
+# Packaged runtimes, models and release assets
+ObenseuerTTS/runtime/
+ObenseuerTTS/model-cache/
+release-staging/
+dist/
+outputs/
+*.zip
+*.7z
+*.tar
+*.gz
+*.pth
+*.pt
+*.safetensors
+
+# Live game/user data
+BepInEx/config/
+speaker_assignments.json
+speech-exclusions.txt
+!data/defaults/speech-exclusions.txt
+tts_ready.txt
+tts_server.log*
+*.cfg
+*.log
+*.tmp
+*.bak
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Credentials and local configuration
+.env
+.env.*
+*.local
+*.user
+*.suo
+
+# IDE and operating-system files
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

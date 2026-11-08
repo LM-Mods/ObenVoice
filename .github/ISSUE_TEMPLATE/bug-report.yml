@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible ObenVoice problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: loader
+    attributes:
+      label: BepInEx version
+      options:
+        - BepInEx 5
+        - BepInEx 6
+    validations:
+      required: true
+  - type: input
+    id: game-version
+    attributes:
+      label: Obenseuer version
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include concise reproduction steps and the expected result.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log excerpt
+      description: Remove usernames, private paths, credentials and unrelated data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I removed personal or sensitive information from this report.
+          required: true
+        - label: I am not attaching copyrighted game files or third-party models.
+          required: true

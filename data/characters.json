@@ -1,0 +1,975 @@
+{
+  "version": 1,
+  "generatedFor": "Obenseuer Dialogue TTS 4.0",
+  "offline": true,
+  "characters": [
+    {
+      "internalName": "Agnes Takala",
+      "displayName": "Agnes Takala",
+      "gender": "female",
+      "aliases": [
+        "Agnes"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Amanda Korhonen",
+      "displayName": "Amanda Korhonen",
+      "gender": "female",
+      "aliases": [
+        "Amanda"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Anya",
+      "displayName": "Anya",
+      "gender": "female",
+      "aliases": [
+        "Anya"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Ayla Green",
+      "displayName": "Ayla Green",
+      "gender": "female",
+      "aliases": [
+        "Ayla"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Caroline",
+      "displayName": "Caroline",
+      "gender": "female",
+      "aliases": [
+        "Caroline"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Eija Lurppu",
+      "displayName": "Eija Lurppu",
+      "gender": "female",
+      "aliases": [
+        "Eija"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Eliana",
+      "displayName": "Eliana",
+      "gender": "female",
+      "aliases": [
+        "Eliana"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Elli Horn",
+      "displayName": "Elli Horn",
+      "gender": "female",
+      "aliases": [
+        "Elli"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Elsa Varis",
+      "displayName": "Elsa Varis",
+      "gender": "female",
+      "aliases": [
+        "Elsa"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Emilie",
+      "displayName": "Emilie",
+      "gender": "female",
+      "aliases": [
+        "Emilie"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Fenella Hunt",
+      "displayName": "Fenella Hunt",
+      "gender": "female",
+      "aliases": [
+        "Fenella"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Ines Hietala",
+      "displayName": "Ines Hietala",
+      "gender": "female",
+      "aliases": [
+        "Ines"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Ingrid Claesson",
+      "displayName": "Ingrid Claesson",
+      "gender": "female",
+      "aliases": [
+        "Ingrid"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Leena Borg",
+      "displayName": "Leena Borg",
+      "gender": "female",
+      "aliases": [
+        "Leena"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Liouba Bennett",
+      "displayName": "Liouba Bennett",
+      "gender": "female",
+      "aliases": [
+        "Liouba"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Lizzy Mopper",
+      "displayName": "Lizzy Mopper",
+      "gender": "female",
+      "aliases": [
+        "Lizzy"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Martta Lapinjoki",
+      "displayName": "Martta Lapinjoki",
+      "gender": "female",
+      "aliases": [
+        "Martta"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Meri Haka",
+      "displayName": "Meri Haka",
+      "gender": "female",
+      "aliases": [
+        "Meri"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Milla Kolleen",
+      "displayName": "Milla Kolleen",
+      "gender": "female",
+      "aliases": [
+        "Milla"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Mirjam Freighter",
+      "displayName": "Mirjam Freighter",
+      "gender": "female",
+      "aliases": [
+        "Mirjam"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Mona Hall",
+      "displayName": "Mona Hall",
+      "gender": "female",
+      "aliases": [
+        "Mona"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Nina Lund",
+      "displayName": "Nina Lund",
+      "gender": "female",
+      "aliases": [
+        "Nina"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Pia Horn",
+      "displayName": "Pia Horn",
+      "gender": "female",
+      "aliases": [
+        "Pia"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Sara Claine",
+      "displayName": "Sara Claine",
+      "gender": "female",
+      "aliases": [
+        "Sara"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Sirkku Maltanen",
+      "displayName": "Sirkku Maltanen",
+      "gender": "female",
+      "aliases": [
+        "Sirkku"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Tatyana Gopnikova",
+      "displayName": "Tatyana Gopnikova",
+      "gender": "female",
+      "aliases": [
+        "Tatyana"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Tea Henderson",
+      "displayName": "Tea Henderson",
+      "gender": "female",
+      "aliases": [
+        "Tea"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Vivi Bondar",
+      "displayName": "Vivi Bondar",
+      "gender": "female",
+      "aliases": [
+        "Vivi"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Zoya Gubenko",
+      "displayName": "Zoya Gubenko",
+      "gender": "female",
+      "aliases": [
+        "Zoya"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Adam Holmgren",
+      "displayName": "Adam Holmgren",
+      "gender": "male",
+      "aliases": [
+        "Adam"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Aleksi Kivi",
+      "displayName": "Aleksi Kivi",
+      "gender": "male",
+      "aliases": [
+        "Aleksi"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Axel Norberg",
+      "displayName": "Axel Norberg",
+      "gender": "male",
+      "aliases": [
+        "Axel"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Börje Nyberg",
+      "displayName": "Börje Nyberg",
+      "gender": "male",
+      "aliases": [
+        "Börje"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Crazy Neighbor",
+      "displayName": "Crazy Neighbor",
+      "gender": "male",
+      "aliases": [
+        "Crazy"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Daan Claesson",
+      "displayName": "Daan Claesson",
+      "gender": "male",
+      "aliases": [
+        "Daan"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "David Lund",
+      "displayName": "David Lund",
+      "gender": "male",
+      "aliases": [
+        "David"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Director Murhapuro",
+      "displayName": "Director Murhapuro",
+      "gender": "male",
+      "aliases": [
+        "Director"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Einar Kaivuri",
+      "displayName": "Einar Kaivuri",
+      "gender": "male",
+      "aliases": [
+        "Einar"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Elias Karhu",
+      "displayName": "Elias Karhu",
+      "gender": "male",
+      "aliases": [
+        "Elias"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Father Tobias",
+      "displayName": "Father Tobias",
+      "gender": "male",
+      "aliases": [
+        "Father"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Fredrik Walker",
+      "displayName": "Fredrik Walker",
+      "gender": "male",
+      "aliases": [
+        "Fredrik"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Hall Kääbus",
+      "displayName": "Hall Kääbus",
+      "gender": "male",
+      "aliases": [
+        "Hall"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Hank Möbelmann",
+      "displayName": "Hank Möbelmann",
+      "gender": "male",
+      "aliases": [
+        "Hank"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Hanss",
+      "displayName": "Hanss",
+      "gender": "male",
+      "aliases": [
+        "Hanss"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Harri Hyvinkää",
+      "displayName": "Harri Hyvinkää",
+      "gender": "male",
+      "aliases": [
+        "Harri"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Heikki Horn",
+      "displayName": "Heikki Horn",
+      "gender": "male",
+      "aliases": [
+        "Heikki"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Heikki Mailanen",
+      "displayName": "Heikki Mailanen",
+      "gender": "male",
+      "aliases": [
+        "Heikki"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Henrik Korpinen",
+      "displayName": "Henrik Korpinen",
+      "gender": "male",
+      "aliases": [
+        "Henrik"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jappe Järvenpää",
+      "displayName": "Jappe Järvenpää",
+      "gender": "male",
+      "aliases": [
+        "Jappe"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jarmo Pettinen",
+      "displayName": "Jarmo Pettinen",
+      "gender": "male",
+      "aliases": [
+        "Jarmo"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jaska Virtanen",
+      "displayName": "Jaska Virtanen",
+      "gender": "male",
+      "aliases": [
+        "Jaska"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jesper Kumpula",
+      "displayName": "Jesper Kumpula",
+      "gender": "male",
+      "aliases": [
+        "Jesper"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jim Nilsen",
+      "displayName": "Jim Nilsen",
+      "gender": "male",
+      "aliases": [
+        "Jim"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Joel Hietala",
+      "displayName": "Joel Hietala",
+      "gender": "male",
+      "aliases": [
+        "Joel"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Johannes Eskola",
+      "displayName": "Johannes Eskola",
+      "gender": "male",
+      "aliases": [
+        "Johannes"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jonne Reis",
+      "displayName": "Jonne Reis",
+      "gender": "male",
+      "aliases": [
+        "Jonne"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Jörge Af Guldsköld",
+      "displayName": "Jörge Af Guldsköld",
+      "gender": "male",
+      "aliases": [
+        "Jörge"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Juha Tuusula",
+      "displayName": "Juha Tuusula",
+      "gender": "male",
+      "aliases": [
+        "Juha"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Kalle Ketku",
+      "displayName": "Kalle Ketku",
+      "gender": "male",
+      "aliases": [
+        "Kalle"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Karl Hagen",
+      "displayName": "Karl Hagen",
+      "gender": "male",
+      "aliases": [
+        "Karl"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Keijo Korsonen",
+      "displayName": "Keijo Korsonen",
+      "gender": "male",
+      "aliases": [
+        "Keijo"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Kirka Kääbus",
+      "displayName": "Kirka Kääbus",
+      "gender": "male",
+      "aliases": [
+        "Kirka"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Kössi Kelmi",
+      "displayName": "Kössi Kelmi",
+      "gender": "male",
+      "aliases": [
+        "Kössi"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Lasse Lurjus",
+      "displayName": "Lasse Lurjus",
+      "gender": "male",
+      "aliases": [
+        "Lasse"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Leon Borg",
+      "displayName": "Leon Borg",
+      "gender": "male",
+      "aliases": [
+        "Leon"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Levo Claesson",
+      "displayName": "Levo Claesson",
+      "gender": "male",
+      "aliases": [
+        "Levo"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Louie Green",
+      "displayName": "Louie Green",
+      "gender": "male",
+      "aliases": [
+        "Louie"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Lukas",
+      "displayName": "Lukas",
+      "gender": "male",
+      "aliases": [
+        "Lukas"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Malone Petronis",
+      "displayName": "Malone Petronis",
+      "gender": "male",
+      "aliases": [
+        "Malone"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Mason Jokinen",
+      "displayName": "Mason Jokinen",
+      "gender": "male",
+      "aliases": [
+        "Mason"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Max Masher",
+      "displayName": "Max Masher",
+      "gender": "male",
+      "aliases": [
+        "Max"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Mike Palmer",
+      "displayName": "Mike Palmer",
+      "gender": "male",
+      "aliases": [
+        "Mike"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Moray Larson",
+      "displayName": "Moray Larson",
+      "gender": "male",
+      "aliases": [
+        "Moray"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Niko Kerava",
+      "displayName": "Niko Kerava",
+      "gender": "male",
+      "aliases": [
+        "Niko"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Olle Leino",
+      "displayName": "Olle Leino",
+      "gender": "male",
+      "aliases": [
+        "Olle"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Pate Rantanen",
+      "displayName": "Pate Rantanen",
+      "gender": "male",
+      "aliases": [
+        "Pate"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Patrik Axelsson",
+      "displayName": "Patrik Axelsson",
+      "gender": "male",
+      "aliases": [
+        "Patrik"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Pentti Penttilä",
+      "displayName": "Pentti Penttilä",
+      "gender": "male",
+      "aliases": [
+        "Pentti"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Pera Harju",
+      "displayName": "Pera Harju",
+      "gender": "male",
+      "aliases": [
+        "Pera"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Per Otter",
+      "displayName": "Per Otter",
+      "gender": "male",
+      "aliases": [
+        "Per"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Petro Blokuvati",
+      "displayName": "Petro Blokuvati",
+      "gender": "male",
+      "aliases": [
+        "Petro"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Samuel Jonasson",
+      "displayName": "Samuel Jonasson",
+      "gender": "male",
+      "aliases": [
+        "Samuel"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Sami Claesson",
+      "displayName": "Sami Claesson",
+      "gender": "male",
+      "aliases": [
+        "Sami"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Taneli Kurju",
+      "displayName": "Taneli Kurju",
+      "gender": "male",
+      "aliases": [
+        "Taneli"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Tapani Kattila",
+      "displayName": "Tapani Kattila",
+      "gender": "male",
+      "aliases": [
+        "Tapani"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Veeti Pärisevä",
+      "displayName": "Veeti Pärisevä",
+      "gender": "male",
+      "aliases": [
+        "Veeti"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Ville Sköldgangster",
+      "displayName": "Ville Sköldgangster",
+      "gender": "male",
+      "aliases": [
+        "Ville"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    },
+    {
+      "internalName": "Walt Bondar",
+      "displayName": "Walt Bondar",
+      "gender": "male",
+      "aliases": [
+        "Walt"
+      ],
+      "region": "",
+      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
+      "preferredVoice": ""
+    }
+  ]
+}
