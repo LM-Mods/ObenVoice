@@ -23,12 +23,13 @@ redistribution audit are publicly available in the GitHub repository.
 
 ## Compatibility
 
-- Windows and Obenseuer on Steam
-- BepInEx 5: gameplay-tested with the accepted 4.1.1 baseline
-- BepInEx 6.0.0-be.788: gameplay-tested with the accepted 4.1.1 baseline
+- Windows with Obenseuer installed through Steam
+- BepInEx 5 or BepInEx 6, installed separately
 - Obenseuer Modding Framework / ObenseuerCore 0.12.1
 
-The path-sanitised public-release DLL passed gameplay testing on both loaders.
+The release DLL passed gameplay testing on BepInEx 5 and BepInEx
+6.0.0-be.788. BepInEx and Obenseuer Modding Framework must already be
+installed separately.
 
 ## Offline operation
 
@@ -38,6 +39,8 @@ local loopback interface. It does not require a cloud speech service.
 
 ## Features and customisation
 
+- Fully offline Kokoro dialogue speech with six included voices.
+- Automatic NPC dialogue and optional confirmed player responses.
 - Full F8 interface for engine status and restart, dialogue behaviour, voice
   pools, voice packs, pronunciation rules and diagnostics.
 - F9 quick controls for player voice, speed and tone.
@@ -46,6 +49,19 @@ local loopback interface. It does not require a cloud speech service.
 - Exact speech exclusions and editable pronunciation replacements.
 - Expandable engine-add-on API and removable Kokoro voice packs.
 - Gameplay-tested shared plugin for both supported BepInEx loaders.
+
+## Installation
+
+1. Install BepInEx 5 or 6 and Obenseuer Modding Framework / ObenseuerCore
+   0.12.1 separately.
+2. Download ObenVoice Core.
+3. Extract the ZIP directly into the main Obenseuer directory containing
+   `Obenseuer.exe` and allow Windows to merge the folders.
+4. Launch Obenseuer normally.
+
+Core includes Kokoro, its default voices and the required private Python
+runtime. No separate Python installation, API key or cloud speech account is
+needed.
 
 ## Credits, Licensing & Source Code
 
@@ -56,8 +72,7 @@ local loopback interface. It does not require a cloud speech service.
 The original ObenVoice code is offered under MIT. Kokoro, Python, eSpeak NG,
 phonemizer and all other third-party engines, models and dependencies retain
 their own licences. The optional British voice pack has its own Apache-2.0
-attribution. Pocket TTS is not part of the Core download and remains
-unpublished pending separate redistribution clearance.
+attribution.
 
 ObenVoice is unofficial and independently developed. It is not affiliated
 with or endorsed by Loiste Interactive, the Obenseuer developers, or the

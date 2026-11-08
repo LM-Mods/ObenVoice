@@ -7,7 +7,7 @@ F8 opens the main settings window:
 - **General:** selected/running engine, owned backend restart, startup behaviour and hotkeys.
 - **Voices:** Kokoro fallback voice and automatic NPC speed/tone ranges.
 - **Dialogue:** NPC dialogue, barks, speaker names and original-audio muting.
-- **Voice packs:** installed Kokoro or Pocket pack controls.
+- **Voice packs:** installed Kokoro voice-pack controls.
 - **Pronunciation:** pronunciation replacements and exact speech exclusions.
 - **Data & status:** character database, assignments, diagnostics and reload controls.
 

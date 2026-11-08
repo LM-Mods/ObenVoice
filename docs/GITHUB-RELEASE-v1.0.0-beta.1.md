@@ -26,15 +26,16 @@ testing and release decisions.
 - `ObenVoice-v1.0.0-beta.1-Core.zip` — complete required installation.
 - British Emma/George voice pack — optional Apache-2.0 Kokoro voices.
 
-Pocket TTS is not included and remains unpublished pending separate model
-redistribution clearance.
-
 ## Installation
 
-Extract Core into the Obenseuer game directory so its `BepInEx` and
-`ObenseuerTTS` folders merge with the corresponding game folders. Back up
-custom data before upgrading. Existing pronunciation rules, speech exclusions,
-configuration and saved voice assignments should be preserved.
+Install BepInEx 5 or 6 and Obenseuer Modding Framework / ObenseuerCore 0.12.1
+separately. Extract Core directly into the main Obenseuer game directory—the
+folder containing `Obenseuer.exe`—and allow Windows to merge the folders.
+
+Core includes Kokoro, its six default voices and the required private Python
+runtime. No separate Python installation, API key or cloud account is needed.
+Back up custom data before upgrading; existing pronunciation rules, speech
+exclusions, configuration and saved voice assignments should be preserved.
 
 ## Source and licensing
 
