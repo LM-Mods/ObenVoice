@@ -29,8 +29,8 @@ as an independent implementation for Obenseuer. No Universal TTS Mod source
 was found in the curated repository. This is evidence from the reviewed files,
 not a guarantee about material that was unavailable to the audit.
 
-Outstanding redistribution checks are tracked in
-[RELEASE-PACKAGING.md](RELEASE-PACKAGING.md). Pocket remains blocked. The
-British voice files have verified pinned provenance.
+Release packaging checks are tracked in
+[RELEASE-PACKAGING.md](RELEASE-PACKAGING.md). The British voice files have
+verified pinned provenance.
 
 This document records release preparation and is not legal advice.

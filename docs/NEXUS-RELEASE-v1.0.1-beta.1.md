@@ -17,7 +17,7 @@
 - Archive: `ObenVoice-v1.0.1-beta.1-Core.zip`
 
 Do not upload the RC-labelled archive. Upload only the final archive after the
-focused candidate gameplay check and final approval. Do not include Pocket.
+focused candidate gameplay check and final approval.
 
 The public mod page is currently visible with one file and version
 `1.0.0-beta.1`. Its scan label is **Some suspicious files**; review that scan

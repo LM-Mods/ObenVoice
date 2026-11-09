@@ -33,10 +33,8 @@ credit, change disclosure and share-alike terms in
 
 ## Optional packages
 
-Pocket and external voice packs are separate distributions. Their code, models,
-fixed voice states and dependencies require package-specific notices. Pocket
-is blocked from publication pending its gated model clearance. The optional
-British voice pack's two unmodified files match Kokoro-82M revision
+External voice packs are separate distributions and require package-specific
+notices. The optional British voice pack's two unmodified files match Kokoro-82M revision
 `f3ff3571791e39611d31c381e3a41a3af07b4987` and retain Apache-2.0 attribution.
 
 This repository contains no third-party model or voice weights.

@@ -21,9 +21,9 @@ Install BepInEx 5 or 6 and Obenseuer Modding Framework / ObenseuerCore 0.12.1
 separately. Extract `ObenVoice-v1.0.1-beta.1-Core.zip` into the main Obenseuer
 folder containing `Obenseuer.exe` and allow Windows to merge folders.
 
-Core includes Kokoro, six default voices and its private Python runtime. It
-does not include Pocket. Existing configuration, pronunciation rules, speech
-exclusions, assignments and separately installed add-ons remain user-managed;
+Core includes Kokoro, six default voices and its private Python runtime.
+Existing configuration, pronunciation rules, speech exclusions, assignments
+and separately installed add-ons remain user-managed;
 back them up before upgrading.
 
 The optional British Emma/George voice pack remains available separately

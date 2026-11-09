@@ -9,8 +9,8 @@ Prepared locally on 9 November 2026. Nothing listed here has been uploaded.
 | `ObenVoice-v1.0.1-beta.1-Core.zip` | 545,063,453 bytes | `B115229DC2610F1CA82AD5FD0C2FB95DC10DA9700F219CB96975741FFB43E2E2` |
 
 The archive contains 13,803 files, one private Python runtime, one Kokoro model
-copy and the shared BepInEx 5/6 DLL. It contains no Pocket material, test tree,
-logs, user configuration or internal release-history documents.
+copy and the shared BepInEx 5/6 DLL. It contains no test tree, logs, user
+configuration or internal release-history documents.
 
 The embedded DLL SHA-256 is:
 
@@ -25,4 +25,4 @@ filename after the BepInEx 6 gameplay check passed.
 
 The approved v1.0.0-beta.1 British Emma/George voice-pack asset is unchanged
 and remains separately available. It was not duplicated or repackaged for
-this candidate. Pocket remains excluded.
+this candidate.

@@ -14,7 +14,7 @@ untouched.
 Baseline: a separate copy of the protected 4.1.1 Core package with the 4.1.2
 DLL and current public documentation overlaid. The asset contains character
 data, backend, one offline Python runtime, one Kokoro model/cache, launcher and
-complete runtime notices. Pocket is excluded.
+complete runtime notices.
 
 The embedded Python runtime is required to run Kokoro, phonemization, audio
 output and their native dependencies without requiring a system-wide Python
@@ -52,13 +52,6 @@ For a validation-only run without creating an archive:
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 -ValidateOnly -ReleaseCandidate
 ```
-
-## Pocket
-
-The preserved internal reference archive was independently recalculated as
-SHA-256 `14AEE71D5F2F990A0E021B3987547BF7087F9F9349C391B8B1C2E685DDFC83E9`.
-
-It contains engine API version 1, Pocket code, model/tokenizer, fixed voice state, SciPy, einops, SentencePiece and collected licences. Publication remains blocked until the model, tokenizer and `bill_boerst.safetensors` provenance is tied to an identifiable upstream release and copyright holder. This does not block Core.
 
 ## British voices
 

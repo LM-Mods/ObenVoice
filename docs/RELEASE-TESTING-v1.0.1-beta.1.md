@@ -22,5 +22,3 @@ A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5
 - BepInEx 5 has build/reference compatibility for this release; it has
   not received a new gameplay pass. Do not describe 4.1.2 as newly
   gameplay-tested on BepInEx 5 unless that check is completed.
-
-Pocket is not part of the candidate or public package.

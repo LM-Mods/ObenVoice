@@ -7,7 +7,6 @@ Expected install roots:
 ```text
 Core/BepInEx/plugins/ObenseuerDialogueTTS/
 Core/ObenseuerTTS/
-Pocket/ObenseuerTTS/engine-addons/pocket/
 British-Voices/ObenseuerTTS/voice-packs/kokoro/british-test/
 ```
 

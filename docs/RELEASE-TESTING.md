@@ -23,5 +23,4 @@ assembly, reference, type, field and method/IL comparison records.
 
 Very short utterances such as `Hmh` and `Ahhh` can be imperfect or skipped.
 This is a known nonblocking pronunciation limitation deferred to a future
-update. Pocket speech worked during local testing, but Pocket is not licensed
-or packaged for public redistribution and is not part of this release.
+update.

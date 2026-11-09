@@ -25,7 +25,7 @@ Updated: 9 November 2026
 - Updated public metadata, changelog, GitHub/Nexus notes, licensing references
   and AI-development disclosure for the release candidate.
 - Prepared a full Core candidate from a separate copy of the protected staging
-  baseline. Pocket and internal test/release-history material are excluded.
+  baseline. Internal test/release-history material is excluded.
 
 ## Verification
 
@@ -38,7 +38,7 @@ Updated: 9 November 2026
 - Both builds produced the same DLL:
   `A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5`.
 - Core candidate validation passed for 13,803 files. It contains one Python
-  runtime, one Kokoro model, no Pocket files, no tests and no user data.
+  runtime, one Kokoro model, no tests and no user data.
 - ZIP integrity and per-entry checks passed.
 
 ## Gameplay and publication status

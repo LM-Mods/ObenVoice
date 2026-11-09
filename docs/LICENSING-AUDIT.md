@@ -12,7 +12,6 @@
 | Core GitHub Release | **PASS** | Licensing/privacy corrections and BepInEx 5/6 gameplay testing are complete; final archive integrity is verified during packaging. |
 | Core Nexus Mods release | **PASS WITH UPLOAD-TIME CHECKS** | Core is prepared; Nexus scanning and the AI-Generated Content classification remain upload-time actions. |
 | British voice pack | **PASS** | Both unmodified files match the pinned Apache-2.0 Kokoro revision. |
-| Pocket add-on | **BLOCKED** | Gated model redistribution permission and authenticated exact-file verification remain unresolved. |
 
 No status in this table authorises an upload or publication.
 
@@ -56,9 +55,6 @@ MIT licence.
 | eSpeak NG | 1.52.0, commit `4870adf` | GPL-3.0 plus component terms | Unmodified binary/data; exact tagged corresponding source and notices recorded |
 | phonemizer-fork | 3.3.2 | GPL-3.0-or-later | Unmodified Python source package and GPL text retained |
 | espeakng-loader | 0.2.4 | Component-specific; carries eSpeak binary/data | Loader source, package metadata, wheel hash and eSpeak obligations recorded |
-| Pocket TTS code | 4.0.1 | MIT | Source licence identified; model clearance remains separate |
-| Pocket English model | Pinned upstream revision | CC BY 4.0 plus gated conditions | **Blocked:** external redistribution permission and authenticated hashes not confirmed |
-| Pocket Bill voice | Kyutai `voice-zero` source | CC0 declaration | Attribution/provenance identified but package remains blocked with Pocket |
 | British `bf_emma` | Kokoro revision `f3ff357…` | Apache-2.0 | Unmodified; SHA-256 `D0A423DEABF4A52B4F49318C51742C54E21BB89BBBE9A12141E7758DDB5DA701` |
 | British `bm_george` | Kokoro revision `f3ff357…` | Apache-2.0 | Unmodified; SHA-256 `F1BC812213DC59774769E5C80004B13EEB79BD78130B11B2D7F934542DAB811B` |
 
@@ -115,18 +111,11 @@ reference, type, field and method/IL records relative to the accepted DLL.
 The replacement passed focused gameplay testing on BepInEx 5 and BepInEx 6,
 including NPC/player dialogue, F8/F9 functionality and clean Steam shutdown.
 
-## Optional add-ons
+## Optional voice pack
 
 The British voice files match the pinned Kokoro revision and retain the
 Apache-2.0 licence and attribution alongside the download. No modifications to
 the weights were identified.
-
-Pocket is not cleared. The upstream model is gated and its repository-level
-CC BY 4.0 declaration does not by itself resolve whether files obtained under
-the gated conditions may be redistributed outside the original host. Exact
-model, tokenizer and fixed-voice hashes also require authenticated comparison
-with their pinned revisions. Pocket must remain unpublished unless those
-questions are resolved affirmatively and documented.
 
 ## Platform compliance
 
@@ -148,4 +137,3 @@ The documentation, source attribution and missing Loguru/Tokenizers records
 have been corrected. The LM-Mods MIT notice is approved, the sanitised DLL
 passed both supported loaders, and the staged Core passed licence, privacy,
 install and upgrade checks. Core and the British voices are release-ready.
-Pocket remains blocked and must not delay or be bundled with Core.

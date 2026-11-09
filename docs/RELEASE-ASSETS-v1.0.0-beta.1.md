@@ -18,5 +18,3 @@ The tested Core DLL inside the Core asset has SHA-256:
 ```text
 59A0B0F5BE6BCD9C55029CCE84E279038B1DFFAE0C950B161D38AA781C5AF265
 ```
-
-Pocket TTS is not included in either asset.
