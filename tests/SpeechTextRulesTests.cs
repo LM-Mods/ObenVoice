@@ -63,6 +63,8 @@ internal static class SpeechTextRulesTests
 
         EditableSpeechRuleDocument restoredDefaults = EditableSpeechRuleDocument.Parse(SpeechExclusionDefaults.DefaultContent, true, null);
         if (restoredDefaults.Entries.Count != 3 ||
+            !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "Doorphone", "Bzzzz!") ||
+            !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "NPC", "Bzzzz!") ||
             !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "Player", "...") ||
             !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "NPC", "AAAAH!"))
             throw new Exception("restored defaults did not contain all three exclusions");

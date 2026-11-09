@@ -2,6 +2,6 @@
 # Format: speaker => spoken text
 # ObenVoice speech exclusions version: 2
 
-Doorphone => Bzzzz!
+* => Bzzzz!
 * => ...
 * => AAAAH!

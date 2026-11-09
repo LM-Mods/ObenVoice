@@ -100,7 +100,7 @@ namespace ObenseuerTts
             "# Exact speech exclusions. Use * to match any speaker or any text.\r\n" +
             "# Format: speaker => spoken text\r\n" +
             VersionMarker + "\r\n\r\n" +
-            "Doorphone => Bzzzz!\r\n" +
+            "* => Bzzzz!\r\n" +
             "* => ...\r\n" +
             "* => AAAAH!\r\n";
 

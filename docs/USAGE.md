@@ -33,7 +33,7 @@ Matching is case-insensitive and word-boundary aware. Changes apply to subsequen
 Exclusions use exact normalized speaker/text matching:
 
 ```text
-Doorphone => Bzzzz!
+* => Bzzzz!
 ```
 
 Use `*` for any speaker or any text. Exclusions are checked before unknown-speaker prompts and speech queueing.

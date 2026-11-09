@@ -2106,7 +2106,7 @@ namespace ObenseuerTts
         {
             if (!confirmExclusionReset)
             {
-                if (GUI.Button(new Rect(384, 326, 178, 25), "Restore default exclusions")) confirmExclusionReset = true;
+                if (GUI.Button(new Rect(384, 326, 230, 25), "Restore default exclusions")) confirmExclusionReset = true;
             }
             else
             {
