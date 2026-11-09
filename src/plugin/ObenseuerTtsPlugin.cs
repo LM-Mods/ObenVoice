@@ -152,7 +152,7 @@ namespace ObenseuerTts
         private ModSetting<bool> autoStartBackend;
         private ModSetting<bool> closeBackendOnGameExit;
         private ModSetting<string> preferredTtsEngine;
-        private ModSetting<string> selectedVoicePack;
+        private ModSetting<string> selectedEngineVoicePack;
         private ModSetting<bool> debugLogging;
         private ModSetting<bool> showStatusOverlay;
         private ModSetting<string> settingsHotkey;
@@ -171,6 +171,7 @@ namespace ObenseuerTts
         private readonly HashSet<string> queuedUnknownNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly SpeakerAnnouncementState speakerAnnouncementState = new SpeakerAnnouncementState();
         private readonly DialogueDiagnostics dialogueDiagnostics = new DialogueDiagnostics();
+        private readonly UnknownSpeakerTracker unknownSpeakerTracker = new UnknownSpeakerTracker();
         private readonly List<DiscoveredVoice> availableKokoroVoices = new List<DiscoveredVoice>();
         private readonly HashSet<string> installedKokoroVoiceIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private string[] femaleVoices = new string[0];
@@ -212,6 +213,7 @@ namespace ObenseuerTts
         private int settingsPage;
         private bool confirmClearAssignments;
         private bool confirmResetDefaults;
+        private bool confirmClearDiagnosticLog;
         private bool settingsCursorCaptured;
         private CursorLockMode cursorLockBeforeSettings;
         private bool cursorVisibleBeforeSettings;
@@ -220,9 +222,11 @@ namespace ObenseuerTts
         private bool showQuickPlayerVoiceChoices;
         private int capturingHotkey;
         private string diagnosticStatus = "Press the flag key after a problem to save the four most recent dialogue events.";
-        private readonly List<string> manualPocketVoicePacks = new List<string>();
+        private string notificationText = string.Empty;
+        private float notificationUntil;
+        private readonly List<string> manualEngineVoicePacks = new List<string>();
         private readonly HashSet<string> installedEngineIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "kokoro" };
-        private bool pocketAddonAvailable;
+        private bool manualEngineVoicePacksAvailable;
         private int pronunciationRuleCount;
         private EditableSpeechRuleDocument pronunciationDocument = new EditableSpeechRuleDocument();
         private EditableSpeechRuleDocument exclusionDocument = new EditableSpeechRuleDocument();
@@ -339,9 +343,9 @@ namespace ObenseuerTts
             clearSavedAssignments = Config.Bind("Speaker matching", "ClearSavedAssignmentsOnNextStart", false, "Use only to reset every remembered speaker choice. It resets itself after the next game start.");
             autoStartBackend = Config.Bind("Backend", "AutoStartBackend", true, "Start the packaged local backend automatically when Steam launches the game.");
             closeBackendOnGameExit = Config.Bind("Backend", "CloseBackendOnGameExit", true, "Close only the backend process started by this plugin when the game exits.");
-            preferredTtsEngine = Config.Bind("Backend", "PreferredTtsEngine", "kokoro", "Engine selected for the next backend start. Use Advanced > Restart Voice Engine in F8 to apply it without restarting the game.");
+            preferredTtsEngine = Config.Bind("Backend", "PreferredTtsEngine", "kokoro", "Voice Engine. Enter an installed engine ID (for example, kokoro). Apply it from F8 or restart the game.");
             // The legacy key name is retained so existing optional-engine voice-pack selections remain compatible.
-            selectedVoicePack = Config.Bind("Voice packs", "SelectedPocketVoicePack", "", "Optional voice-pack folder for an engine add-on that supports manual packs. Leave blank for that engine's default voice. Applied on the next engine start.");
+            selectedEngineVoicePack = Config.Bind("Voice packs", "SelectedPocketVoicePack", "", "Engine Voice Pack. Optional folder used by a compatible voice engine add-on. Leave blank for that engine's default voice; applied on the next engine start.");
             debugLogging = Config.Bind("Diagnostics", "DebugLogging", false, "Write continuous detailed troubleshooting messages to the game log. Leave off during normal play.");
             showStatusOverlay = Config.Bind("Diagnostics", "ShowStatusOverlay", true, "Show brief messages while the voice service starts, reconnects or needs attention.");
             settingsHotkey = Config.Bind("General", "SettingsHotkey", "F8", "Open or close the full ObenVoice settings menu.");
@@ -359,7 +363,9 @@ namespace ObenseuerTts
             LoadVoiceRules();
             LoadCharacterDatabase();
             LoadAssignments();
-            if (pocketAddonAvailable) ScanManualPocketVoicePacks();
+            try { unknownSpeakerTracker.Load(GetUnknownSpeakerLogPath()); }
+            catch (Exception ex) { Logger.LogWarning("Could not load unknown-speaker tracking log: " + ex.Message); }
+            if (manualEngineVoicePacksAvailable) ScanManualEngineVoicePacks();
             if (clearSavedAssignments.Value)
             {
                 savedAssignments.Clear();
@@ -578,6 +584,7 @@ namespace ObenseuerTts
                 SetSettingsWindowVisible(!showSettingsWindow);
                 confirmClearAssignments = false;
                 confirmResetDefaults = false;
+                confirmClearDiagnosticLog = false;
             }
 
             if (!typingInRuleEditor && capturingHotkey == 0 && IsHotkeyDown(playerVoiceHotkey.Value))
@@ -650,6 +657,11 @@ namespace ObenseuerTts
                 RecordDialogueDiagnostic(kind, speakerDetails, rawText, text, string.Empty, "skipped: NPC dialogue speech is disabled");
                 return;
             }
+            if (SpeechTextRules.IsConfirmedNonSpeech(text))
+            {
+                RecordDialogueDiagnostic(kind, speakerDetails, rawText, text, string.Empty, "filtered: confirmed non-speech expression");
+                return;
+            }
             if (SpeechExclusionRules.IsExcluded(exclusionDocument.Entries, rawSpeakerName, text))
             {
                 DebugLog("Speech excluded before speaker resolution: speaker=" + rawSpeakerName + " text=" + text);
@@ -716,6 +728,11 @@ namespace ObenseuerTts
             if (!speakPlayerDialogue.Value)
             {
                 RecordDialogueDiagnostic(DialogueKind.Player, playerDetails, rawText, text, string.Empty, "skipped: player dialogue speech is disabled");
+                return;
+            }
+            if (SpeechTextRules.IsConfirmedNonSpeech(text))
+            {
+                RecordDialogueDiagnostic(DialogueKind.Player, playerDetails, rawText, text, string.Empty, "filtered: confirmed non-speech expression");
                 return;
             }
             if (SpeechExclusionRules.IsExcluded(exclusionDocument.Entries, "Player", text))
@@ -1047,11 +1064,7 @@ namespace ObenseuerTts
         }
         private static string StablePoolVoice(string speakerName, string[] pool, string fallback)
         {
-            if (pool == null || pool.Length == 0) return fallback;
-            int hash = 17;
-            string key = speakerName ?? string.Empty;
-            for (int i = 0; i < key.Length; i++) hash = unchecked(hash * 31 + char.ToUpperInvariant(key[i]));
-            return pool[(hash & 0x7fffffff) % pool.Length];
+            return VoiceSelectionRules.StableVoice(speakerName, pool, fallback);
         }
 
         private static string GetSpeakerName(PixelCrushers.DialogueSystem.CharacterInfo speaker)
@@ -1235,7 +1248,17 @@ namespace ObenseuerTts
 
         private string GetDialogueDiagnosticLogPath()
         {
-            return Path.Combine(Paths.ConfigPath, "ObenseuerDialogueTTS", "dialogue-diagnostics.log");
+            return Path.Combine(GetRuntimeLogDirectory(), "dialogue-diagnostics.log");
+        }
+
+        private string GetUnknownSpeakerLogPath()
+        {
+            return Path.Combine(GetRuntimeLogDirectory(), "unknown-speakers.tsv");
+        }
+
+        private static string GetRuntimeLogDirectory()
+        {
+            return Path.Combine(Paths.GameRootPath, "ObenseuerTTS");
         }
 
         private void FlagRecentDialogue()
@@ -1246,37 +1269,23 @@ namespace ObenseuerTts
                 diagnosticStatus = count == 0
                     ? "Flag saved, but no dialogue events have been captured yet."
                     : "Saved " + count.ToString(CultureInfo.InvariantCulture) + " recent dialogue event" + (count == 1 ? string.Empty : "s") + ".";
+                ShowNotification(count == 0
+                    ? "Dialogue flagged — no events captured"
+                    : "Dialogue flagged — " + count.ToString(CultureInfo.InvariantCulture) + " event" + (count == 1 ? string.Empty : "s") + " saved");
                 Logger.LogInfo("Dialogue diagnostic flag saved " + count.ToString(CultureInfo.InvariantCulture) + " recent event(s) to " + GetDialogueDiagnosticLogPath());
             }
             catch (Exception ex)
             {
                 diagnosticStatus = "Could not save the dialogue flag: " + ex.Message;
+                ShowNotification("Dialogue flag failed — check the game log");
                 Logger.LogWarning(diagnosticStatus);
             }
         }
 
-        private void OpenDialogueDiagnosticLog()
+        private void ShowNotification(string message)
         {
-            try
-            {
-                string path = GetDialogueDiagnosticLogPath();
-                if (!File.Exists(path))
-                {
-                    string directory = Path.GetDirectoryName(path);
-                    if (!string.IsNullOrEmpty(directory)) Directory.CreateDirectory(directory);
-                    File.WriteAllText(path, "ObenVoice dialogue diagnostics\r\n", new UTF8Encoding(false));
-                }
-                ProcessStartInfo info = new ProcessStartInfo();
-                info.FileName = path;
-                info.UseShellExecute = true;
-                Process.Start(info);
-                diagnosticStatus = "Opened the dialogue diagnostic log.";
-            }
-            catch (Exception ex)
-            {
-                diagnosticStatus = "Could not open the diagnostic log: " + ex.Message;
-                Logger.LogWarning(diagnosticStatus);
-            }
+            notificationText = message ?? string.Empty;
+            notificationUntil = Time.unscaledTime + 2.5f;
         }
 
         private void ClearDialogueDiagnosticLog()
@@ -1296,6 +1305,8 @@ namespace ObenseuerTts
         private void QueueUnknownSpeaker(string name, string rawText, string cleanText, string speakerId, DialogueKind kind)
         {
             if (string.IsNullOrEmpty(name) || queuedUnknownNames.Contains(name)) return;
+            try { unknownSpeakerTracker.RecordOccurrence(name, speakerId, rawText, DateTime.UtcNow); }
+            catch (Exception ex) { Logger.LogWarning("Could not update unknown-speaker tracking log: " + ex.Message); }
             PendingUnknown pending = new PendingUnknown();
             pending.Name = name;
             pending.RawText = rawText;
@@ -1314,10 +1325,12 @@ namespace ObenseuerTts
             if (activeUnknown != null) backendState = "Unknown speaker: " + activeUnknown.Name;
         }
 
-        private void ApplyUnknownChoice(string gender, string exactVoice, bool ignore)
+        private void ApplyUnknownChoice(string gender, string exactVoice, bool ignore, string choiceMethod)
         {
             if (activeUnknown == null) return;
             string name = activeUnknown.Name;
+            if (string.Equals(choiceMethod, "random compatible voice", StringComparison.Ordinal))
+                exactVoice = StablePoolVoice(name, unknownVoices, ResolveInstalledVoiceSpec(voice.Value, "af_heart"));
             SpeechProfile profile = BuildProfile(name, gender, exactVoice, string.IsNullOrEmpty(exactVoice) && !ignore);
             SpeakerAssignment assignment = new SpeakerAssignment();
             assignment.inputName = name;
@@ -1326,9 +1339,9 @@ namespace ObenseuerTts
             assignment.voice = profile.Voice;
             assignment.speed = profile.Speed;
             assignment.pitch = profile.Pitch;
-            assignment.matchMethod = "unknown speaker prompt";
+            assignment.matchMethod = "unknown speaker prompt: " + choiceMethod;
             assignment.genderSource = "user/manual";
-            assignment.voiceSource = string.IsNullOrEmpty(exactVoice) ? (IsKnownGender(gender) ? "user-selected gender pool" : "DefaultVoice") : "user-selected exact voice";
+            assignment.voiceSource = choiceMethod;
             assignment.speakerId = activeUnknown.SpeakerId;
             assignment.variationSeed = variationSeed.Value;
             assignment.manual = true;
@@ -1339,6 +1352,12 @@ namespace ObenseuerTts
                 SaveAssignments();
                 DebugLog("Unknown speaker assignment saved for " + name + " voice=" + assignment.voice + " gender=" + assignment.gender + " ignore=" + ignore);
             }
+            try
+            {
+                unknownSpeakerTracker.RecordChoice(name, activeUnknown.SpeakerId, profile.Voice,
+                    ignore ? "ignored by user" : choiceMethod, gender, rememberUnknownChoice, DateTime.UtcNow);
+            }
+            catch (Exception ex) { Logger.LogWarning("Could not update unknown-speaker tracking log: " + ex.Message); }
 
             if (!ignore && !string.IsNullOrEmpty(activeUnknown.CleanText))
             {
@@ -1363,14 +1382,16 @@ namespace ObenseuerTts
         private void OnGUI()
         {
             CaptureHotkeyInput();
+            bool notificationVisible = !string.IsNullOrEmpty(notificationText) && Time.unscaledTime < notificationUntil;
+            if (notificationVisible) GUI.Box(new Rect(12, 12, 360, 34), notificationText);
             if (showStatusOverlay != null && showStatusOverlay.Value && !string.Equals(backendState, "Connected", StringComparison.Ordinal))
             {
-                GUI.Box(new Rect(12, 12, 360, 34), "ObenVoice: " + backendState);
+                GUI.Box(new Rect(12, notificationVisible ? 52 : 12, 360, 34), "ObenVoice: " + backendState);
             }
 
             if (activeUnknown != null && unknownSpeakerPrompt.Value)
             {
-                float height = choosingUnknownVoice ? 245f : 190f;
+                float height = choosingUnknownVoice ? 245f : 230f;
                 Rect area = new Rect((Screen.width - 440f) / 2f, (Screen.height - height) / 2f, 440f, height);
                 GUI.Window(946210, area, DrawUnknownSpeakerWindow, "ObenVoice — Unknown speaker");
             }
@@ -1510,8 +1531,12 @@ namespace ObenseuerTts
         {
             GUI.Label(new Rect(20, 105, 145, 22), "Voice engine");
             if (GUI.Button(new Rect(170, 100, 220, 28), preferredTtsEngine.Value + "  ▼")) showEngineChoices = !showEngineChoices;
-            GUI.Label(new Rect(410, 105, 310, 22), "Running: " + runningTtsEngine);
-            GUI.Label(new Rect(20, 136, 700, 22), "Choose an installed engine here. Apply a change from Advanced > Restart Voice Engine.");
+            bool oldEnabled = GUI.enabled;
+            GUI.enabled = restartInProgress == 0 && IsInstalledEngine(preferredTtsEngine.Value) && SelectedEngineDiffersFromRunning();
+            if (GUI.Button(new Rect(400, 100, 72, 28), "Apply")) RestartVoiceEngine();
+            GUI.enabled = oldEnabled;
+            GUI.Label(new Rect(485, 105, 235, 22), "Running: " + runningTtsEngine);
+            GUI.Label(new Rect(20, 136, 700, 22), "Select an installed voice engine, then choose Apply when the selection changes.");
 
             autoStartBackend.Value = GUI.Toggle(new Rect(20, 175, 350, 24), autoStartBackend.Value, "Start the offline voice service with the game");
             closeBackendOnGameExit.Value = GUI.Toggle(new Rect(20, 205, 350, 24), closeBackendOnGameExit.Value, "Close the service started by ObenVoice on exit");
@@ -1539,6 +1564,14 @@ namespace ObenseuerTts
             }
         }
 
+        private bool SelectedEngineDiffersFromRunning()
+        {
+            string selected = (preferredTtsEngine.Value ?? string.Empty).Trim();
+            string running = (runningTtsEngine ?? string.Empty).Trim();
+            if (selected.Length == 0 || string.Equals(selected, running, StringComparison.OrdinalIgnoreCase)) return false;
+            return !startedBackend || !string.Equals(selected, launchedTtsEngine, StringComparison.OrdinalIgnoreCase);
+        }
+
         private void ResetOrdinarySettings()
         {
             ResetSetting(host); ResetSetting(port); ResetSetting(voice); ResetSetting(autoConnect);
@@ -1551,12 +1584,12 @@ namespace ObenseuerTts
             ResetSetting(muteOriginalDialogueAudio); ResetSetting(muteOriginalBarkAudio);
             ResetSetting(minimumCharacters); ResetSetting(maximumCharacters); ResetSetting(ignoredExactTerms); ResetSetting(duplicateCooldownSeconds);
             ResetSetting(unknownSpeakerPrompt); ResetSetting(speakerDatabaseEnabled); ResetSetting(clearSavedAssignments);
-            ResetSetting(autoStartBackend); ResetSetting(closeBackendOnGameExit); ResetSetting(preferredTtsEngine); ResetSetting(selectedVoicePack);
+            ResetSetting(autoStartBackend); ResetSetting(closeBackendOnGameExit); ResetSetting(preferredTtsEngine); ResetSetting(selectedEngineVoicePack);
             ResetSetting(debugLogging); ResetSetting(showStatusOverlay); ResetSetting(settingsHotkey); ResetSetting(playerVoiceHotkey); ResetSetting(flagDialogueHotkey);
             // CharacterVoiceOverrides and CharacterProfileOverrides are deliberately preserved.
             ScanInstalledEngineAddons();
             ScanInstalledVoicePacks();
-            if (pocketAddonAvailable) ScanManualPocketVoicePacks();
+            if (manualEngineVoicePacksAvailable) ScanManualEngineVoicePacks();
             LoadVoiceRules();
             LoadCharacterDatabase();
             confirmResetDefaults = false;
@@ -1673,7 +1706,10 @@ namespace ObenseuerTts
         private Vector2 DrawSelectableVoiceList(Rect viewport, Vector2 scroll, bool selectFallback)
         {
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-            buttonStyle.wordWrap = true;
+            buttonStyle.wordWrap = selectFallback;
+            GUIStyle selectedStyle = new GUIStyle(buttonStyle);
+            selectedStyle.normal.background = GUI.skin.button.active.background;
+            selectedStyle.hover.background = GUI.skin.button.active.background;
             float rowWidth = viewport.width - 28f;
             float contentHeight = 4f;
             foreach (string gender in new string[] { "female", "male" })
@@ -1681,7 +1717,7 @@ namespace ObenseuerTts
                 contentHeight += 24f;
                 foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
                     if (string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase))
-                        contentHeight += Math.Max(42f, buttonStyle.CalcHeight(new GUIContent(VoiceMenuLabel(voiceInfo)), rowWidth)) + 4f;
+                        contentHeight += selectFallback ? Math.Max(42f, buttonStyle.CalcHeight(new GUIContent(VoiceMenuLabel(voiceInfo)), rowWidth)) + 4f : 30f;
             }
 
             scroll = GUI.BeginScrollView(viewport, scroll, new Rect(0, 0, viewport.width - 20f, Math.Max(viewport.height - 4f, contentHeight)));
@@ -1693,9 +1729,11 @@ namespace ObenseuerTts
                 foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
                 {
                     if (!string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase)) continue;
-                    string label = VoiceMenuLabel(voiceInfo);
-                    float height = Math.Max(42f, buttonStyle.CalcHeight(new GUIContent(label), rowWidth));
-                    if (GUI.Button(new Rect(4, y, rowWidth, height), label, buttonStyle))
+                    bool selected = string.Equals(selectFallback ? voice.Value : playerVoice.Value, voiceInfo.Id, StringComparison.OrdinalIgnoreCase);
+                    string label = selectFallback ? VoiceMenuLabel(voiceInfo) : CompactVoiceMenuLabel(voiceInfo);
+                    if (selected && !selectFallback) label = "[Selected] " + label;
+                    float height = selectFallback ? Math.Max(42f, buttonStyle.CalcHeight(new GUIContent(label), rowWidth)) : 26f;
+                    if (GUI.Button(new Rect(4, y, rowWidth, height), label, selected && !selectFallback ? selectedStyle : buttonStyle))
                     {
                         if (selectFallback) voice.Value = voiceInfo.Id;
                         else playerVoice.Value = voiceInfo.Id;
@@ -1707,6 +1745,12 @@ namespace ObenseuerTts
             }
             GUI.EndScrollView();
             return scroll;
+        }
+
+        private static string CompactVoiceMenuLabel(DiscoveredVoice voiceInfo)
+        {
+            string origin = voiceInfo.External ? voiceInfo.PackName : "Default";
+            return voiceInfo.DisplayName + " (" + voiceInfo.Id + ") - " + origin;
         }
 
         private static string VoiceLabel(string voiceName)
@@ -1734,7 +1778,7 @@ namespace ObenseuerTts
 
             if (string.Equals(preferredTtsEngine.Value, "pocket", StringComparison.OrdinalIgnoreCase))
             {
-                DrawPocketVoicePackSettings();
+                DrawManualEngineVoicePackSettings();
                 return;
             }
 
@@ -1792,30 +1836,30 @@ namespace ObenseuerTts
             return voiceInfo.DisplayName + " (" + voiceInfo.Id + ")\n" + origin;
         }
 
-        private void DrawPocketVoicePackSettings()
+        private void DrawManualEngineVoicePackSettings()
         {
-            if (!pocketAddonAvailable)
+            if (!manualEngineVoicePacksAvailable)
             {
                 GUI.Box(new Rect(20, 105, 700, 80), "Voice packs are engine-specific. Install a voice pack compatible with the selected engine.\nOptional engine add-ons are required only for voice packs that use those engines.");
                 return;
             }
             GUI.Label(new Rect(20, 105, 700, 22), "Optional-engine voice folders. Put one compatible voice file in each folder; manifest.json is optional.");
-            GUI.Label(new Rect(20, 135, 700, 22), "Folder: " + GetManualPocketVoicePackRoot());
+            GUI.Label(new Rect(20, 135, 700, 22), "Folder: " + GetManualEngineVoicePackRoot());
             GUI.Label(new Rect(20, 165, 700, 22), "Folders are scanned automatically at game startup. Restart after installing or removing a pack.");
-            if (GUI.Button(new Rect(20, 195, 150, 28), "Use bundled voice")) selectedVoicePack.Value = string.Empty;
+            if (GUI.Button(new Rect(20, 195, 150, 28), "Use Engine Default")) selectedEngineVoicePack.Value = string.Empty;
 
-            GUI.Label(new Rect(190, 200, 530, 22), "Selected: " + (string.IsNullOrEmpty(selectedVoicePack.Value) ? "Bundled default" : selectedVoicePack.Value));
-            if (manualPocketVoicePacks.Count == 0)
+            GUI.Label(new Rect(190, 200, 530, 22), "Engine Voice Pack: " + (string.IsNullOrEmpty(selectedEngineVoicePack.Value) ? "Engine default" : selectedEngineVoicePack.Value));
+            if (manualEngineVoicePacks.Count == 0)
             {
                 GUI.Box(new Rect(20, 240, 700, 70), "No compatible voice packs found for this engine.\nCreate ObenseuerTTS\\VoicePacks\\PackName and place a supported voice file inside.\nSee README.txt in the VoicePacks folder. Selection applies after the next engine start.");
             }
             else
             {
-                int shown = Math.Min(8, manualPocketVoicePacks.Count);
+                int shown = Math.Min(8, manualEngineVoicePacks.Count);
                 for (int i = 0; i < shown; i++)
                 {
-                    string name = manualPocketVoicePacks[i];
-                    if (GUI.Button(new Rect(20 + (i % 2) * 350, 240 + (i / 2) * 32, 330, 27), name)) selectedVoicePack.Value = name;
+                    string name = manualEngineVoicePacks[i];
+                    if (GUI.Button(new Rect(20 + (i % 2) * 350, 240 + (i / 2) * 32, 330, 27), name)) selectedEngineVoicePack.Value = name;
                 }
             }
             GUI.Label(new Rect(20, 365, 700, 42), "Packs are user-managed. You are responsible for their source, safety, compatibility and licence. See README.txt in this folder.");
@@ -1824,36 +1868,9 @@ namespace ObenseuerTts
         private void DrawDataAndStatus()
         {
             GUI.Label(new Rect(20, 105, 700, 22), "Character records: " + databaseExact.Count + "    |    Saved assignments: " + savedAssignments.Count + "    |    Pronunciation rules: " + pronunciationRuleCount);
-            speakerDatabaseEnabled.Value = GUI.Toggle(new Rect(20, 140, 330, 24), speakerDatabaseEnabled.Value, "Use bundled character database");
-            unknownSpeakerPrompt.Value = GUI.Toggle(new Rect(20, 170, 330, 24), unknownSpeakerPrompt.Value, "Ask when an unknown speaker is encountered");
-            if (GUI.Button(new Rect(400, 140, 180, 28), "Reload character database"))
-            {
-                LoadCharacterDatabase();
-                backendState = "Character database reloaded";
-            }
-            if (GUI.Button(new Rect(400, 175, 180, 28), "Reload pronunciation rules"))
-            {
-                LoadPronunciationRules();
-                LoadEditableRuleFiles();
-                backendState = "Pronunciation and exclusion rules reloaded";
-            }
-            if (!confirmClearAssignments)
-            {
-                if (GUI.Button(new Rect(400, 210, 180, 28), "Reset saved assignments")) confirmClearAssignments = true;
-            }
-            else
-            {
-                GUI.Label(new Rect(400, 245, 250, 22), "Reset every saved speaker choice?");
-                if (GUI.Button(new Rect(400, 275, 82, 28), "Yes, reset"))
-                {
-                    savedAssignments.Clear();
-                    SaveAssignments();
-                    confirmClearAssignments = false;
-                    backendState = "Saved speaker assignments cleared";
-                }
-                if (GUI.Button(new Rect(490, 275, 82, 28), "Cancel")) confirmClearAssignments = false;
-            }
-            GUI.Label(new Rect(20, 325, 700, 60), "Rule files: ObenseuerTTS\\pronunciation-replacements.txt and speech-exclusions.txt\nEngine add-ons and voice packs are detected at startup. Use Restart Voice Engine after changing the selected engine.");
+            unknownSpeakerPrompt.Value = GUI.Toggle(new Rect(20, 145, 380, 24), unknownSpeakerPrompt.Value, "Ask when an unknown speaker is encountered");
+            GUI.Label(new Rect(20, 190, 700, 42), "Character-database and reload controls are available in Advanced > Maintenance.");
+            GUI.Label(new Rect(20, 245, 700, 70), "Rule files: ObenseuerTTS\\pronunciation-replacements.txt and speech-exclusions.txt\nUnknown-speaker candidates: ObenseuerTTS\\unknown-speakers.tsv\nEngine add-ons and voice packs are detected at startup.");
         }
 
         private void DrawAdvancedSettings()
@@ -1863,28 +1880,76 @@ namespace ObenseuerTts
             GUI.Label(new Rect(20, 165, 190, 22), "Flag recent dialogue key");
             DrawHotkeyField(new Rect(210, 159, 170, 28), flagDialogueHotkey, 3);
             if (GUI.Button(new Rect(400, 159, 105, 28), "Flag now")) FlagRecentDialogue();
-            if (GUI.Button(new Rect(515, 159, 95, 28), "Open Log")) OpenDialogueDiagnosticLog();
-            if (GUI.Button(new Rect(620, 159, 95, 28), "Clear Log")) ClearDialogueDiagnosticLog();
-            GUI.Label(new Rect(20, 195, 700, 42), "Flagging works even when continuous logging is off. It saves the four most recent dialogue outcomes to a bounded log.");
-            GUI.Label(new Rect(20, 235, 700, 42), diagnosticStatus);
-
-            GUI.Label(new Rect(20, 285, 700, 22), "Maintenance");
-            bool oldEnabled = GUI.enabled;
-            GUI.enabled = restartInProgress == 0 && IsInstalledEngine(preferredTtsEngine.Value);
-            if (GUI.Button(new Rect(20, 315, 200, 30), restartInProgress == 0 ? "Restart Voice Engine" : "Restarting...")) RestartVoiceEngine();
-            GUI.enabled = oldEnabled;
-            GUI.Label(new Rect(235, 320, 470, 22), "Applies engine or engine voice-pack changes without restarting the game.");
-
-            if (!confirmResetDefaults)
+            if (!confirmClearDiagnosticLog)
             {
-                if (GUI.Button(new Rect(20, 365, 200, 30), "Reset Settings to Defaults")) confirmResetDefaults = true;
-                GUI.Label(new Rect(235, 370, 470, 22), "Keeps assignments, manual overrides and pronunciation rules.");
+                if (GUI.Button(new Rect(515, 159, 105, 28), "Clear Log")) confirmClearDiagnosticLog = true;
+                GUI.Label(new Rect(20, 195, 700, 22), "Flagging works with continuous logging off and saves the four most recent dialogue outcomes.");
+                GUI.Label(new Rect(20, 220, 700, 22), diagnosticStatus);
             }
             else
             {
-                GUI.Label(new Rect(20, 362, 380, 22), "Reset ordinary settings while keeping saved voice data?");
-                if (GUI.Button(new Rect(410, 358, 90, 28), "Reset")) ResetOrdinarySettings();
-                if (GUI.Button(new Rect(510, 358, 90, 28), "Cancel")) confirmResetDefaults = false;
+                GUI.Label(new Rect(20, 195, 360, 22), "Clear diagnostic log? This deletes recorded entries.");
+                if (GUI.Button(new Rect(400, 190, 100, 28), "Cancel")) confirmClearDiagnosticLog = false;
+                if (GUI.Button(new Rect(510, 190, 110, 28), "Clear Log"))
+                {
+                    ClearDialogueDiagnosticLog();
+                    confirmClearDiagnosticLog = false;
+                }
+            }
+
+            GUI.Label(new Rect(20, 250, 700, 22), "Maintenance");
+            bool oldEnabled = GUI.enabled;
+            GUI.enabled = restartInProgress == 0 && IsInstalledEngine(preferredTtsEngine.Value);
+            if (GUI.Button(new Rect(20, 277, 200, 28), restartInProgress == 0 ? "Restart Voice Engine" : "Restarting...")) RestartVoiceEngine();
+            GUI.enabled = oldEnabled;
+            speakerDatabaseEnabled.Value = GUI.Toggle(new Rect(20, 315, 340, 24), speakerDatabaseEnabled.Value, "Use bundled character database");
+
+            if (GUI.Button(new Rect(400, 277, 200, 28), "Reload Character Database"))
+            {
+                LoadCharacterDatabase();
+                backendState = "Character database reloaded";
+            }
+            if (GUI.Button(new Rect(400, 312, 200, 28), "Reload Pronunciation Rules"))
+            {
+                LoadPronunciationRules();
+                LoadEditableRuleFiles();
+                backendState = "Pronunciation and exclusion rules reloaded";
+            }
+            if (!confirmResetDefaults && !confirmClearAssignments)
+            {
+                if (GUI.Button(new Rect(400, 347, 200, 28), "Reset Saved Assignments"))
+                {
+                    confirmClearAssignments = true;
+                    confirmResetDefaults = false;
+                }
+            }
+            else if (confirmClearAssignments)
+            {
+                GUI.Label(new Rect(390, 342, 300, 22), "Reset every saved speaker choice?");
+                if (GUI.Button(new Rect(400, 370, 90, 26), "Cancel")) confirmClearAssignments = false;
+                if (GUI.Button(new Rect(500, 370, 100, 26), "Reset"))
+                {
+                    savedAssignments.Clear();
+                    SaveAssignments();
+                    confirmClearAssignments = false;
+                    backendState = "Saved speaker assignments cleared";
+                }
+            }
+
+            if (!confirmClearAssignments && !confirmResetDefaults)
+            {
+                if (GUI.Button(new Rect(20, 365, 200, 28), "Reset Settings to Defaults"))
+                {
+                    confirmResetDefaults = true;
+                    confirmClearAssignments = false;
+                }
+                GUI.Label(new Rect(20, 397, 360, 22), "Keeps assignments, overrides and pronunciation rules.");
+            }
+            else if (confirmResetDefaults)
+            {
+                GUI.Label(new Rect(20, 355, 350, 22), "Reset ordinary settings and keep saved voice data?");
+                if (GUI.Button(new Rect(20, 382, 90, 26), "Cancel")) confirmResetDefaults = false;
+                if (GUI.Button(new Rect(120, 382, 90, 26), "Reset")) ResetOrdinarySettings();
             }
         }
 
@@ -2030,7 +2095,7 @@ namespace ObenseuerTts
         {
             if (!confirmPronunciationReset)
             {
-                if (GUI.Button(new Rect(24, 326, 160, 25), "Reset pronunciation defaults")) confirmPronunciationReset = true;
+                if (GUI.Button(new Rect(24, 326, 230, 25), "Reset pronunciation defaults")) confirmPronunciationReset = true;
             }
             else
             {
@@ -2220,7 +2285,7 @@ namespace ObenseuerTts
             {
                 Logger.LogWarning("Could not scan optional TTS engine add-ons: " + ex.Message);
             }
-            pocketAddonAvailable = installedEngineIds.Contains("pocket");
+            manualEngineVoicePacksAvailable = installedEngineIds.Contains("pocket");
         }
 
         private string[] GetInstalledEngineIds()
@@ -2368,29 +2433,29 @@ namespace ObenseuerTts
             Config.Save();
         }
 
-        private string GetManualPocketVoicePackRoot()
+        private string GetManualEngineVoicePackRoot()
         {
             return Path.Combine(Paths.GameRootPath, "ObenseuerTTS", "VoicePacks");
         }
 
-        private void ScanManualPocketVoicePacks()
+        private void ScanManualEngineVoicePacks()
         {
-            manualPocketVoicePacks.Clear();
+            manualEngineVoicePacks.Clear();
             try
             {
-                string root = GetManualPocketVoicePackRoot();
+                string root = GetManualEngineVoicePackRoot();
                 if (!Directory.Exists(root)) Directory.CreateDirectory(root);
-                EnsureManualVoicePackReadme(root);
+                EnsureManualEngineVoicePackReadme(root);
                 foreach (string directory in Directory.GetDirectories(root))
                 {
                     string name = Path.GetFileName(directory);
                     if (string.IsNullOrEmpty(name) || name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0) continue;
                     if (File.Exists(Path.Combine(directory, "manifest.json")) || Directory.GetFiles(directory, "*.safetensors", SearchOption.TopDirectoryOnly).Length > 0)
-                        manualPocketVoicePacks.Add(name);
+                        manualEngineVoicePacks.Add(name);
                 }
-                manualPocketVoicePacks.Sort(StringComparer.OrdinalIgnoreCase);
-                if (!string.IsNullOrEmpty(selectedVoicePack.Value) && !manualPocketVoicePacks.Contains(selectedVoicePack.Value))
-                    selectedVoicePack.Value = string.Empty;
+                manualEngineVoicePacks.Sort(StringComparer.OrdinalIgnoreCase);
+                if (!string.IsNullOrEmpty(selectedEngineVoicePack.Value) && !manualEngineVoicePacks.Contains(selectedEngineVoicePack.Value))
+                    selectedEngineVoicePack.Value = string.Empty;
             }
             catch (Exception ex)
             {
@@ -2398,7 +2463,7 @@ namespace ObenseuerTts
             }
         }
 
-        private void EnsureManualVoicePackReadme(string root)
+        private void EnsureManualEngineVoicePackReadme(string root)
         {
             string path = Path.Combine(root, "README.txt");
             if (File.Exists(path)) return;
@@ -2431,17 +2496,18 @@ namespace ObenseuerTts
                     int row = i / columns;
                     int column = i % columns;
                     if (GUI.Button(new Rect(20 + column * 200, 112 + row * 27, 190, 24), choices[i]))
-                        ApplyUnknownChoice("unknown", choices[i], false);
+                        ApplyUnknownChoice("unknown", choices[i], false, "chosen voice");
                 }
                 if (GUI.Button(new Rect(320, 58, 90, 24), "Back")) choosingUnknownVoice = false;
             }
             else
             {
-                if (GUI.Button(new Rect(20, 92, 92, 30), "Male")) ApplyUnknownChoice("male", null, false);
-                if (GUI.Button(new Rect(118, 92, 92, 30), "Female")) ApplyUnknownChoice("female", null, false);
-                if (GUI.Button(new Rect(216, 92, 194, 30), "Choose voice...")) choosingUnknownVoice = true;
-                if (GUI.Button(new Rect(20, 130, 190, 30), "Use default")) ApplyUnknownChoice("unknown", voice.Value, false);
-                if (GUI.Button(new Rect(216, 130, 194, 30), "Ignore this speaker")) ApplyUnknownChoice("unknown", voice.Value, true);
+                if (GUI.Button(new Rect(20, 92, 120, 30), "Male")) ApplyUnknownChoice("male", null, false, "male voice pool");
+                if (GUI.Button(new Rect(145, 92, 120, 30), "Female")) ApplyUnknownChoice("female", null, false, "female voice pool");
+                if (GUI.Button(new Rect(270, 92, 140, 30), "Random")) ApplyUnknownChoice("unknown", null, false, "random compatible voice");
+                if (GUI.Button(new Rect(20, 130, 190, 30), "Choose Voice...")) choosingUnknownVoice = true;
+                if (GUI.Button(new Rect(216, 130, 194, 30), "Use Default")) ApplyUnknownChoice("unknown", voice.Value, false, "default voice");
+                if (GUI.Button(new Rect(20, 168, 390, 30), "Ignore This Speaker")) ApplyUnknownChoice("unknown", voice.Value, true, "ignored by user");
             }
             GUI.DragWindow(new Rect(0, 0, 440, 25));
         }
@@ -2509,7 +2575,7 @@ namespace ObenseuerTts
                 info.EnvironmentVariables["TTS_CACHE_DIR"] = Path.Combine(root, "cache");
                 info.EnvironmentVariables["TTS_PORT"] = port.Value.ToString(CultureInfo.InvariantCulture);
                 info.EnvironmentVariables["TTS_ENGINE"] = engine;
-                info.EnvironmentVariables["TTS_VOICE_PACK"] = selectedVoicePack.Value ?? string.Empty;
+                info.EnvironmentVariables["TTS_VOICE_PACK"] = selectedEngineVoicePack.Value ?? string.Empty;
                 info.EnvironmentVariables["TTS_DEBUG"] = debugLogging.Value ? "1" : "0";
 
                 backendProcess = Process.Start(info);

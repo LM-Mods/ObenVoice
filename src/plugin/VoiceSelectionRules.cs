@@ -61,5 +61,14 @@ namespace ObenseuerTts
                     if (!result.Exists(item => string.Equals(item, voice, StringComparison.OrdinalIgnoreCase))) result.Add(voice);
             return string.Join(",", result.ToArray());
         }
+
+        internal static string StableVoice(string speakerName, string[] pool, string fallback)
+        {
+            if (pool == null || pool.Length == 0) return fallback;
+            int hash = 17;
+            string key = speakerName ?? string.Empty;
+            for (int i = 0; i < key.Length; i++) hash = unchecked(hash * 31 + char.ToUpperInvariant(key[i]));
+            return pool[(hash & 0x7fffffff) % pool.Length];
+        }
     }
 }

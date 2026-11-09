@@ -26,6 +26,9 @@ internal static class VoiceSelectionRulesTests
         Expect(persisted, "af_heart,bf_emma", "external selection persisted");
         Expect(string.Join(",", VoiceSelectionRules.BuildRuntimePool(persisted, installed, "af_heart")), "af_heart,bf_emma", "persisted selection reload");
         Expect(VoiceSelectionRules.MergeConfigured("af_heart,bf_emma", "am_adam,bm_george"), "af_heart,bf_emma,am_adam,bm_george", "unknown pool follows enabled genders");
+        string randomVoice = VoiceSelectionRules.StableVoice("Mystery Person", new string[] { "af_heart", "am_adam", "bf_emma" }, "af_heart");
+        Expect(VoiceSelectionRules.StableVoice("Mystery Person", new string[] { "af_heart", "am_adam", "bf_emma" }, "af_heart"), randomVoice, "random assignment remains stable");
+        if (Array.IndexOf(new string[] { "af_heart", "am_adam", "bf_emma" }, randomVoice) < 0) throw new Exception("random assignment was outside compatible pool");
         if (VoiceSelectionRules.IsVoiceSpecAvailable("bf_missing", installed)) throw new Exception("missing voice reported available");
 
         Console.WriteLine("voice selection rules tests passed");

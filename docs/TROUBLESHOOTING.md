@@ -9,7 +9,7 @@
 
 ## Engine change does not apply
 
-Choose the installed engine in F8 and press **Restart Voice Engine**. ObenVoice refuses to terminate a backend process it did not start.
+Choose the installed engine in F8 and press **Apply** beside the Voice Engine list. Use Advanced → **Restart Voice Engine** for a manual restart. ObenVoice refuses to terminate a backend process it did not start.
 
 ## Optional engine or voice is missing
 
@@ -19,4 +19,4 @@ Choose the installed engine in F8 and press **Restart Voice Engine**. ObenVoice 
 
 ## Preserve diagnostics safely
 
-Logs may contain dialogue and speaker names. Review them before sharing and do not include configuration or speaker-assignment files in public bug reports unless deliberately sanitized.
+`ObenseuerTTS\dialogue-diagnostics.log` and `ObenseuerTTS\unknown-speakers.tsv` may contain dialogue and speaker names. Review them before sharing and do not include configuration or speaker-assignment files in public bug reports unless deliberately sanitized.

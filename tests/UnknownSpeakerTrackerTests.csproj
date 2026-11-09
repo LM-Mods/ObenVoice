@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="UnknownSpeakerTrackerTests.cs" />
+    <Compile Include="..\src\plugin\UnknownSpeakerTracker.cs" Link="UnknownSpeakerTracker.cs" />
+  </ItemGroup>
+</Project>
