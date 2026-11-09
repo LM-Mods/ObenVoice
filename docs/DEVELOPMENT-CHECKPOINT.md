@@ -8,8 +8,8 @@ Updated: 9 November 2026
 - Final small-fix implementation: `444036c` (`Make default speech exclusions global`)
 - Release preparation: `84a0600` (`Prepare v1.0.1 beta release candidate`)
 - Public baseline: `aa9f00d` on `main`
-- Proposed public version: `v1.0.1-beta.1` (internal build 4.1.2)
-- No push, tag, GitHub publication, Nexus upload or existing public asset change has been performed.
+- Published public version: `v1.0.1-beta.1` (internal build 4.1.2)
+- GitHub source, tag and Core release are published. No Nexus upload has been performed.
 
 ## Completed
 

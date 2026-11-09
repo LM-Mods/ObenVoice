@@ -1,13 +1,11 @@
-# Release packaging plan
+# Release packaging record
 
-The v1.0.1-beta.1 Core release candidate is prepared locally for review before
-any upload. The original v1.0.0-beta.1 assets and staging baseline remain
-untouched.
+The v1.0.1-beta.1 Core archive was published on 9 November 2026. The original
+v1.0.0-beta.1 assets and staging baseline remain untouched.
 
-## Planned assets
+## Published Core asset
 
 - `ObenVoice-v1.0.1-beta.1-Core.zip`
-- Existing `ObenVoice-v1.0.0-beta.1-British-Voices.zip` (unchanged optional add-on)
 
 ## Core
 
@@ -21,9 +19,9 @@ output and their native dependencies without requiring a system-wide Python
 installation. It is local to ObenVoice and must not contain caches, logs or
 user-specific configuration.
 
-The public documents, licence/privacy review and BepInEx 5/6 gameplay tests are
-complete. The packaging script performs the final file, archive-integrity and
-checksum checks.
+The public documents, licence/privacy review, BepInEx 6 gameplay test and
+BepInEx 5 compatibility-reference build are complete. The packaging script
+performs the final file, archive-integrity and checksum checks.
 
 After assembling the core in a staging directory, regenerate its bundled Python
 inventory and collected package licence files without downloading anything:
@@ -32,19 +30,12 @@ inventory and collected package licence files without downloading anything:
 python tools\generate_runtime_inventory.py C:\path\to\staged-core
 ```
 
-Create and verify the review-only candidate with:
+The published archive reused the verified candidate bytes after the BepInEx 6
+gameplay check. For future candidate validation:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 `
   -ReleaseCandidate -LicenseApproved
-```
-
-After the final gameplay confirmations, create and verify the publishable Core
-asset with:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 `
-  -LicenseApproved -BepInEx5GameplayPassed -BepInEx6GameplayPassed
 ```
 
 For a validation-only run without creating an archive:

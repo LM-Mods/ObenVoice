@@ -1,6 +1,6 @@
 # v1.0.1-beta.1 release assets
 
-Prepared locally on 9 November 2026. Nothing listed here has been uploaded.
+Published on GitHub on 9 November 2026.
 
 ## Core release
 
@@ -18,8 +18,8 @@ The embedded DLL SHA-256 is:
 A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5
 ```
 
-The final archive reuses the verified candidate bytes under the public release
-filename after the BepInEx 6 gameplay check passed.
+The published archive reuses the verified candidate bytes under the public
+release filename after the BepInEx 6 gameplay check passed.
 
 ## Optional add-on
 

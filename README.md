@@ -5,6 +5,9 @@ ObenVoice adds fully local, offline text-to-speech to dialogue in
 player responses, and assigns stable voices to characters without sending
 dialogue to an online service.
 
+- **[Download ObenVoice Core](https://github.com/LM-Mods/ObenVoice/releases/download/v1.0.1-beta.1/ObenVoice-v1.0.1-beta.1-Core.zip)**
+- **[All Add-on Downloads](docs/ADDON-DOWNLOADS.md)**
+
 ## Development & Transparency
 
 ObenVoice is an independent, open-source community project, originally built

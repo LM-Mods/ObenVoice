@@ -9,7 +9,7 @@
 | Target | Status | Finding |
 |---|---|---|
 | Public GitHub source | **PASS** | MIT with `Copyright (c) 2026 LM-Mods` is approved; separate third-party and data terms are present. |
-| Core GitHub Release | **PASS** | Licensing/privacy corrections and BepInEx 5/6 gameplay testing are complete; final archive integrity is verified during packaging. |
+| Core GitHub Release | **PASS** | Licensing/privacy corrections, BepInEx 6 gameplay testing and the BepInEx 5 compatibility-reference build are complete; final archive integrity was verified during packaging. |
 | Core Nexus Mods release | **PASS WITH UPLOAD-TIME CHECKS** | Core is prepared; Nexus scanning and the AI-Generated Content classification remain upload-time actions. |
 | British voice pack | **PASS** | Both unmodified files match the pinned Apache-2.0 Kokoro revision. |
 
