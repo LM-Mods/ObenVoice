@@ -5,55 +5,64 @@ Updated: 9 November 2026
 ## Repository state
 
 - Branch: `dev/f8-webui-diagnostics`
-- Latest implementation commit: `3d7941b` (`Consolidate confirmed speech exclusions`)
-- Earlier functional commits: `282498e`, `750c9a8`
+- Final small-fix implementation: `444036c` (`Make default speech exclusions global`)
+- Release preparation: `84a0600` (`Prepare v1.0.1 beta release candidate`)
 - Public baseline: `aa9f00d` on `main`
-- Public release files, frozen test baseline and remote repository were not changed.
+- Proposed public version: `v1.0.1-beta.1` (internal build 4.1.2)
+- No push, tag, GitHub publication, Nexus upload or existing public asset change has been performed.
 
 ## Completed
 
-- Consolidated standalone `...` and exact `AAAAH!` into the editable Any-speaker exclusion defaults alongside `Doorphone => Bzzzz!`; the separate hardcoded filter was removed.
-- Added a version-marked one-time exclusion migration that preserves custom rules and does not restore an entry after the user deliberately removes it.
-- Added F8 General **Apply** beside Voice Engine; it reuses Restart Voice Engine and is available only when the installed selection differs from the running/launched engine.
-- Retained manual Restart Voice Engine in Advanced and kept F9 focused on player voices.
-- Made F9 voice rows compact, single-line, scrollable and visibly marked when selected.
-- Added stable Random to the unknown-speaker popup alongside Male, Female, Choose Voice, Use Default and Ignore; remembered assignments use the existing persistence path.
-- Added bounded, deduplicated `ObenseuerTTS/unknown-speakers.tsv` tracking with unresolved identity status, timestamps, occurrence count, example dialogue, chosen voice/method/gender and remember state. It never edits `characters.json`.
-- Moved `dialogue-diagnostics.log` beside `tts_server.log` under `ObenseuerTTS`.
-- Added a non-interrupting 2.5-second top-left flag success/error notification reporting the actual event count.
-- Removed Open Log and added Cancel-first confirmation before Clear Log.
-- Moved character database, reload and saved-assignment maintenance controls from Data & Status to Advanced; retained the unknown-speaker option in Data & Status.
-- Widened Reset Pronunciation Defaults so its label is visible.
-- Replaced remaining generic-use Pocket identifiers/labels with engine terminology while preserving the legacy persisted key `SelectedPocketVoicePack` for compatibility.
-- Updated usage, troubleshooting and known-limitations documentation.
+- Retained exact matching and the editable F8 speech-exclusion system.
+- Changed fresh-install/default-restoration exclusions to three global rules:
+  `Bzzzz!`, `...` and `AAAAH!`.
+- Kept the built-in defaults separate from the user-managed
+  `ObenseuerTTS\speech-exclusions.txt`; existing user files are not rewritten.
+- Matched the pronunciation and exclusion reset buttons at 230 × 25 pixels.
+- Retained the completed F8/F9 layout, engine Apply behavior, stable unknown-
+  speaker Random selection/tracking and Advanced dialogue diagnostics.
+- Retained ObenseuerCore 0.12.1; framework refactoring remains deferred.
+- Updated public metadata, changelog, GitHub/Nexus notes, licensing references
+  and AI-development disclosure for the release candidate.
+- Prepared a full Core candidate from a separate copy of the protected staging
+  baseline. Pocket and internal test/release-history material are excluded.
 
 ## Verification
 
-- Default .NET Framework 4.7.2 release build: passed, 0 warnings.
-- BepInEx 5 compatibility-reference release build: passed, 0 warnings.
-- Default and BepInEx 5 reference builds produce one identical deterministic DLL.
-- Speech text/pronunciation tests: passed, including NPC/player wildcard matching, migration preservation, one-time behavior, deliberate removal and default restoration.
-- Unknown-speaker tracker tests: passed.
-- Dialogue diagnostics tests: passed.
-- Voice selection tests: passed, including stable compatible Random selection.
-- Speaker announcement tests: passed.
-- Voice-pack manifest test: passed.
-- Mock backend shutdown and same-port restart tests: passed with localhost socket permission.
+- All focused C# tests passed.
+- Engine-add-on and external voice-pack Python tests passed.
+- Mock backend owned shutdown and same-port restart passed with localhost
+  socket permission.
+- Default .NET Framework 4.7.2 release build passed with no warnings.
+- BepInEx 5 compatibility-reference build passed with no warnings.
+- Both builds produced the same DLL:
+  `A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5`.
+- Core candidate validation passed for 13,803 files. It contains one Python
+  runtime, one Kokoro model, no Pocket files, no tests and no user data.
+- ZIP integrity and per-entry checks passed.
 
-## Framework recommendation
+## Gameplay and publication status
 
-Retain Obenseuer Modding Framework / ObenseuerCore 0.12.1.
+- The user gameplay-tested the preceding feature build on BepInEx 6 and
+  reported F8/F9, engine controls, diagnostics, unknown-speaker behavior and
+  exclusions working.
+- Final internal build 4.1.2 still needs the short BepInEx 6 candidate check
+  for the three global defaults and matched reset buttons.
+- The 4.1.2 BepInEx 5 result is build/reference compatibility only; no new
+  gameplay pass has been performed.
+- The Nexus page is publicly visible at version 1.0.0-beta.1 with one file;
+  its current scan label is **Some suspicious files**. Review that scan and
+  ticket `#277860` before upload.
 
-The plugin directly uses `FrameworkMod` lifecycle, mod/dependency metadata, framework logging and many `ModConfig`/`ModSetting` bindings that also provide optional WebUI exposure. Harmony patching itself is already explicit. Removing the framework is technically possible, and losing WebUI is acceptable, but it would require replacing the lifecycle/bootstrap, logger, configuration migration/ranges and dependency handling. Most importantly, it would introduce a new BepInEx 5/6 compatibility layer where the current indirect reference produces one identical DLL. The maintenance and regression cost outweighs one fewer dependency at this stage.
+## Local artifacts
 
-The focused optimisation review is recorded in `docs/FRAMEWORK-OPTIMISATION-REVIEW.md`. The only clearly worthwhile candidate is using `ModSetting<T>.Changed` to keep derived voice-pool state consistent after optional WebUI edits. Framework scene/dialogue events are a conditional future simplification; migrating working hotkeys or custom structured logs is not currently worthwhile.
+- Development overlay:
+  local `ObenVoice-Development-84a0600` overlay outside the repository
+- Core candidate ZIP:
+  `dist/ObenVoice-v1.0.1-beta.1-Core.zip`
+- ZIP SHA-256:
+  `B115229DC2610F1CA82AD5FD0C2FB95DC10DA9700F219CB96975741FFB43E2E2`
 
-## Known limitations and gameplay checks
-
-- BepInEx 6 gameplay testing passed for the prior UI, engine, unknown-speaker and diagnostic changes, including suppression of `...` and `AAAAH!`.
-- Focused follow-up: confirm the three defaults appear in F8 Speech Exclusions, an upgraded custom file gains the two new Any-speaker entries once, removing one remains respected, and Restore Default Exclusions restores all three.
-- No GitHub push, release publication, Nexus upload or public artifact update has been performed.
-
-## Local development output
-
-The unzipped overlay is prepared under `outputs/ObenVoice-Development-3d7941b` with one DLL in the normal game-root plugin path. It intentionally reuses the existing installed Core backend, models, configuration and add-ons rather than duplicating unchanged runtime data.
+The optional British Emma/George asset remains unchanged and separately
+available. The final non-RC filename remains gated by gameplay confirmation
+and explicit publishing approval.
