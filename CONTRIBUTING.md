@@ -11,6 +11,10 @@ Before submitting a change:
    game files, logs, caches, credentials or personal paths.
 4. Identify the source and licence of any third-party material.
 5. Do not submit code or assets copied from another mod without permission.
+6. Review the complete staged diff before committing. Remove local workspace
+   paths, account or computer identifiers, private network details and tokens.
+7. Check screenshots and other media for visible personal information and
+   embedded metadata before publishing them.
 
 By submitting original material, you agree that it may be distributed under
 the project's MIT licence. Material under a different compatible licence must
