@@ -37,6 +37,12 @@ internal static class SpeechTextRulesTests
             throw new Exception("text-only wildcard exclusion did not match");
         if (SpeechExclusionRules.IsExcluded(exclusions.Entries, "NPC", "I used the doorphone."))
             throw new Exception("unrelated dialogue was broadly excluded");
+        if (!SpeechTextRules.IsConfirmedNonSpeech("...") || !SpeechTextRules.IsConfirmedNonSpeech("……"))
+            throw new Exception("standalone ellipsis was not excluded");
+        if (!SpeechTextRules.IsConfirmedNonSpeech("AAAAH!") || !SpeechTextRules.IsConfirmedNonSpeech("aaaah!"))
+            throw new Exception("confirmed AAAAH expression was not excluded");
+        if (SpeechTextRules.IsConfirmedNonSpeech("Wait...") || SpeechTextRules.IsConfirmedNonSpeech("AAAH!") || SpeechTextRules.IsConfirmedNonSpeech(".."))
+            throw new Exception("non-matching dialogue was over-broadly excluded");
         pronunciation.Entries.Add(new EditableSpeechRule("testword", "test word"));
         pronunciation.Entries[1] = new EditableSpeechRule("edited", "spoken edit");
         EditableSpeechRuleDocument persisted = EditableSpeechRuleDocument.Parse(pronunciation.Serialize("# heading"), false, null);
