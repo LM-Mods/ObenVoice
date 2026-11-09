@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.1-beta.1 — release candidate
+## v1.0.1-beta.1 — 9 November 2026
 
 Public release label for internal build 4.1.2.
 

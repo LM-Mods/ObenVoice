@@ -15,14 +15,11 @@ A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5
 - Default .NET Framework 4.7.2 release build: passed with no warnings.
 - BepInEx 5 reference build: passed with no warnings.
 - Default and BepInEx 5 reference builds: byte-identical shared DLL.
-- BepInEx 6 gameplay testing passed for the feature build immediately before
-  the final global-default and button-width changes.
+- Final 4.1.2 BepInEx 6 gameplay testing: passed.
 
-## Required before publication
+## Compatibility note
 
-- Focused BepInEx 6 gameplay check of the final 4.1.2 candidate: three global
-  defaults, restore behaviour, both reset buttons and ordinary F8/F9 use.
-- BepInEx 5 has build/reference compatibility only for this candidate; it has
+- BepInEx 5 has build/reference compatibility for this release; it has
   not received a new gameplay pass. Do not describe 4.1.2 as newly
   gameplay-tested on BepInEx 5 unless that check is completed.
 

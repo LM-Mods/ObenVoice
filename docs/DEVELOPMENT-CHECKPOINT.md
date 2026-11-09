@@ -46,8 +46,7 @@ Updated: 9 November 2026
 - The user gameplay-tested the preceding feature build on BepInEx 6 and
   reported F8/F9, engine controls, diagnostics, unknown-speaker behavior and
   exclusions working.
-- Final internal build 4.1.2 still needs the short BepInEx 6 candidate check
-  for the three global defaults and matched reset buttons.
+- Final internal build 4.1.2 passed the BepInEx 6 gameplay check.
 - The 4.1.2 BepInEx 5 result is build/reference compatibility only; no new
   gameplay pass has been performed.
 - The Nexus page is publicly visible at version 1.0.0-beta.1 with one file;
@@ -64,5 +63,4 @@ Updated: 9 November 2026
   `B115229DC2610F1CA82AD5FD0C2FB95DC10DA9700F219CB96975741FFB43E2E2`
 
 The optional British Emma/George asset remains unchanged and separately
-available. The final non-RC filename remains gated by gameplay confirmation
-and explicit publishing approval.
+available. Publishing was explicitly approved after gameplay confirmation.
