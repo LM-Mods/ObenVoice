@@ -1,6 +1,8 @@
 # Known limitations
 
-- The path-sanitised release DLL was gameplay-tested on BepInEx 5 and BepInEx 6.
+- One shared plugin DLL targets BepInEx 5 and BepInEx 6. Routine development
+  gameplay testing uses BepInEx 6; BepInEx 5 is also checked by a separate
+  compatibility-reference build.
 - Synthetic pronunciation and emotional delivery vary by voice and line.
 - Very short hesitation sounds such as `Hmh`, `Ahhh`, `Hmm`, `Um` and `Urgh?`
   can sound unnatural or occasionally be skipped.

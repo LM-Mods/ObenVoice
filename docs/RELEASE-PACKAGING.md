@@ -1,17 +1,20 @@
 # Release packaging plan
 
-Release assets were created locally and verified on 8 November 2026 for review
-before any upload. Their sizes and SHA-256 values are recorded in
-[RELEASE-ASSETS-v1.0.0-beta.1.md](RELEASE-ASSETS-v1.0.0-beta.1.md).
+The v1.0.1-beta.1 Core release candidate is prepared locally for review before
+any upload. The original v1.0.0-beta.1 assets and staging baseline remain
+untouched.
 
 ## Planned assets
 
-- `ObenVoice-v1.0.0-beta.1-Core.zip`
-- `ObenVoice-v1.0.0-beta.1-British-Voices.zip`
+- `ObenVoice-v1.0.1-beta.1-Core.zip`
+- Existing `ObenVoice-v1.0.0-beta.1-British-Voices.zip` (unchanged optional add-on)
 
 ## Core
 
-Baseline: the protected 4.1.1 `Ready-to-Install-Core` checkpoint. The eventual asset contains the tested DLL, character data, backend, offline Python runtime, Kokoro model/cache, launcher and complete runtime notices.
+Baseline: a separate copy of the protected 4.1.1 Core package with the 4.1.2
+DLL and current public documentation overlaid. The asset contains character
+data, backend, one offline Python runtime, one Kokoro model/cache, launcher and
+complete runtime notices. Pocket is excluded.
 
 The embedded Python runtime is required to run Kokoro, phonemization, audio
 output and their native dependencies without requiring a system-wide Python
@@ -29,8 +32,15 @@ inventory and collected package licence files without downloading anything:
 python tools\generate_runtime_inventory.py C:\path\to\staged-core
 ```
 
-With the approved licence and completed gameplay confirmations, create and
-verify the final Core asset with:
+Create and verify the review-only candidate with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 `
+  -ReleaseCandidate -LicenseApproved
+```
+
+After the final gameplay confirmations, create and verify the publishable Core
+asset with:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 `
@@ -40,7 +50,7 @@ powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 `
 For a validation-only run without creating an archive:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 -ValidateOnly
+powershell -ExecutionPolicy Bypass -File tools\package-core-release.ps1 -ValidateOnly -ReleaseCandidate
 ```
 
 ## Pocket

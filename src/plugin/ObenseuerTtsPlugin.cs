@@ -102,7 +102,7 @@ namespace ObenseuerTts
         public bool ignore;
     }
 
-    [ModInfo("com.kokoro.tts.obenseuer", "ObenVoice", "4.1.1")]
+    [ModInfo("com.kokoro.tts.obenseuer", "ObenVoice", "4.1.2")]
     [ModDependency("obenseuer.moddingframework", "0.12.1")]
     public sealed class ObenseuerTtsPlugin : FrameworkMod
     {
@@ -397,7 +397,7 @@ namespace ObenseuerTts
             try { lastConversationActive = DialogueManager.isConversationActive; } catch { }
             if (autoStartBackend.Value) StartBackendIfNeeded();
             BeginConnect();
-            Logger.LogInfo("ObenVoice 4.1.1 loaded.");
+            Logger.LogInfo("ObenVoice 4.1.2 loaded.");
         }
 
         private void LoadVoiceRules()

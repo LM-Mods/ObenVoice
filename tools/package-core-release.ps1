@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
     [switch]$ValidateOnly,
+    [switch]$ReleaseCandidate,
     [switch]$LicenseApproved,
     [switch]$BepInEx5GameplayPassed,
     [switch]$BepInEx6GameplayPassed,
@@ -10,11 +11,11 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$releaseName = 'ObenVoice-v1.0.0-beta.1-Core.zip'
-$expectedDllSha256 = '59A0B0F5BE6BCD9C55029CCE84E279038B1DFFAE0C950B161D38AA781C5AF265'
+$releaseName = if ($ReleaseCandidate) { 'ObenVoice-v1.0.1-beta.1-Core-RC.zip' } else { 'ObenVoice-v1.0.1-beta.1-Core.zip' }
+$expectedDllSha256 = 'A67DF8D9AB82EF7225D23D2836D0AE4FE89B84C3B746F6D39A16BAC4002D5DB5'
 $repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $stagingRoot = [IO.Path]::GetFullPath((Join-Path $repoRoot 'release-staging'))
-$coreRoot = [IO.Path]::GetFullPath((Join-Path $stagingRoot 'core-rc'))
+$coreRoot = [IO.Path]::GetFullPath((Join-Path $stagingRoot 'core-v1.0.1-beta.1'))
 $outputRoot = [IO.Path]::GetFullPath((Join-Path $repoRoot 'dist'))
 $zipPath = Join-Path $outputRoot $releaseName
 $checksumPath = $zipPath + '.sha256'
@@ -66,8 +67,10 @@ Assert-True ($licenseText.Contains('Copyright (c) 2026 LM-Mods')) 'The LM-Mods M
 
 if (-not $ValidateOnly) {
     Assert-True $LicenseApproved 'Packaging stopped: pass -LicenseApproved only after explicit user approval of the LM-Mods MIT notice.'
-    Assert-True $BepInEx5GameplayPassed 'Packaging stopped: pass -BepInEx5GameplayPassed only after the sanitised DLL passes the focused BepInEx 5 gameplay test.'
-    Assert-True $BepInEx6GameplayPassed 'Packaging stopped: pass -BepInEx6GameplayPassed only after the sanitised DLL passes the focused BepInEx 6 gameplay test.'
+    if (-not $ReleaseCandidate) {
+        Assert-True $BepInEx5GameplayPassed 'Final packaging stopped: pass -BepInEx5GameplayPassed only after the sanitised DLL passes the focused BepInEx 5 gameplay test.'
+        Assert-True $BepInEx6GameplayPassed 'Final packaging stopped: pass -BepInEx6GameplayPassed only after the sanitised DLL passes the focused BepInEx 6 gameplay test.'
+    }
 }
 
 $required = @(
@@ -152,6 +155,10 @@ if ($ValidateOnly) {
         Write-Warning 'Final packaging remains gated by explicit licence approval and both gameplay confirmations.'
     }
     exit 0
+}
+
+if ($ReleaseCandidate) {
+    Write-Warning 'This RC archive is for review and gameplay testing only. Do not publish it as the final release asset.'
 }
 
 if ((Test-Path -LiteralPath $zipPath) -or (Test-Path -LiteralPath $checksumPath)) {

@@ -1,6 +1,19 @@
 # Changelog
 
-## v1.0.0-beta.1 — planned
+## v1.0.1-beta.1 — release candidate
+
+Public release label for internal build 4.1.2.
+
+- Reorganised F8 and F9 controls for clearer day-to-day use.
+- Added explicit Apply behaviour for voice-engine changes while retaining manual restart controls.
+- Added stable Random selection and persistent tracking for unknown speakers.
+- Expanded dialogue diagnostics with recent-event flagging, clearer feedback and safer log clearing.
+- Moved exact non-speech filtering into the editable F8 exclusions list.
+- Made `Bzzzz!`, `...` and `AAAAH!` global exact-match defaults for fresh installs and default restoration.
+- Improved consistency of pronunciation and exclusion reset controls.
+- Preserved one shared plugin DLL for BepInEx 5 and BepInEx 6.
+
+## v1.0.0-beta.1 — 8 November 2026
 
 Public release label for internal build 4.1.1.
 

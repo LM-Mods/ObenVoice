@@ -43,8 +43,10 @@ Source: https://github.com/LM-Mods/ObenVoice
 - Obenseuer Modding Framework / ObenseuerCore 0.12.1
 
 BepInEx and Obenseuer Modding Framework must already be installed separately.
-The release DLL passed gameplay testing on BepInEx 5 and BepInEx
-6.0.0-be.788.
+ObenVoice uses one shared DLL for both loaders. The original public DLL passed
+gameplay testing on BepInEx 5 and BepInEx 6.0.0-be.788; routine development
+gameplay testing now uses BepInEx 6, with BepInEx 5 checked by a separate
+reference build unless a release record says otherwise.
 
 ## Download and installation
 
