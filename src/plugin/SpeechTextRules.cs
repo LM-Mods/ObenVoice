@@ -68,13 +68,6 @@ namespace ObenseuerTts
             return result;
         }
 
-        internal static bool IsConfirmedNonSpeech(string text)
-        {
-            string value = (text ?? string.Empty).Trim();
-            if (Regex.IsMatch(value, @"^(?:\.{3,}|…+)$", RegexOptions.CultureInvariant)) return true;
-            return string.Equals(value, "AAAAH!", StringComparison.OrdinalIgnoreCase);
-        }
-
         private static PronunciationRule[] BuiltInRules()
         {
             return new PronunciationRule[] { new PronunciationRule("Hmh", "Hmm") };

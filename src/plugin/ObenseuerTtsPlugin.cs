@@ -242,7 +242,7 @@ namespace ObenseuerTts
         private bool confirmExclusionReset;
         private bool typingInRuleEditor;
         private const string DefaultPronunciationFile = "# Speech-only pronunciation replacements. Format: source => spoken replacement\r\n# Matching is case-insensitive and respects word boundaries.\r\n\r\nHmh => Hmm\r\n";
-        private const string DefaultExclusionFile = "# Exact speech exclusions. Use * to match any speaker or any text.\r\n# Format: speaker => spoken text\r\n\r\nDoorphone => Bzzzz!\r\n";
+        private const string DefaultExclusionFile = SpeechExclusionDefaults.DefaultContent;
         private static readonly string[] BundledKokoroVoices = new string[] { "af_heart", "af_bella", "af_sarah", "am_adam", "am_michael", "am_onyx" };
 
         private enum DialogueKind
@@ -657,11 +657,6 @@ namespace ObenseuerTts
                 RecordDialogueDiagnostic(kind, speakerDetails, rawText, text, string.Empty, "skipped: NPC dialogue speech is disabled");
                 return;
             }
-            if (SpeechTextRules.IsConfirmedNonSpeech(text))
-            {
-                RecordDialogueDiagnostic(kind, speakerDetails, rawText, text, string.Empty, "filtered: confirmed non-speech expression");
-                return;
-            }
             if (SpeechExclusionRules.IsExcluded(exclusionDocument.Entries, rawSpeakerName, text))
             {
                 DebugLog("Speech excluded before speaker resolution: speaker=" + rawSpeakerName + " text=" + text);
@@ -728,11 +723,6 @@ namespace ObenseuerTts
             if (!speakPlayerDialogue.Value)
             {
                 RecordDialogueDiagnostic(DialogueKind.Player, playerDetails, rawText, text, string.Empty, "skipped: player dialogue speech is disabled");
-                return;
-            }
-            if (SpeechTextRules.IsConfirmedNonSpeech(text))
-            {
-                RecordDialogueDiagnostic(DialogueKind.Player, playerDetails, rawText, text, string.Empty, "filtered: confirmed non-speech expression");
                 return;
             }
             if (SpeechExclusionRules.IsExcluded(exclusionDocument.Entries, "Player", text))
@@ -2179,12 +2169,24 @@ namespace ObenseuerTts
                     File.WriteAllText(exclusionsPath, DefaultExclusionFile, new UTF8Encoding(false));
                 }
                 exclusionDocument = EditableSpeechRuleDocument.Parse(File.ReadAllText(exclusionsPath, Encoding.UTF8), true, message => Logger.LogWarning(message));
+                if (SpeechExclusionDefaults.AddUpgradeDefaults(exclusionDocument))
+                {
+                    try
+                    {
+                        WriteTextSafely(exclusionsPath, exclusionDocument.Serialize("# Exact speech exclusions. Use * to match any speaker or any text."));
+                        Logger.LogInfo("Added the version 2 editable speech-exclusion defaults without replacing existing rules.");
+                    }
+                    catch (Exception migrationException)
+                    {
+                        Logger.LogWarning("Applied the version 2 speech exclusions for this session but could not save the migration: " + migrationException.Message);
+                    }
+                }
                 Logger.LogInfo("Loaded " + exclusionDocument.Entries.Count + " speech exclusion rules from " + exclusionsPath);
             }
             catch (Exception ex)
             {
                 exclusionDocument = EditableSpeechRuleDocument.Parse(DefaultExclusionFile, true, null);
-                Logger.LogWarning("Could not load speech exclusions; using the built-in Doorphone rule: " + ex.Message);
+                Logger.LogWarning("Could not load speech exclusions; using the built-in default rules: " + ex.Message);
             }
         }
 

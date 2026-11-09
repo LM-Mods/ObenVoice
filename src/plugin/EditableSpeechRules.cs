@@ -92,4 +92,36 @@ namespace ObenseuerTts
             return Regex.Replace((value ?? string.Empty).Trim(), @"\s+", " ");
         }
     }
+
+    internal static class SpeechExclusionDefaults
+    {
+        internal const string VersionMarker = "# ObenVoice speech exclusions version: 2";
+        internal const string DefaultContent =
+            "# Exact speech exclusions. Use * to match any speaker or any text.\r\n" +
+            "# Format: speaker => spoken text\r\n" +
+            VersionMarker + "\r\n\r\n" +
+            "Doorphone => Bzzzz!\r\n" +
+            "* => ...\r\n" +
+            "* => AAAAH!\r\n";
+
+        internal static bool AddUpgradeDefaults(EditableSpeechRuleDocument document)
+        {
+            if (document == null) return false;
+            foreach (string line in document.PreservedLines)
+                if (string.Equals((line ?? string.Empty).Trim(), VersionMarker, StringComparison.Ordinal)) return false;
+
+            document.PreservedLines.Add(VersionMarker);
+            AddIfMissing(document.Entries, "*", "...");
+            AddIfMissing(document.Entries, "*", "AAAAH!");
+            return true;
+        }
+
+        private static void AddIfMissing(IList<EditableSpeechRule> entries, string speaker, string text)
+        {
+            foreach (EditableSpeechRule entry in entries)
+                if (string.Equals((entry.First ?? string.Empty).Trim(), speaker, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals((entry.Second ?? string.Empty).Trim(), text, StringComparison.OrdinalIgnoreCase)) return;
+            entries.Add(new EditableSpeechRule(speaker, text));
+        }
+    }
 }

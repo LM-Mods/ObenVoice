@@ -37,12 +37,35 @@ internal static class SpeechTextRulesTests
             throw new Exception("text-only wildcard exclusion did not match");
         if (SpeechExclusionRules.IsExcluded(exclusions.Entries, "NPC", "I used the doorphone."))
             throw new Exception("unrelated dialogue was broadly excluded");
-        if (!SpeechTextRules.IsConfirmedNonSpeech("...") || !SpeechTextRules.IsConfirmedNonSpeech("……"))
-            throw new Exception("standalone ellipsis was not excluded");
-        if (!SpeechTextRules.IsConfirmedNonSpeech("AAAAH!") || !SpeechTextRules.IsConfirmedNonSpeech("aaaah!"))
-            throw new Exception("confirmed AAAAH expression was not excluded");
-        if (SpeechTextRules.IsConfirmedNonSpeech("Wait...") || SpeechTextRules.IsConfirmedNonSpeech("AAAH!") || SpeechTextRules.IsConfirmedNonSpeech(".."))
-            throw new Exception("non-matching dialogue was over-broadly excluded");
+        EditableSpeechRuleDocument upgradedExclusions = EditableSpeechRuleDocument.Parse(
+            "# existing file\nDoorphone => Bzzzz!\nNPC => Keep my custom rule", true, null);
+        if (!SpeechExclusionDefaults.AddUpgradeDefaults(upgradedExclusions))
+            throw new Exception("older exclusions were not migrated");
+        if (upgradedExclusions.Entries.Count != 4 ||
+            !SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "NPC", "...") ||
+            !SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "Player", "aaaah!") ||
+            !SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "Doorphone", "Bzzzz!") ||
+            !SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "NPC", "Keep my custom rule"))
+            throw new Exception("migration did not preserve and add exact exclusions");
+        if (SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "NPC", "Wait...") ||
+            SpeechExclusionRules.IsExcluded(upgradedExclusions.Entries, "NPC", "AAAH!"))
+            throw new Exception("migrated exclusions were too broad");
+
+        string upgradedContent = upgradedExclusions.Serialize("# heading");
+        EditableSpeechRuleDocument upgradedReload = EditableSpeechRuleDocument.Parse(upgradedContent, true, null);
+        if (SpeechExclusionDefaults.AddUpgradeDefaults(upgradedReload))
+            throw new Exception("migration marker did not prevent repeated defaults");
+        upgradedReload.Entries.RemoveAll(entry => entry.Second == "...");
+        EditableSpeechRuleDocument deliberateRemoval = EditableSpeechRuleDocument.Parse(upgradedReload.Serialize("# heading"), true, null);
+        if (SpeechExclusionDefaults.AddUpgradeDefaults(deliberateRemoval) ||
+            SpeechExclusionRules.IsExcluded(deliberateRemoval.Entries, "NPC", "..."))
+            throw new Exception("deliberately removed exclusion was silently restored");
+
+        EditableSpeechRuleDocument restoredDefaults = EditableSpeechRuleDocument.Parse(SpeechExclusionDefaults.DefaultContent, true, null);
+        if (restoredDefaults.Entries.Count != 3 ||
+            !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "Player", "...") ||
+            !SpeechExclusionRules.IsExcluded(restoredDefaults.Entries, "NPC", "AAAAH!"))
+            throw new Exception("restored defaults did not contain all three exclusions");
         pronunciation.Entries.Add(new EditableSpeechRule("testword", "test word"));
         pronunciation.Entries[1] = new EditableSpeechRule("edited", "spoken edit");
         EditableSpeechRuleDocument persisted = EditableSpeechRuleDocument.Parse(pronunciation.Serialize("# heading"), false, null);

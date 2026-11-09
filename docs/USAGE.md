@@ -38,7 +38,7 @@ Doorphone => Bzzzz!
 
 Use `*` for any speaker or any text. Exclusions are checked before unknown-speaker prompts and speech queueing.
 
-ObenVoice also suppresses the confirmed non-speech expressions `...` (including the Unicode ellipsis equivalent) and `AAAAH!`. Normal sentences containing ellipses and other exclamations are unaffected.
+The editable defaults include `Any speaker => ...` and `Any speaker => AAAAH!`. Normal sentences containing ellipses and other exclamations are unaffected. Upgrades add these defaults once without replacing custom rules; removing one afterward is respected.
 
 ## Dialogue diagnostics
 

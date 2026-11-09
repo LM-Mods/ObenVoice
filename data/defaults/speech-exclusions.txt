@@ -1,4 +1,7 @@
 # Exact speech exclusions. Use * to match any speaker or any text.
 # Format: speaker => spoken text
+# ObenVoice speech exclusions version: 2
 
 Doorphone => Bzzzz!
+* => ...
+* => AAAAH!
