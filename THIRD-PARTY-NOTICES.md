@@ -19,7 +19,12 @@ voices, game assets or the separately licensed character database.
 | Loguru | 0.7.3 | MIT; exact upstream notice in [LOGURU-0.7.3-MIT.txt](docs/LOGURU-0.7.3-MIT.txt) |
 | Hugging Face Tokenizers | 0.23.3 | Apache-2.0; treatment in [TOKENIZERS-0.23.3-NOTICE.md](docs/TOKENIZERS-0.23.3-NOTICE.md) |
 
-The Core release also contains PyTorch, NumPy, Transformers, Hugging Face Hub, spaCy, SoundDevice, SoundFile and transitive packages under their own licences. The generated inventory is in [RUNTIME-DEPENDENCIES.md](docs/RUNTIME-DEPENDENCIES.md). Release assets must preserve package metadata, collected licence/NOTICE files and [the eSpeak redistribution record](docs/ESPEAK-NG-REDISTRIBUTION.md).
+The Core release also contains PyTorch, NumPy, Transformers, Hugging Face Hub,
+spaCy, SoundDevice, SoundFile, libsndfile and transitive packages under their
+own licences. The generated inventory is in
+[RUNTIME-DEPENDENCIES.md](docs/RUNTIME-DEPENDENCIES.md). Release assets must
+preserve package metadata, collected licence/NOTICE files and
+[the GPL/LGPL source-access record](docs/ESPEAK-NG-REDISTRIBUTION.md).
 
 ## Game and modding ecosystem
 

@@ -14,7 +14,7 @@ configurations install separately under `ObenVoice/Characters`.
 Emma and George are unmodified third-party Kokoro-82M voice weights from the
 pinned revision recorded in `ATTRIBUTION.txt`. Apache License 2.0 is included.
 Version 1.0.1 uses the consolidated `ObenVoice` installation layout and adds
-the complete **Brit - Expanded** and **Brit - Pack Only** 292-character
+the complete **Brit - Expanded** and **Brit - Pack Only** 292-record
 casting configurations. The established pack and voice IDs are unchanged.
 
 Emma and George share their standard Kokoro voice IDs with any other installed

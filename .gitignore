@@ -13,9 +13,15 @@ dependencies/*
 # Packaged runtimes, models and release assets
 ObenseuerTTS/runtime/
 ObenseuerTTS/model-cache/
+/ObenseuerTTS/
+/ObenVoice/
+/BepInEx/plugins/ObenseuerDialogueTTS/
 release-staging/
 dist/
 outputs/
+/ObenVoice-Core-v*/
+/ObenVoice-British-Voices-v*/
+/ObenVoice-Stalburg-Voices-v*/
 *.zip
 *.7z
 *.tar
@@ -27,14 +33,27 @@ outputs/
 # Live game/user data
 BepInEx/config/
 speaker_assignments.json
+npc-voice-overrides.json
+pronunciation-replacements.txt
 speech-exclusions.txt
 !data/defaults/speech-exclusions.txt
+unknown-speakers.tsv
+dialogue-diagnostics.log*
 tts_ready.txt
 tts_server.log*
 *.cfg
 *.log
 *.tmp
 *.bak
+*.backup
+*.old
+*.orig
+
+# Test reports and private local checklists
+**/TestResults/
+*.trx
+coverage*
+/packaging/CLEAN-INSTALL-TESTING.md
 
 # Python caches and environments
 __pycache__/

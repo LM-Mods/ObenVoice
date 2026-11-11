@@ -2,9 +2,10 @@
 
 ## v1.0.2-beta.1 — 11 November 2026
 
-- Expanded the local NPC identity database to 292 game-scanned records with
+- Expanded the local NPC identity database to 292 game-registry records,
+  including game test/placeholder entries and records flagged for review, with
   ambiguity-safe alias matching and optional verified game-ID support.
-- Added five complete 292-character casting configurations, dynamically
+- Added five complete 292-record casting configurations, dynamically
   discovered NPC presets and a single local
   `npc-voice-overrides.json` source for explicit NPC voice, speed and pitch.
 - Added Default, installed-pack and Custom automatic voice-pool selection.

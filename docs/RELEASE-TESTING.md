@@ -1,5 +1,9 @@
 # Final release-candidate gameplay record
 
+> **Historical v1.0.0-beta.1 evidence.** The DLL hash and results below apply
+> only to that release. For v1.0.2-beta.1, see
+> [the current release asset record](RELEASE-ASSETS-v1.0.2-beta.1.md).
+
 The path-sanitised v1.0.0-beta.1 DLL was tested by the user on 8 November 2026.
 
 | Check | Result |

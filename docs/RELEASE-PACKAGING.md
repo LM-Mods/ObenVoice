@@ -1,5 +1,10 @@
 # Release packaging record
 
+> **Historical v1.0.1-beta.1 record.** The current published packages and
+> hashes are recorded in
+> [RELEASE-ASSETS-v1.0.2-beta.1.md](RELEASE-ASSETS-v1.0.2-beta.1.md). Keep this
+> page only as provenance for the earlier release process.
+
 The v1.0.1-beta.1 Core archive was published on 9 November 2026. The original
 v1.0.0-beta.1 assets and staging baseline remain untouched.
 
@@ -19,9 +24,10 @@ output and their native dependencies without requiring a system-wide Python
 installation. It is local to ObenVoice and must not contain caches, logs or
 user-specific configuration.
 
-The public documents, licence/privacy review, BepInEx 6 gameplay test and
-BepInEx 5 compatibility-reference build are complete. The packaging script
-performs the final file, archive-integrity and checksum checks.
+For that historical release, the public documents, licence/privacy review,
+BepInEx 6 gameplay test and BepInEx 5 compatibility-reference build were
+complete. The packaging script performed the final file, archive-integrity and
+checksum checks.
 
 After assembling the core in a staging directory, regenerate its bundled Python
 inventory and collected package licence files without downloading anything:

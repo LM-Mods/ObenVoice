@@ -7,10 +7,12 @@ to the extent the project is authorised to license the compilation.
 ## Source and credit
 
 The current database was generated from a local Obenseuer 0.5.19 character
-registry scan supplied for private development. It contains the 292 scanned
-game character IDs, exact displayed names and game-provided genders required
-for local identity matching. Legacy-only research names and wiki-only records
-are excluded.
+registry scan supplied for private development. It contains 292 game-registry
+records: 282 game-scanned records, two records flagged for game-scan review and
+eight game test/placeholder entries. The IDs, displayed names and game-provided
+genders are retained for local identity matching. The total is not a claim
+that every entry is an ordinary, encounterable or fully verified NPC.
+Legacy-only research names and wiki-only records are excluded.
 
 ## Adaptations
 

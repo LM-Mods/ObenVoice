@@ -47,9 +47,9 @@ accent-identification result.
 Version 1.0.1 provides two opt-in casting configurations
 under `ObenVoice/Characters`:
 
-- **SV1 - Expanded** contains a complete 292-character provisional casting and
+- **SV1 - Expanded** contains a complete 292-record provisional casting and
   retains active-pool fallback.
-- **SV1 - Pack Only** contains a complete 292-character provisional casting.
+- **SV1 - Pack Only** contains a complete 292-record provisional casting.
 
 The existing provisional assignments are preserved for compatibility. Exact
 matches to the game-scanned database carry game character IDs; older unmatched
@@ -68,6 +68,12 @@ Apache License 2.0; see `APACHE-2.0-LICENSE.txt`, `NOTICE.txt` and
 It is optional developer-only source and is NOT run by the game. It generates
 new tensors from upstream input assets, not from any user's private game data.
 The release retains the main project's licensing and integrity records.
+
+Repository metadata note: after v1.0.1 was published, the four source anchors
+that had mutable `/blob/main/` links were verified byte-for-byte at Kokoro-82M
+revision `f3ff3571791e39611d31c381e3a41a3af07b4987` and pinned in this repository's
+`PROVENANCE.json`. The published v1.0.1 ZIP remains unchanged; its recorded
+source hashes already identify the same four input files.
 
 No user names, email addresses, absolute local paths, telemetry, online services,
 recorded user speech or private audio are part of this add-on.

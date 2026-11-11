@@ -1,5 +1,10 @@
 # Development checkpoint
 
+> **Historical record — 9 November 2026.** This describes the v1.0.1-beta.1
+> development state and is not the current branch, release or verification
+> record. See [the current release asset record](RELEASE-ASSETS-v1.0.2-beta.1.md)
+> and [changelog](../CHANGELOG.md).
+
 Updated: 9 November 2026
 
 ## Repository state
@@ -53,14 +58,11 @@ Updated: 9 November 2026
   its current scan label is **Some suspicious files**. Review that scan and
   ticket `#277860` before upload.
 
-## Local artifacts
+## Historical local artifacts
 
-- Development overlay:
-  local `ObenVoice-Development-84a0600` overlay outside the repository
-- Core candidate ZIP:
-  `dist/ObenVoice-v1.0.1-beta.1-Core.zip`
-- ZIP SHA-256:
-  `B115229DC2610F1CA82AD5FD0C2FB95DC10DA9700F219CB96975741FFB43E2E2`
+The corresponding private development overlay and release candidate were
+preserved outside the repository at the time. They are not current download
+instructions and are not part of the public source tree.
 
 The optional British Emma/George asset remains unchanged and separately
 available. Publishing was explicitly approved after gameplay confirmation.

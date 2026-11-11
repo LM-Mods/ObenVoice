@@ -31,7 +31,8 @@ Source: https://github.com/LM-Mods/ObenVoice
 - Automatic NPC dialogue and bark speech
 - Optional confirmed player-response speech
 - Stable per-character voice, speed and pitch selection
-- Bundled NPC identity database, optional NPC presets and per-NPC overrides
+- Bundled 292-record game-registry database, optional NPC presets and per-NPC
+  overrides; the database includes game test/placeholder and review entries
 - Remembered automatic voices for known and unknown speakers
 - Full F8 settings and customisation interface
 - F9 quick player-voice controls
@@ -100,10 +101,12 @@ rules and Overrides use `ObenVoice/UserData`; new diagnostics use
 group is empty, Core continues using the legacy group without copying or
 overwriting it.
 
-Core supplies the 292-character **Default** casting. British Voices supplies
+Core supplies the 292-record **Default** casting. British Voices supplies
 **Brit - Expanded** and **Brit - Pack Only**; Stalburg Voices Vol. 1 supplies
 **SV1 - Expanded** and **SV1 - Pack Only**. These configurations retain their
-stable IDs, and personal Overrides always take priority.
+stable IDs, and personal Overrides always take priority. The registry includes
+game test/placeholder entries and records flagged for review; 292 does not mean
+292 ordinary, encounterable or fully verified NPCs.
 
 Restart the game after adding or removing an engine add-on, voice pack or NPC
 preset. Use **Restart Voice Engine** after changing the selected engine, and

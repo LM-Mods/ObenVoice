@@ -40,7 +40,8 @@ The assembly name, plugin ID and runtime paths intentionally retain their legacy
 
 The C# test projects are standalone executables under `tests`. Python tests use the standard Python installation and the source backend; mock socket lifecycle tests require permission to open localhost ports.
 
-The accepted 4.1.1 DLL was gameplay-tested on both loaders. Any newly built
-path-sanitised release DLL must complete the focused checklist in
-[RELEASE-TESTING.md](RELEASE-TESTING.md) before it is described as
-gameplay-tested.
+Historical test records are version-specific and do not validate a newly built
+DLL. Any new release DLL must complete the relevant focused checklist before
+it is described as gameplay-tested. The current published build and hash are
+recorded in [RELEASE-ASSETS-v1.0.2-beta.1.md](RELEASE-ASSETS-v1.0.2-beta.1.md);
+[RELEASE-TESTING.md](RELEASE-TESTING.md) is retained as older release evidence.

@@ -11,12 +11,12 @@
 | Target | Status | Finding |
 |---|---|---|
 | Public GitHub source | **PASS** | MIT with `Copyright (c) 2026 LM-Mods` is approved; separate third-party and data terms are present. |
-| Core GitHub Release | **PASS** | The frozen v1.0.2-beta.1 archive passed integrity, licensing and privacy checks and gameplay testing on BepInEx 6 and BepInEx 5.4.23.6. |
+| Core GitHub Release | **SOURCE EVIDENCE PASS; LIVE LINK UPDATE PENDING** | The frozen v1.0.2-beta.1 archive passed integrity, notice and privacy checks and gameplay testing on BepInEx 6 and BepInEx 5.4.23.6. GPL/LGPL source locations are version-pinned. Absolute links are prepared in the repository release description, but still require a separately approved edit to the live GitHub release; continued source availability must then be maintained. |
 | Core Nexus Mods release | **PASS WITH UPLOAD-TIME CHECKS** | Core is prepared; Nexus scanning and the AI-Generated Content classification remain upload-time actions. |
 | British voice pack v1.0.1 | **PASS** | Both unmodified files match the pinned Apache-2.0 Kokoro revision; attribution and licence accompany the pack. |
 | Stalburg Voices Vol. 1 v1.0.1 | **PASS** | The 20 derivative tensors have per-file source/output provenance, generator source, Apache-2.0 text and upstream dataset acknowledgements. |
 
-No status in this table authorises an upload or publication.
+No status in this table authorises changing published assets or release tags.
 
 ## Original project material
 
@@ -41,7 +41,7 @@ MIT licence.
 | Component | Version/revision | Licence | Evidence and treatment |
 |---|---|---|---|
 | Original ObenVoice material | v1.0.2-beta.1 source | MIT | Root licence approved for LM-Mods |
-| `characters.json` | 292 game-scanned identity records | CC BY-SA 4.0 compilation terms | Local Obenseuer 0.5.19 registry-scan provenance and data boundaries recorded in `data/LICENSE.md` |
+| `characters.json` | 292 game-registry records | CC BY-SA 4.0 compilation terms | Includes 282 game-scanned records, two records flagged for game-scan review and eight game test/placeholder entries; provenance and data boundaries are in `data/LICENSE.md` |
 | Obenseuer Modding Framework API | 0.12.1 reference | MIT | Referenced for integration; framework and game assemblies are not bundled |
 | Python embedded runtime | 3.12.10 | PSF and bundled component terms | Complete runtime licence file retained |
 | Kokoro / Misaki | 0.9.4 / 0.9.4 | Apache-2.0 | Package licences retained; used without source modifications except normal configuration/integration |
@@ -54,7 +54,7 @@ MIT licence.
 | num2words | 0.5.14 | LGPL | Source package and licence retained |
 | certifi | Inventory version | MPL-2.0 | Source/data and notice retained |
 | SoundDevice / PortAudio | Inventory versions | MIT / MIT-style | Notices retained |
-| SoundFile / libsndfile | Inventory versions | BSD / LGPL | Notices and applicable source/package material retained |
+| SoundFile / libsndfile | 0.14.0 / 1.2.2 | BSD / LGPL-2.1 | SoundFile metadata and licence retained; libsndfile is a separate DLL with its LGPL text and exact source location recorded |
 | eSpeak NG | 1.52.0, commit `4870adf` | GPL-3.0 plus component terms | Unmodified binary/data; exact tagged corresponding source and notices recorded |
 | phonemizer-fork | 3.3.2 | GPL-3.0-or-later | Unmodified Python source package and GPL text retained |
 | espeakng-loader | 0.2.4 | Component-specific; carries eSpeak binary/data | Loader source, package metadata, wheel hash and eSpeak obligations recorded |
@@ -71,8 +71,10 @@ substitute for the required licence text or notice.
 
 The current character database is a compilation of limited factual identity
 information generated from a local Obenseuer 0.5.19 character-registry scan.
-It contains 292 scanned game character IDs, displayed names and game-provided
-genders. Scanner diagnostics, personal paths and research prose are excluded.
+It contains 292 game-registry records: 282 game-scanned records, two records
+flagged for game-scan review and eight game test/placeholder entries. It is not
+a claim that all 292 are ordinary, encounterable or fully verified NPCs.
+Scanner diagnostics, personal paths and research prose are excluded.
 
 The database-specific attribution, modification statement and share-alike
 notice are in `data/LICENSE.md` and must accompany the data in Core. This does
@@ -82,15 +84,23 @@ not place the program code under CC BY-SA.
 
 The Core package identifies eSpeak NG 1.52.0, phonemizer-fork 3.3.2 and
 espeakng-loader 0.2.4 precisely. No upstream modifications were identified.
-Full GPL and component licence texts are retained. Exact tagged/source archive
-locations and integrity records are in `docs/ESPEAK-NG-REDISTRIBUTION.md`.
+Full GPL and component licence texts are retained. The focused review verified
+the eSpeak release commit and archive, phonemizer-fork's hashed 3.3.2 source
+distribution and espeakng-loader's exact 0.2.4 source commit. PyPI publishes no
+0.2.4 loader sdist, so the pinned upstream commit and archive are recorded.
 
-For network distribution, the exact corresponding-source directions must be
-kept beside or clearly linked from the binary download and remain available
-for as long as required. Preserving matching source archives as release assets
-is the most robust option, but publication of such assets has not been
-performed or authorised. A written source offer is not being used as a
-substitute.
+The packaged libsndfile DLL reports version 1.2.2, is dynamically loaded and
+retains its LGPL-2.1 text; num2words 0.5.14 is installed as Python source and
+retains its LGPL-2.1 text. Their exact source locations are also recorded in
+`docs/ESPEAK-NG-REDISTRIBUTION.md`.
+
+For network distribution under GPLv3 section 6(d), clear source directions
+must be kept next to the binary download and the distributor must ensure that
+equivalent source access remains available for as long as required. The public
+Core release description therefore needs a direct link to the redistribution
+record. Upstream hosting is acceptable only while that access is maintained;
+it is not a permanent guarantee. A written source offer is not being used as a
+substitute, and no formal legal certification is claimed.
 
 The components are distributed as identifiable runtime packages rather than
 incorporated source modifications to ObenVoice. This packaging supports the
@@ -134,8 +144,10 @@ checks and are not recorded as passed here.
 
 ## Final assessment
 
-The documentation and source attribution are current. The LM-Mods MIT notice
-is approved, the frozen DLL passed both supported loaders, and the staged Core
-passed licence, privacy, install and upgrade checks. Core v1.0.2-beta.1,
-British Voices v1.0.1 and Stalburg Voices Vol. 1 v1.0.1 are release-ready,
-subject to the owner's separate publication approval.
+Core v1.0.2-beta.1, British Voices v1.0.1 and Stalburg Voices Vol. 1 v1.0.1
+were published on 11 November 2026. The frozen DLL passed both supported
+loaders, and the packages passed the recorded licence, privacy, install and
+upgrade checks. The remaining compliance-maintenance action is to apply the
+prepared absolute documentation and corresponding-source links to the live
+Core release description, then maintain those source locations while the
+binary remains distributed.

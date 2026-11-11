@@ -2,7 +2,7 @@
 
 This optional pack adds the unmodified Kokoro `bf_emma` and `bm_george` voice
 weights plus complete **Brit - Expanded** and **Brit - Pack Only**
-292-character casting configurations. Version 1.0.1 uses the consolidated
+292-record casting configurations. Version 1.0.1 uses the consolidated
 `ObenVoice/VoicePacks` and `ObenVoice/Characters` layout while retaining the
 established pack, preset and voice IDs.
 
@@ -17,3 +17,5 @@ Emma and George use the same IDs as the stock Kokoro voices. Core resolves
 duplicates deterministically, but installing duplicate copies is unnecessary.
 The pack retains its Apache-2.0 licence and pinned upstream attribution. It
 contains no runtime, models, settings, logs or user data.
+
+[Licence and pinned source attribution](https://github.com/LM-Mods/ObenVoice/blob/main/packaging/british-voices/ATTRIBUTION.txt)

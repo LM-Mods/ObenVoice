@@ -1,7 +1,7 @@
 # v1.0.2-beta.1 release assets
 
-Frozen and verified on 11 November 2026. These exact gameplay-tested files are
-the approved publication candidates; rebuilding or repacking would create new,
+Published and verified on 11 November 2026. These exact gameplay-tested files
+are the frozen GitHub release assets; rebuilding or repacking would create new,
 untested assets.
 
 | Asset | Size | SHA-256 |
@@ -15,6 +15,7 @@ Shared Core DLL SHA-256:
 
 The Core candidate passed gameplay testing on BepInEx 6 and BepInEx 5.4.23.6.
 Focused source rebuild and preset tests reproduced the frozen DLL and validated
-all five 292-character casting configurations. Privacy, licence, archive
-integrity and required-file checks passed. No release publication is authorised
-by this record alone.
+all five 292-record casting configurations. Privacy, licence, archive
+integrity and required-file checks passed. The three release tags point to
+commit `968f96ba5a1a4b45508b30f8a448caae96233c05`; Core is the GitHub Latest
+release. This record does not authorise changing or replacing published assets.

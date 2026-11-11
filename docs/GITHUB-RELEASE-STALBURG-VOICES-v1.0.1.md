@@ -1,7 +1,7 @@
 # Stalburg Voices Vol. 1 v1.0.1
 
 This optional pack adds 20 gameplay-tested Kokoro-compatible voices and the
-complete **SV1 - Expanded** and **SV1 - Pack Only** 292-character provisional
+complete **SV1 - Expanded** and **SV1 - Pack Only** 292-record provisional
 castings. Version 1.0.1 uses the consolidated `ObenVoice/VoicePacks` and
 `ObenVoice/Characters` layout while retaining all established pack, preset and
 voice IDs.
@@ -17,7 +17,11 @@ The pack includes generator source, exact source/output provenance, the
 Apache-2.0 text and inherited upstream dataset acknowledgements. It contains
 no runtime, settings, logs or user data.
 
+- [Attribution and modification notice](https://github.com/LM-Mods/ObenVoice/blob/main/packaging/stalburg-voices/NOTICE.txt)
+- [Source/output provenance](https://github.com/LM-Mods/ObenVoice/blob/main/packaging/stalburg-voices/PROVENANCE.json)
+
 The frozen gameplay-tested candidate's pack-in README retains older draft
 casting counts and private-test wording. This release description supersedes
 that non-executable text: both included SV1 casting files contain exactly 292
-unique game-character assignments, and the archive bytes are unchanged.
+unique game-registry assignments, including the registry's test/placeholder
+and review entries, and the archive bytes are unchanged.
