@@ -1,0 +1,21 @@
+British Emma and George Test Pack
+
+Files:
+- voices/bf_emma.pt
+- voices/bm_george.pt
+
+Upstream project: hexgrad/Kokoro-82M
+Pinned revision: f3ff3571791e39611d31c381e3a41a3af07b4987
+Source: https://huggingface.co/hexgrad/Kokoro-82M/tree/f3ff3571791e39611d31c381e3a41a3af07b4987/voices
+Licence: Apache License 2.0
+
+The two weight files are redistributed unmodified from that pinned revision.
+They are third-party Kokoro-82M material and are not claimed as LM-Mods-owned
+work.
+
+The complete Apache 2.0 text supplied with the accepted core is included as
+LICENSE-Apache-2.0.txt.
+
+Local file checks:
+- bf_emma.pt SHA-256: D0A423DEABF4A52B4F49318C51742C54E21BB89BBBE9A12141E7758DDB5DA701
+- bm_george.pt SHA-256: F1BC812213DC59774769E5C80004B13EEB79BD78130B11B2D7F934542DAB811B

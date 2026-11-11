@@ -29,7 +29,9 @@ preserve their package metadata, licence texts and corresponding-source links.
 - The eSpeak NG tag's Apache-2.0, BSD-2-Clause, and Unicode Data licence
   texts/notices are also included under `licenses/eSpeak-NG-1.52.0-*`.
 - phonemizer's original licence file and package metadata remain in
-  `ObenseuerTTS/runtime/Lib/site-packages/phonemizer_fork-3.3.2.dist-info`.
+  `ObenVoice/runtime/Lib/site-packages/phonemizer_fork-3.3.2.dist-info`.
+  Existing legacy installations may retain the equivalent `ObenseuerTTS`
+  runtime path.
 
 ## Exact corresponding-source locations
 

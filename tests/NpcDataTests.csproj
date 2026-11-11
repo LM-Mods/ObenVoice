@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="NpcDataTests.cs" />
+    <Compile Include="..\src\plugin\SimpleJson.cs" Link="SimpleJson.cs" />
+    <Compile Include="..\src\plugin\NpcIdentityDatabase.cs" Link="NpcIdentityDatabase.cs" />
+    <Compile Include="..\src\plugin\NpcVoiceData.cs" Link="NpcVoiceData.cs" />
+  </ItemGroup>
+</Project>

@@ -12,10 +12,10 @@ third-party libraries, models, voices, game material or character data.
 
 ## Character database
 
-`characters.json` is adapted from limited factual information on the
-[Stalburg Wiki Obenseuer/Characters page](https://stalburg.net/Obenseuer/Characters)
-and supplemented through in-game curation. It is separately distributed under
-CC BY-SA 4.0. The source credit, changes and share-alike terms are recorded in
+`characters.json` is a compilation of limited factual identity information from
+a local Obenseuer 0.5.19 character registry scan. Legacy-only research names
+are excluded. It is separately distributed under CC BY-SA 4.0 to the extent
+the project may license the compilation. The source and terms are recorded in
 `data/LICENSE.md` in the repository and `CHARACTER-DATA-LICENSE.md` beside the
 database in Core.
 

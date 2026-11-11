@@ -5,7 +5,7 @@ ObenVoice adds fully local, offline text-to-speech to dialogue in
 player responses, and assigns stable voices to characters without sending
 dialogue to an online service.
 
-- **[Download ObenVoice Core](https://github.com/LM-Mods/ObenVoice/releases/download/v1.0.1-beta.1/ObenVoice-v1.0.1-beta.1-Core.zip)**
+- **[Download ObenVoice Core](https://github.com/LM-Mods/ObenVoice/releases/download/v1.0.2-beta.1/ObenVoice-Core-v1.0.2-beta.1.zip)**
 - **[All Add-on Downloads](docs/ADDON-DOWNLOADS.md)**
 
 ## Development & Transparency
@@ -31,6 +31,8 @@ Source: https://github.com/LM-Mods/ObenVoice
 - Automatic NPC dialogue and bark speech
 - Optional confirmed player-response speech
 - Stable per-character voice, speed and pitch selection
+- Bundled NPC identity database, optional NPC presets and per-NPC overrides
+- Remembered automatic voices for known and unknown speakers
 - Full F8 settings and customisation interface
 - F9 quick player-voice controls
 - In-game pronunciation replacement editor
@@ -45,11 +47,10 @@ Source: https://github.com/LM-Mods/ObenVoice
 - BepInEx 5 or BepInEx 6
 - Obenseuer Modding Framework / ObenseuerCore 0.12.1
 
-BepInEx and Obenseuer Modding Framework must already be installed separately.
-ObenVoice uses one shared DLL for both loaders. The original public DLL passed
-gameplay testing on BepInEx 5 and BepInEx 6.0.0-be.788; routine development
-gameplay testing now uses BepInEx 6, with BepInEx 5 checked by a separate
-reference build unless a release record says otherwise.
+BepInEx and the compiled Obenseuer Modding Framework / ObenseuerCore 0.12.1
+release must already be installed separately. Do not install the framework's
+GitHub source-code ZIP as a game mod. ObenVoice v1.0.2-beta.1 uses one shared
+DLL and has passed gameplay testing on BepInEx 6 and BepInEx 5.4.23.6.
 
 ## Download and installation
 
@@ -59,7 +60,7 @@ reference build unless a release record says otherwise.
 3. Allow Windows to merge the included folders.
 4. Launch Obenseuer normally.
 
-Core includes Kokoro, six default voices and the required private Python
+Core includes Kokoro, six default voices and the required bundled Python
 runtime. Players do not need to install Python, provide API keys or use a cloud
 speech service.
 
@@ -67,6 +68,55 @@ speech service.
 
 - **F8** — main ObenVoice settings and customisation menu
 - **F9** — player voice controls
+
+The F8 status row shows the current backend state plus the selected and running
+engines. The five tabs are **General**, **Voice Packs**, **NPC Voices**,
+**Pronunciation** and **Advanced**. Dialogue controls are on General; engine
+diagnostics, maintenance, reset and help are on Advanced.
+
+### NPC voices and local data
+
+NPC voice resolution uses this order: personal override, selected preset,
+previously saved automatic voice, then a new automatic assignment. The NPC
+Voice Overrides editor lists only records actually stored in
+`ObenVoice/UserData/npc-voice-overrides.json`. **Add NPC** searches the bundled
+database and uses the selected preset as a starting point without saving until
+a real customization is made. **Reset to Default** removes only that NPC's
+personal record; it does not alter a preset.
+
+Unknown-speaker choices can be remembered in the same overrides file as
+automatic records. Unknown-speaker candidates are logged separately in
+`ObenVoice/Logs/unknown-speakers.tsv`. Pronunciation and exclusion rules, user
+settings and diagnostic files are also stored locally. ObenVoice does not send
+dialogue or these settings to an online service.
+
+Shared character data and editable casting configurations are loaded from
+`ObenVoice/Characters`. Voice assets and pack manifests use
+`ObenVoice/VoicePacks`. Existing installations using the older
+`BepInEx/plugins/ObenseuerDialogueTTS/characters.json` and
+`ObenseuerTTS/voice-packs/kokoro` locations remain supported. New personal
+rules and Overrides use `ObenVoice/UserData`; new diagnostics use
+`ObenVoice/Logs`. If an existing legacy user-data group is found and the new
+group is empty, Core continues using the legacy group without copying or
+overwriting it.
+
+Core supplies the 292-character **Default** casting. British Voices supplies
+**Brit - Expanded** and **Brit - Pack Only**; Stalburg Voices Vol. 1 supplies
+**SV1 - Expanded** and **SV1 - Pack Only**. These configurations retain their
+stable IDs, and personal Overrides always take priority.
+
+Restart the game after adding or removing an engine add-on, voice pack or NPC
+preset. Use **Restart Voice Engine** after changing the selected engine, and
+**Reload Pronunciation Rules** after editing rule files outside the game.
+
+Legacy manual character-name strings in the BepInEx configuration remain
+supported as a fallback but are not automatically migrated into the NPC
+database or `npc-voice-overrides.json`.
+
+If a voice is missing or incorrect, first check the selected preset and the
+NPC's stored override. Advanced can flag recent dialogue for a local diagnostic
+log. Malformed override JSON is preserved rather than overwritten; repair or
+replace it, then reopen the editor and use **Reload file**.
 
 More information:
 
@@ -100,9 +150,9 @@ Copyright (c) 2026 LM-Mods
 ```
 
 MIT does not relicense bundled third-party engines, libraries, models, voices
-or data. The adapted character database is separately licensed under CC BY-SA
-4.0. The optional British Emma/George pack is third-party Apache-2.0 material
-from a pinned Kokoro-82M revision.
+or data. The game-scanned character database compilation is separately offered
+under CC BY-SA 4.0 to the extent applicable. The optional British Emma/George
+pack is third-party Apache-2.0 material from a pinned Kokoro-82M revision.
 
 See [LICENSING.md](docs/LICENSING.md),
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and the
@@ -121,6 +171,8 @@ third-party speech projects it uses.
 - 4 November 2026: the British voice-pack checkpoint was preserved.
 - 7 November 2026: internal build 4.1.1 was frozen after gameplay testing.
 - 8 November 2026: sanitised BepInEx 5/6 release testing and packaging passed.
+- 11 November 2026: v1.0.2-beta.1 and the v1.0.1 optional packs passed final
+  package, privacy and supported-loader checks.
 
 ObenVoice was developed independently for Obenseuer. The included backend is
 not copied from Universal TTS Mod or another mod. Original checkpoints, hashes
@@ -132,7 +184,8 @@ testing and should not be treated as an official or safety-critical product.
 
 ## Internal compatibility names
 
-The initial public beta retains tested legacy identifiers for upgrade and
-configuration compatibility, including `ObenseuerDialogueTTS.dll`, plugin ID
-`com.kokoro.tts.obenseuer`, runtime folder `ObenseuerTTS`, and existing saved
-configuration paths.
+The project retains tested identifiers for loader and configuration
+compatibility, including `ObenseuerDialogueTTS.dll` and plugin ID
+`com.kokoro.tts.obenseuer`. New installations use the consolidated
+`ObenVoice` folder; the old `ObenseuerTTS` runtime and saved-data paths remain
+readable for existing installations.

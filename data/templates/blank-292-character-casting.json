@@ -1,0 +1,1470 @@
+{
+  "presetVersion": 1,
+  "id": "blank-292-casting-template",
+  "name": "Blank 292-character casting template",
+  "description": "Development template only. Voice, speed and pitch are intentionally unassigned.",
+  "provisional": true,
+  "fallbackMode": "active",
+  "assignments": [
+    {
+      "gameCharacterId": -1,
+      "internalName": "Name",
+      "displayName": "Name"
+    },
+    {
+      "gameCharacterId": 0,
+      "internalName": "Player",
+      "displayName": "Player"
+    },
+    {
+      "gameCharacterId": 2,
+      "internalName": "Mirjam Freighter",
+      "displayName": "Mirjam Freighter"
+    },
+    {
+      "gameCharacterId": 3,
+      "internalName": "Ivan Kapustanov",
+      "displayName": "Ivan Kapustanov"
+    },
+    {
+      "gameCharacterId": 4,
+      "internalName": "Marjukka Sieni",
+      "displayName": "Marjukka Sieni"
+    },
+    {
+      "gameCharacterId": 5,
+      "internalName": "Hilla Palo",
+      "displayName": "Hilla Palo"
+    },
+    {
+      "gameCharacterId": 6,
+      "internalName": "Oliver Berggren",
+      "displayName": "Oliver Berggren"
+    },
+    {
+      "gameCharacterId": 7,
+      "internalName": "Ritva Sumppi",
+      "displayName": "Ritva Sumppi"
+    },
+    {
+      "gameCharacterId": 8,
+      "internalName": "Sofija Pisula",
+      "displayName": "Sofija Pisula"
+    },
+    {
+      "gameCharacterId": 9,
+      "internalName": "Gustav Sågspånberg",
+      "displayName": "Gustav Sågspånberg"
+    },
+    {
+      "gameCharacterId": 10,
+      "internalName": "Astrid Vinsjö",
+      "displayName": "Astrid Vinsjö"
+    },
+    {
+      "gameCharacterId": 11,
+      "internalName": "Pentti Penttilä",
+      "displayName": "Pentti Penttilä"
+    },
+    {
+      "gameCharacterId": 12,
+      "internalName": "Ville Sköldgangster",
+      "displayName": "Ville Sköldgangster"
+    },
+    {
+      "gameCharacterId": 13,
+      "internalName": "Toni Mayer",
+      "displayName": "Toni Mayer"
+    },
+    {
+      "gameCharacterId": 14,
+      "internalName": "The doctor",
+      "displayName": "The doctor"
+    },
+    {
+      "gameCharacterId": 15,
+      "internalName": "Ella Karlsson",
+      "displayName": "Ella Karlsson"
+    },
+    {
+      "gameCharacterId": 16,
+      "internalName": "Elias Karlsson",
+      "displayName": "Elias Karlsson"
+    },
+    {
+      "gameCharacterId": 17,
+      "internalName": "Lucas Karlsson",
+      "displayName": "Lucas Karlsson"
+    },
+    {
+      "gameCharacterId": 18,
+      "internalName": "Luna Karlsson",
+      "displayName": "Luna Karlsson"
+    },
+    {
+      "gameCharacterId": 19,
+      "internalName": "Leah Karlsson",
+      "displayName": "Leah Karlsson"
+    },
+    {
+      "gameCharacterId": 20,
+      "internalName": "Junk trader",
+      "displayName": "Junk trader"
+    },
+    {
+      "gameCharacterId": 21,
+      "internalName": "Mr. House",
+      "displayName": "Mr. House"
+    },
+    {
+      "gameCharacterId": 22,
+      "internalName": "Johan Wider",
+      "displayName": "Johan Wider"
+    },
+    {
+      "gameCharacterId": 23,
+      "internalName": "Omari Solheim",
+      "displayName": "Omari Solheim"
+    },
+    {
+      "gameCharacterId": 24,
+      "internalName": "Oscar Nilsson",
+      "displayName": "Oscar Nilsson"
+    },
+    {
+      "gameCharacterId": 25,
+      "internalName": "Rob Madsen",
+      "displayName": "Rob Madsen"
+    },
+    {
+      "gameCharacterId": 26,
+      "internalName": "Pate Rantanen",
+      "displayName": "Pate Rantanen"
+    },
+    {
+      "gameCharacterId": 27,
+      "internalName": "Mr. Duck",
+      "displayName": "Mr. Duck"
+    },
+    {
+      "gameCharacterId": 28,
+      "internalName": "Hostel Placeholder guy",
+      "displayName": "Hostel Placeholder guy"
+    },
+    {
+      "gameCharacterId": 29,
+      "internalName": "Adam Holmgren",
+      "displayName": "Adam Holmgren"
+    },
+    {
+      "gameCharacterId": 30,
+      "internalName": "Samuel Jonasson",
+      "displayName": "Samuel Jonasson"
+    },
+    {
+      "gameCharacterId": 31,
+      "internalName": "Test Map Female Npc",
+      "displayName": "Test Map Female Npc"
+    },
+    {
+      "gameCharacterId": 32,
+      "internalName": "Mr. Bag",
+      "displayName": "Mr. Bag"
+    },
+    {
+      "gameCharacterId": 33,
+      "internalName": "Jomppe Kurahaara",
+      "displayName": "Jomppe Kurahaara"
+    },
+    {
+      "gameCharacterId": 34,
+      "internalName": "Yuri Takahashi",
+      "displayName": "Yuri Takahashi"
+    },
+    {
+      "gameCharacterId": 35,
+      "internalName": "Aleksi Kivi",
+      "displayName": "Aleksi Kivi"
+    },
+    {
+      "gameCharacterId": 36,
+      "internalName": "Pera Harju",
+      "displayName": "Pera Harju"
+    },
+    {
+      "gameCharacterId": 37,
+      "internalName": "Malone Petronis",
+      "displayName": "Malone Petronis"
+    },
+    {
+      "gameCharacterId": 38,
+      "internalName": "Nina Lund",
+      "displayName": "Nina Lund"
+    },
+    {
+      "gameCharacterId": 39,
+      "internalName": "Martta Lapinjoki",
+      "displayName": "Martta Lapinjoki"
+    },
+    {
+      "gameCharacterId": 40,
+      "internalName": "Jarmo Pettinen",
+      "displayName": "Jarmo Pettinen"
+    },
+    {
+      "gameCharacterId": 41,
+      "internalName": "Daniel Nilsson",
+      "displayName": "Daniel Nilsson"
+    },
+    {
+      "gameCharacterId": 42,
+      "internalName": "Amanda Korhonen",
+      "displayName": "Amanda Korhonen"
+    },
+    {
+      "gameCharacterId": 43,
+      "internalName": "Tea Henderson",
+      "displayName": "Tea Henderson"
+    },
+    {
+      "gameCharacterId": 44,
+      "internalName": "Burt Kraut",
+      "displayName": "Burt Kraut"
+    },
+    {
+      "gameCharacterId": 45,
+      "internalName": "Test Map Police",
+      "displayName": "Test Map Police"
+    },
+    {
+      "gameCharacterId": 46,
+      "internalName": "Mona Hall",
+      "displayName": "Mona Hall"
+    },
+    {
+      "gameCharacterId": 47,
+      "internalName": "Patrik Axelsson",
+      "displayName": "Patrik Axelsson"
+    },
+    {
+      "gameCharacterId": 48,
+      "internalName": "Hank Möbelmann",
+      "displayName": "Hank Möbelmann"
+    },
+    {
+      "gameCharacterId": 49,
+      "internalName": "Tatyana Gopnikova",
+      "displayName": "Tatyana Gopnikova"
+    },
+    {
+      "gameCharacterId": 50,
+      "internalName": "Dr. Pena MD",
+      "displayName": "Dr. Pena MD"
+    },
+    {
+      "gameCharacterId": 51,
+      "internalName": "Martha Freighter",
+      "displayName": "Martha Freighter"
+    },
+    {
+      "gameCharacterId": 52,
+      "internalName": "Max Masher",
+      "displayName": "Max Masher"
+    },
+    {
+      "gameCharacterId": 53,
+      "internalName": "Jim Nilsen",
+      "displayName": "Jim Nilsen"
+    },
+    {
+      "gameCharacterId": 54,
+      "internalName": "Keijo Korsonen",
+      "displayName": "Keijo Korsonen"
+    },
+    {
+      "gameCharacterId": 55,
+      "internalName": "David Lund",
+      "displayName": "David Lund"
+    },
+    {
+      "gameCharacterId": 56,
+      "internalName": "Kaisa Wirta",
+      "displayName": "Kaisa Wirta"
+    },
+    {
+      "gameCharacterId": 57,
+      "internalName": "Noomi Palo",
+      "displayName": "Noomi Palo"
+    },
+    {
+      "gameCharacterId": 58,
+      "internalName": "Fidan Tanner",
+      "displayName": "Fidan Tanner"
+    },
+    {
+      "gameCharacterId": 59,
+      "internalName": "Agnes Takala",
+      "displayName": "Agnes Takala"
+    },
+    {
+      "gameCharacterId": 60,
+      "internalName": "Jesper Kumpula",
+      "displayName": "Jesper Kumpula"
+    },
+    {
+      "gameCharacterId": 61,
+      "internalName": "Ingrid Claesson",
+      "displayName": "Ingrid Claesson"
+    },
+    {
+      "gameCharacterId": 62,
+      "internalName": "Ulrik Takala",
+      "displayName": "Ulrik Takala"
+    },
+    {
+      "gameCharacterId": 63,
+      "internalName": "Leon Borg",
+      "displayName": "Leon Borg"
+    },
+    {
+      "gameCharacterId": 64,
+      "internalName": "Olle Leino",
+      "displayName": "Olle Leino"
+    },
+    {
+      "gameCharacterId": 65,
+      "internalName": "Sara Claine",
+      "displayName": "Sara Claine"
+    },
+    {
+      "gameCharacterId": 66,
+      "internalName": "Vivi Bondar",
+      "displayName": "Vivi Bondar"
+    },
+    {
+      "gameCharacterId": 67,
+      "internalName": "Sami Claesson",
+      "displayName": "Sami Claesson"
+    },
+    {
+      "gameCharacterId": 68,
+      "internalName": "Daan Claesson",
+      "displayName": "Daan Claesson"
+    },
+    {
+      "gameCharacterId": 69,
+      "internalName": "Levo Claesson",
+      "displayName": "Levo Claesson"
+    },
+    {
+      "gameCharacterId": 70,
+      "internalName": "Aino Pettinen",
+      "displayName": "Aino Pettinen"
+    },
+    {
+      "gameCharacterId": 71,
+      "internalName": "Ilona Pettinen",
+      "displayName": "Ilona Pettinen"
+    },
+    {
+      "gameCharacterId": 72,
+      "internalName": "Leena Borg",
+      "displayName": "Leena Borg"
+    },
+    {
+      "gameCharacterId": 73,
+      "internalName": "Jaska Virtanen",
+      "displayName": "Jaska Virtanen"
+    },
+    {
+      "gameCharacterId": 74,
+      "internalName": "Simppa Kurahaara",
+      "displayName": "Simppa Kurahaara"
+    },
+    {
+      "gameCharacterId": 75,
+      "internalName": "Lönkka Kurahaara",
+      "displayName": "Lönkka Kurahaara"
+    },
+    {
+      "gameCharacterId": 76,
+      "internalName": "Axel Norberg",
+      "displayName": "Axel Norberg"
+    },
+    {
+      "gameCharacterId": 77,
+      "internalName": "Eija Lurppu",
+      "displayName": "Eija Lurppu"
+    },
+    {
+      "gameCharacterId": 78,
+      "internalName": "Teuvo Skogman",
+      "displayName": "Teuvo Skogman"
+    },
+    {
+      "gameCharacterId": 79,
+      "internalName": "Petro Blokuvati",
+      "displayName": "Petro Blokuvati"
+    },
+    {
+      "gameCharacterId": 80,
+      "internalName": "Henning Torskvær",
+      "displayName": "Henning Torskvær"
+    },
+    {
+      "gameCharacterId": 81,
+      "internalName": "Sirkku Maltanen",
+      "displayName": "Sirkku Maltanen"
+    },
+    {
+      "gameCharacterId": 82,
+      "internalName": "Kalpana Selma",
+      "displayName": "Kalpana Selma"
+    },
+    {
+      "gameCharacterId": 83,
+      "internalName": "Guard",
+      "displayName": "Guard"
+    },
+    {
+      "gameCharacterId": 84,
+      "internalName": "Tenement Market Square Police",
+      "displayName": "Tenement Market Square Police"
+    },
+    {
+      "gameCharacterId": 85,
+      "internalName": "Tenement Backyard Police",
+      "displayName": "Tenement Backyard Police"
+    },
+    {
+      "gameCharacterId": 86,
+      "internalName": "Rauha Taisto",
+      "displayName": "Rauha Taisto"
+    },
+    {
+      "gameCharacterId": 87,
+      "internalName": "Jörge Af Guldskjöld",
+      "displayName": "Jörge Af Guldskjöld"
+    },
+    {
+      "gameCharacterId": 88,
+      "internalName": "Urban Leggett",
+      "displayName": "Urban Leggett"
+    },
+    {
+      "gameCharacterId": 89,
+      "internalName": "Walt Bondar",
+      "displayName": "Walt Bondar"
+    },
+    {
+      "gameCharacterId": 90,
+      "internalName": "Sam Morton",
+      "displayName": "Sam Morton"
+    },
+    {
+      "gameCharacterId": 91,
+      "internalName": "Taneli Kurju",
+      "displayName": "Taneli Kurju"
+    },
+    {
+      "gameCharacterId": 92,
+      "internalName": "Milla Kolleen",
+      "displayName": "Milla Kolleen"
+    },
+    {
+      "gameCharacterId": 93,
+      "internalName": "Hall Kääbus",
+      "displayName": "Hall Kääbus"
+    },
+    {
+      "gameCharacterId": 94,
+      "internalName": "Kirka Kääbus",
+      "displayName": "Kirka Kääbus"
+    },
+    {
+      "gameCharacterId": 95,
+      "internalName": "Fenella Hunt",
+      "displayName": "Fenella Hunt"
+    },
+    {
+      "gameCharacterId": 96,
+      "internalName": "Börje Nyberg",
+      "displayName": "Börje Nyberg"
+    },
+    {
+      "gameCharacterId": 97,
+      "internalName": "Liouba Bennett",
+      "displayName": "Liouba Bennett"
+    },
+    {
+      "gameCharacterId": 98,
+      "internalName": "Moray Larson",
+      "displayName": "Moray Larson"
+    },
+    {
+      "gameCharacterId": 99,
+      "internalName": "Meri Haka",
+      "displayName": "Meri Haka"
+    },
+    {
+      "gameCharacterId": 100,
+      "internalName": "Ami Kunkka",
+      "displayName": "Ami Kunkka"
+    },
+    {
+      "gameCharacterId": 101,
+      "internalName": "Julius Öberg",
+      "displayName": "Julius Öberg"
+    },
+    {
+      "gameCharacterId": 102,
+      "internalName": "Henrik Korpinen",
+      "displayName": "Henrik Korpinen"
+    },
+    {
+      "gameCharacterId": 103,
+      "internalName": "Arvid Vinter",
+      "displayName": "Arvid Vinter"
+    },
+    {
+      "gameCharacterId": 104,
+      "internalName": "Teuvo Sorvi",
+      "displayName": "Teuvo Sorvi"
+    },
+    {
+      "gameCharacterId": 105,
+      "internalName": "Fredrik",
+      "displayName": "Fredrik"
+    },
+    {
+      "gameCharacterId": 106,
+      "internalName": "Torsten Dvergsson",
+      "displayName": "Torsten Dvergsson"
+    },
+    {
+      "gameCharacterId": 107,
+      "internalName": "Crazy Neighbor",
+      "displayName": "Crazy Neighbor"
+    },
+    {
+      "gameCharacterId": 108,
+      "internalName": "Eliana",
+      "displayName": "Eliana"
+    },
+    {
+      "gameCharacterId": 109,
+      "internalName": "Bazaar Bank",
+      "displayName": "Bazaar Bank"
+    },
+    {
+      "gameCharacterId": 110,
+      "internalName": "Mason Jokinen",
+      "displayName": "Mason Jokinen"
+    },
+    {
+      "gameCharacterId": 111,
+      "internalName": "Louie Green",
+      "displayName": "Louie Green"
+    },
+    {
+      "gameCharacterId": 112,
+      "internalName": "Ayla Green",
+      "displayName": "Ayla Green"
+    },
+    {
+      "gameCharacterId": 113,
+      "internalName": "Johannes Eskola",
+      "displayName": "Johannes Eskola"
+    },
+    {
+      "gameCharacterId": 114,
+      "internalName": "Jonne Reis",
+      "displayName": "Jonne Reis"
+    },
+    {
+      "gameCharacterId": 115,
+      "internalName": "Emma-Maija Taylor",
+      "displayName": "Emma-Maija Taylor"
+    },
+    {
+      "gameCharacterId": 116,
+      "internalName": "Pia",
+      "displayName": "Pia"
+    },
+    {
+      "gameCharacterId": 117,
+      "internalName": "Heska Pavonen",
+      "displayName": "Heska Pavonen"
+    },
+    {
+      "gameCharacterId": 118,
+      "internalName": "Joran Kallio",
+      "displayName": "Joran Kallio"
+    },
+    {
+      "gameCharacterId": 119,
+      "internalName": "Anna Markkanen",
+      "displayName": "Anna Markkanen"
+    },
+    {
+      "gameCharacterId": 120,
+      "internalName": "Veikko Martinsen",
+      "displayName": "Veikko Martinsen"
+    },
+    {
+      "gameCharacterId": 121,
+      "internalName": "Einar Kaivuri",
+      "displayName": "Einar Kaivuri"
+    },
+    {
+      "gameCharacterId": 122,
+      "internalName": "Reijo Rautakaivos",
+      "displayName": "Reijo Rautakaivos"
+    },
+    {
+      "gameCharacterId": 123,
+      "internalName": "Tanja Nypan",
+      "displayName": "Tanja Nypan"
+    },
+    {
+      "gameCharacterId": 124,
+      "internalName": "Mikkel Purola",
+      "displayName": "Mikkel Purola"
+    },
+    {
+      "gameCharacterId": 125,
+      "internalName": "Seamus Liepa",
+      "displayName": "Seamus Liepa"
+    },
+    {
+      "gameCharacterId": 126,
+      "internalName": "Lizzy Mopper",
+      "displayName": "Lizzy Mopper"
+    },
+    {
+      "gameCharacterId": 127,
+      "internalName": "Ivar Pihl",
+      "displayName": "Ivar Pihl"
+    },
+    {
+      "gameCharacterId": 128,
+      "internalName": "Vera Hietala",
+      "displayName": "Vera Hietala"
+    },
+    {
+      "gameCharacterId": 129,
+      "internalName": "Kalle Suutari",
+      "displayName": "Kalle Suutari"
+    },
+    {
+      "gameCharacterId": 130,
+      "internalName": "Olavi Hyypiö",
+      "displayName": "Olavi Hyypiö"
+    },
+    {
+      "gameCharacterId": 131,
+      "internalName": "Laura Markkanen",
+      "displayName": "Laura Markkanen"
+    },
+    {
+      "gameCharacterId": 132,
+      "internalName": "Ken Nakahara",
+      "displayName": "Ken Nakahara"
+    },
+    {
+      "gameCharacterId": 133,
+      "internalName": "Toivo Malmijoki",
+      "displayName": "Toivo Malmijoki"
+    },
+    {
+      "gameCharacterId": 134,
+      "internalName": "Antero Erikson",
+      "displayName": "Antero Erikson"
+    },
+    {
+      "gameCharacterId": 135,
+      "internalName": "Emil Kauha",
+      "displayName": "Emil Kauha"
+    },
+    {
+      "gameCharacterId": 136,
+      "internalName": "Saunaklonkku",
+      "displayName": "Saunaklonkku"
+    },
+    {
+      "gameCharacterId": 137,
+      "internalName": "Anders Terva",
+      "displayName": "Anders Terva"
+    },
+    {
+      "gameCharacterId": 138,
+      "internalName": "Maunu Gren",
+      "displayName": "Maunu Gren"
+    },
+    {
+      "gameCharacterId": 139,
+      "internalName": "Caroline",
+      "displayName": "Caroline"
+    },
+    {
+      "gameCharacterId": 140,
+      "internalName": "Ines Hietala",
+      "displayName": "Ines Hietala"
+    },
+    {
+      "gameCharacterId": 141,
+      "internalName": "Welhö",
+      "displayName": "Welhö"
+    },
+    {
+      "gameCharacterId": 142,
+      "internalName": "Rob Rosso",
+      "displayName": "Rob Rosso"
+    },
+    {
+      "gameCharacterId": 143,
+      "internalName": "Arvo Kirkastaja",
+      "displayName": "Arvo Kirkastaja"
+    },
+    {
+      "gameCharacterId": 144,
+      "internalName": "Empty Test Map NPC",
+      "displayName": "Empty Test Map NPC"
+    },
+    {
+      "gameCharacterId": 145,
+      "internalName": "Empty Test Map NPC Follower",
+      "displayName": "Empty Test Map NPC Follower"
+    },
+    {
+      "gameCharacterId": 146,
+      "internalName": "Empty Test Map Police",
+      "displayName": "Empty Test Map Police"
+    },
+    {
+      "gameCharacterId": 147,
+      "internalName": "Minh Thienlong",
+      "displayName": "Minh Thienlong"
+    },
+    {
+      "gameCharacterId": 148,
+      "internalName": "Irma Kött",
+      "displayName": "Irma Kött"
+    },
+    {
+      "gameCharacterId": 149,
+      "internalName": "Kauko Poronen",
+      "displayName": "Kauko Poronen"
+    },
+    {
+      "gameCharacterId": 150,
+      "internalName": "Timo Löyly",
+      "displayName": "Timo Löyly"
+    },
+    {
+      "gameCharacterId": 151,
+      "internalName": "Jasper Sporefield",
+      "displayName": "Jasper Sporefield"
+    },
+    {
+      "gameCharacterId": 152,
+      "internalName": "Niko Kerava",
+      "displayName": "Niko Kerava"
+    },
+    {
+      "gameCharacterId": 153,
+      "internalName": "Jappe Järvenpää",
+      "displayName": "Jappe Järvenpää"
+    },
+    {
+      "gameCharacterId": 154,
+      "internalName": "Harri Hyvinkää",
+      "displayName": "Harri Hyvinkää"
+    },
+    {
+      "gameCharacterId": 155,
+      "internalName": "Juha Tuusula",
+      "displayName": "Juha Tuusula"
+    },
+    {
+      "gameCharacterId": 156,
+      "internalName": "Robin Madsen",
+      "displayName": "Robin Madsen"
+    },
+    {
+      "gameCharacterId": 157,
+      "internalName": "Tero Verkko",
+      "displayName": "Tero Verkko"
+    },
+    {
+      "gameCharacterId": 158,
+      "internalName": "Ms. Lotina",
+      "displayName": "Ms. Lotina"
+    },
+    {
+      "gameCharacterId": 159,
+      "internalName": "Muscle Max",
+      "displayName": "Muscle Max"
+    },
+    {
+      "gameCharacterId": 160,
+      "internalName": "Hazmat Guy",
+      "displayName": "Hazmat Guy"
+    },
+    {
+      "gameCharacterId": 161,
+      "internalName": "Urho Siltanen",
+      "displayName": "Urho Siltanen"
+    },
+    {
+      "gameCharacterId": 162,
+      "internalName": "Warden",
+      "displayName": "Warden"
+    },
+    {
+      "gameCharacterId": 163,
+      "internalName": "Cajsa Mörk",
+      "displayName": "Cajsa Mörk"
+    },
+    {
+      "gameCharacterId": 164,
+      "internalName": "Elsa Varis",
+      "displayName": "Elsa Varis"
+    },
+    {
+      "gameCharacterId": 165,
+      "internalName": "Jooseppi Tuoppi",
+      "displayName": "Jooseppi Tuoppi"
+    },
+    {
+      "gameCharacterId": 166,
+      "internalName": "Reiska Remppa",
+      "displayName": "Reiska Remppa"
+    },
+    {
+      "gameCharacterId": 167,
+      "internalName": "Larry Goatbridge",
+      "displayName": "Larry Goatbridge"
+    },
+    {
+      "gameCharacterId": 168,
+      "internalName": "Sirpa Kvenlayson",
+      "displayName": "Sirpa Kvenlayson"
+    },
+    {
+      "gameCharacterId": 169,
+      "internalName": "Samuel Godman",
+      "displayName": "Samuel Godman"
+    },
+    {
+      "gameCharacterId": 170,
+      "internalName": "Jens Brom",
+      "displayName": "Jens Brom"
+    },
+    {
+      "gameCharacterId": 171,
+      "internalName": "Irmeli Nakkila",
+      "displayName": "Irmeli Nakkila"
+    },
+    {
+      "gameCharacterId": 172,
+      "internalName": "Gold Store Police",
+      "displayName": "Gold Store Police"
+    },
+    {
+      "gameCharacterId": 173,
+      "internalName": "Bazaar Police",
+      "displayName": "Bazaar Police"
+    },
+    {
+      "gameCharacterId": 174,
+      "internalName": "Elias Karhu",
+      "displayName": "Elias Karhu"
+    },
+    {
+      "gameCharacterId": 175,
+      "internalName": "Toini Karhu",
+      "displayName": "Toini Karhu"
+    },
+    {
+      "gameCharacterId": 176,
+      "internalName": "Arto Neulakoski",
+      "displayName": "Arto Neulakoski"
+    },
+    {
+      "gameCharacterId": 177,
+      "internalName": "Miko Poltinvuori",
+      "displayName": "Miko Poltinvuori"
+    },
+    {
+      "gameCharacterId": 178,
+      "internalName": "Gary Lind",
+      "displayName": "Gary Lind"
+    },
+    {
+      "gameCharacterId": 179,
+      "internalName": "Ethan Ward",
+      "displayName": "Ethan Ward"
+    },
+    {
+      "gameCharacterId": 180,
+      "internalName": "Helena Neulakoski",
+      "displayName": "Helena Neulakoski"
+    },
+    {
+      "gameCharacterId": 181,
+      "internalName": "Zoya Gubenko",
+      "displayName": "Zoya Gubenko"
+    },
+    {
+      "gameCharacterId": 182,
+      "internalName": "Rita Korjus",
+      "displayName": "Rita Korjus"
+    },
+    {
+      "gameCharacterId": 183,
+      "internalName": "Filippa Pajusalu",
+      "displayName": "Filippa Pajusalu"
+    },
+    {
+      "gameCharacterId": 184,
+      "internalName": "Ahmed Rahman",
+      "displayName": "Ahmed Rahman"
+    },
+    {
+      "gameCharacterId": 185,
+      "internalName": "Marko Mainisto",
+      "displayName": "Marko Mainisto"
+    },
+    {
+      "gameCharacterId": 186,
+      "internalName": "Maria Yrtikäinen",
+      "displayName": "Maria Yrtikäinen"
+    },
+    {
+      "gameCharacterId": 187,
+      "internalName": "Kalle Ketku",
+      "displayName": "Kalle Ketku"
+    },
+    {
+      "gameCharacterId": 188,
+      "internalName": "Slum Police",
+      "displayName": "Slum Police"
+    },
+    {
+      "gameCharacterId": 189,
+      "internalName": "Finlay Bjorkman",
+      "displayName": "Finlay Bjorkman"
+    },
+    {
+      "gameCharacterId": 190,
+      "internalName": "Topias Iisalmi",
+      "displayName": "Topias Iisalmi"
+    },
+    {
+      "gameCharacterId": 191,
+      "internalName": "Ulla Svendsen",
+      "displayName": "Ulla Svendsen"
+    },
+    {
+      "gameCharacterId": 192,
+      "internalName": "Karri Backman",
+      "displayName": "Karri Backman"
+    },
+    {
+      "gameCharacterId": 193,
+      "internalName": "Alexandra Kattila",
+      "displayName": "Alexandra Kattila"
+    },
+    {
+      "gameCharacterId": 194,
+      "internalName": "Tapani Kattila",
+      "displayName": "Tapani Kattila"
+    },
+    {
+      "gameCharacterId": 195,
+      "internalName": "Tähti Kattila",
+      "displayName": "Tähti Kattila"
+    },
+    {
+      "gameCharacterId": 196,
+      "internalName": "Viljo Kattila",
+      "displayName": "Viljo Kattila"
+    },
+    {
+      "gameCharacterId": 197,
+      "internalName": "Kössi Kelmi",
+      "displayName": "Kössi Kelmi"
+    },
+    {
+      "gameCharacterId": 198,
+      "internalName": "Lasse Lurjus",
+      "displayName": "Lasse Lurjus"
+    },
+    {
+      "gameCharacterId": 199,
+      "internalName": "Kari Hämäläinen",
+      "displayName": "Kari Hämäläinen"
+    },
+    {
+      "gameCharacterId": 200,
+      "internalName": "Jari Mäkinen",
+      "displayName": "Jari Mäkinen"
+    },
+    {
+      "gameCharacterId": 201,
+      "internalName": "Jarkko Tulimäki",
+      "displayName": "Jarkko Tulimäki"
+    },
+    {
+      "gameCharacterId": 202,
+      "internalName": "Erkki Kianen",
+      "displayName": "Erkki Kianen"
+    },
+    {
+      "gameCharacterId": 203,
+      "internalName": "Pertti Parju",
+      "displayName": "Pertti Parju"
+    },
+    {
+      "gameCharacterId": 204,
+      "internalName": "Reino Littinen",
+      "displayName": "Reino Littinen"
+    },
+    {
+      "gameCharacterId": 205,
+      "internalName": "Remontti-Repe",
+      "displayName": "Remontti-Repe"
+    },
+    {
+      "gameCharacterId": 206,
+      "internalName": "Raimo Stalreg",
+      "displayName": "Raimo Stalreg"
+    },
+    {
+      "gameCharacterId": 207,
+      "internalName": "Hugo Björnson",
+      "displayName": "Hugo Björnson"
+    },
+    {
+      "gameCharacterId": 208,
+      "internalName": "Jonas Elström",
+      "displayName": "Jonas Elström"
+    },
+    {
+      "gameCharacterId": 209,
+      "internalName": "Penni-Pena",
+      "displayName": "Penni-Pena"
+    },
+    {
+      "gameCharacterId": 210,
+      "internalName": "Private Lötjönen",
+      "displayName": "Private Lötjönen"
+    },
+    {
+      "gameCharacterId": 211,
+      "internalName": "Ruth McTrosg",
+      "displayName": "Ruth McTrosg"
+    },
+    {
+      "gameCharacterId": 212,
+      "internalName": "Tor Bergstahl",
+      "displayName": "Tor Bergstahl"
+    },
+    {
+      "gameCharacterId": 213,
+      "internalName": "Aune Korsborg",
+      "displayName": "Aune Korsborg"
+    },
+    {
+      "gameCharacterId": 214,
+      "internalName": "Anneli Tuoppi",
+      "displayName": "Anneli Tuoppi"
+    },
+    {
+      "gameCharacterId": 215,
+      "internalName": "Denys Moskalenko",
+      "displayName": "Denys Moskalenko"
+    },
+    {
+      "gameCharacterId": 216,
+      "internalName": "Anders Aadlärkjörts",
+      "displayName": "Anders Aadlärkjörts"
+    },
+    {
+      "gameCharacterId": 217,
+      "internalName": "Rosario Rootto",
+      "displayName": "Rosario Rootto"
+    },
+    {
+      "gameCharacterId": 218,
+      "internalName": "Riina Pamppumäki",
+      "displayName": "Riina Pamppumäki"
+    },
+    {
+      "gameCharacterId": 219,
+      "internalName": "Casper Colikke",
+      "displayName": "Casper Colikke"
+    },
+    {
+      "gameCharacterId": 220,
+      "internalName": "Zara Nkosi",
+      "displayName": "Zara Nkosi"
+    },
+    {
+      "gameCharacterId": 221,
+      "internalName": "Gérard Dujardin",
+      "displayName": "Gérard Dujardin"
+    },
+    {
+      "gameCharacterId": 222,
+      "internalName": "Raimo Räyhä",
+      "displayName": "Raimo Räyhä"
+    },
+    {
+      "gameCharacterId": 223,
+      "internalName": "Pertti Korhonen",
+      "displayName": "Pertti Korhonen"
+    },
+    {
+      "gameCharacterId": 224,
+      "internalName": "Hygge Svamprad",
+      "displayName": "Hygge Svamprad"
+    },
+    {
+      "gameCharacterId": 225,
+      "internalName": "Meri Hostari",
+      "displayName": "Meri Hostari"
+    },
+    {
+      "gameCharacterId": 226,
+      "internalName": "Giacobbe Bolognese",
+      "displayName": "Giacobbe Bolognese"
+    },
+    {
+      "gameCharacterId": 227,
+      "internalName": "Dolores Bolognese",
+      "displayName": "Dolores Bolognese"
+    },
+    {
+      "gameCharacterId": 228,
+      "internalName": "Keke Roinaneva",
+      "displayName": "Keke Roinaneva"
+    },
+    {
+      "gameCharacterId": 229,
+      "internalName": "Ari Pulsunmäki",
+      "displayName": "Ari Pulsunmäki"
+    },
+    {
+      "gameCharacterId": 230,
+      "internalName": "Jeppe Rinkmann",
+      "displayName": "Jeppe Rinkmann"
+    },
+    {
+      "gameCharacterId": 231,
+      "internalName": "Denis Passmore",
+      "displayName": "Denis Passmore"
+    },
+    {
+      "gameCharacterId": 232,
+      "internalName": "Aune Kirkastaja",
+      "displayName": "Aune Kirkastaja"
+    },
+    {
+      "gameCharacterId": 233,
+      "internalName": "Johanna Faust",
+      "displayName": "Johanna Faust"
+    },
+    {
+      "gameCharacterId": 234,
+      "internalName": "Alfred Schweinstein",
+      "displayName": "Alfred Schweinstein"
+    },
+    {
+      "gameCharacterId": 235,
+      "internalName": "Anatoli Mustaruoho",
+      "displayName": "Anatoli Mustaruoho"
+    },
+    {
+      "gameCharacterId": 236,
+      "internalName": "Justyna Krystiana",
+      "displayName": "Justyna Krystiana"
+    },
+    {
+      "gameCharacterId": 237,
+      "internalName": "Christian Sykkelsen",
+      "displayName": "Christian Sykkelsen"
+    },
+    {
+      "gameCharacterId": 238,
+      "internalName": "Marja Noukkinen",
+      "displayName": "Marja Noukkinen"
+    },
+    {
+      "gameCharacterId": 239,
+      "internalName": "Ragnar Stortorsk",
+      "displayName": "Ragnar Stortorsk"
+    },
+    {
+      "gameCharacterId": 240,
+      "internalName": "Eva Smörbulle",
+      "displayName": "Eva Smörbulle"
+    },
+    {
+      "gameCharacterId": 241,
+      "internalName": "Olle Skatt",
+      "displayName": "Olle Skatt"
+    },
+    {
+      "gameCharacterId": 242,
+      "internalName": "Akim Azizi",
+      "displayName": "Akim Azizi"
+    },
+    {
+      "gameCharacterId": 243,
+      "internalName": "Tim Nickelson",
+      "displayName": "Tim Nickelson"
+    },
+    {
+      "gameCharacterId": 244,
+      "internalName": "Urpo Murhapuro",
+      "displayName": "Urpo Murhapuro"
+    },
+    {
+      "gameCharacterId": 245,
+      "internalName": "Matti Kiehinen",
+      "displayName": "Matti Kiehinen"
+    },
+    {
+      "gameCharacterId": 246,
+      "internalName": "Minna Poreva",
+      "displayName": "Minna Poreva"
+    },
+    {
+      "gameCharacterId": 247,
+      "internalName": "Svana Wallmark",
+      "displayName": "Svana Wallmark"
+    },
+    {
+      "gameCharacterId": 248,
+      "internalName": "Sandra Klapi",
+      "displayName": "Sandra Klapi"
+    },
+    {
+      "gameCharacterId": 249,
+      "internalName": "Kama",
+      "displayName": "Kama"
+    },
+    {
+      "gameCharacterId": 250,
+      "internalName": "Lykke Tillbehör",
+      "displayName": "Lykke Tillbehör"
+    },
+    {
+      "gameCharacterId": 251,
+      "internalName": "Dave Smiker",
+      "displayName": "Dave Smiker"
+    },
+    {
+      "gameCharacterId": 252,
+      "internalName": "Karl Hagen",
+      "displayName": "Karl Hagen"
+    },
+    {
+      "gameCharacterId": 253,
+      "internalName": "Bror Stjäla",
+      "displayName": "Bror Stjäla"
+    },
+    {
+      "gameCharacterId": 254,
+      "internalName": "Per Otter",
+      "displayName": "Per Otter"
+    },
+    {
+      "gameCharacterId": 255,
+      "internalName": "Mikael Arnaldur",
+      "displayName": "Mikael Arnaldur"
+    },
+    {
+      "gameCharacterId": 256,
+      "internalName": "Anu Otter",
+      "displayName": "Anu Otter"
+    },
+    {
+      "gameCharacterId": 257,
+      "internalName": "Jane Miller",
+      "displayName": "Jane Miller"
+    },
+    {
+      "gameCharacterId": 258,
+      "internalName": "Stella Polaris",
+      "displayName": "Stella Polaris"
+    },
+    {
+      "gameCharacterId": 259,
+      "internalName": "Erto Lagerfeld",
+      "displayName": "Erto Lagerfeld"
+    },
+    {
+      "gameCharacterId": 260,
+      "internalName": "Interviewer",
+      "displayName": "Interviewer"
+    },
+    {
+      "gameCharacterId": 261,
+      "internalName": "Dr. Martti",
+      "displayName": "Dr. Martti"
+    },
+    {
+      "gameCharacterId": 262,
+      "internalName": "Teppo Tulppa",
+      "displayName": "Teppo Tulppa"
+    },
+    {
+      "gameCharacterId": 263,
+      "internalName": "Vincent Hjermann",
+      "displayName": "Vincent Hjermann"
+    },
+    {
+      "gameCharacterId": 264,
+      "internalName": "Heikki Mailanen",
+      "displayName": "Heikki Mailanen"
+    },
+    {
+      "gameCharacterId": 265,
+      "internalName": "Theo Tammi",
+      "displayName": "Theo Tammi"
+    },
+    {
+      "gameCharacterId": 266,
+      "internalName": "Sigvard Caune",
+      "displayName": "Sigvard Caune"
+    },
+    {
+      "gameCharacterId": 267,
+      "internalName": "Miina-Ansa Virtanen",
+      "displayName": "Miina-Ansa Virtanen"
+    },
+    {
+      "gameCharacterId": 268,
+      "internalName": "Lätty",
+      "displayName": "Lätty"
+    },
+    {
+      "gameCharacterId": 269,
+      "internalName": "Eetu Rymy",
+      "displayName": "Eetu Rymy"
+    },
+    {
+      "gameCharacterId": 270,
+      "internalName": "Kalevi Harvakattu",
+      "displayName": "Kalevi Harvakattu"
+    },
+    {
+      "gameCharacterId": 271,
+      "internalName": "Veeti Pärisevä",
+      "displayName": "Veeti Pärisevä"
+    },
+    {
+      "gameCharacterId": 272,
+      "internalName": "Jussi Pöhinä",
+      "displayName": "Jussi Pöhinä"
+    },
+    {
+      "gameCharacterId": 273,
+      "internalName": "Katriina Vermund",
+      "displayName": "Katriina Vermund"
+    },
+    {
+      "gameCharacterId": 274,
+      "internalName": "Vanja Bjorkman",
+      "displayName": "Vanja Bjorkman"
+    },
+    {
+      "gameCharacterId": 275,
+      "internalName": "Svein Regnell",
+      "displayName": "Svein Regnell"
+    },
+    {
+      "gameCharacterId": 276,
+      "internalName": "Anni Kiinteistö",
+      "displayName": "Anni Kiinteistö"
+    },
+    {
+      "gameCharacterId": 277,
+      "internalName": "Lotta Savisaar",
+      "displayName": "Lotta Savisaar"
+    },
+    {
+      "gameCharacterId": 278,
+      "internalName": "Matias Savisaar",
+      "displayName": "Matias Savisaar"
+    },
+    {
+      "gameCharacterId": 279,
+      "internalName": "Tonie Savisaar",
+      "displayName": "Tonie Savisaar"
+    },
+    {
+      "gameCharacterId": 280,
+      "internalName": "Ilona Rummo",
+      "displayName": "Ilona Rummo"
+    },
+    {
+      "gameCharacterId": 281,
+      "internalName": "Rami Nousukainen",
+      "displayName": "Rami Nousukainen"
+    },
+    {
+      "gameCharacterId": 282,
+      "internalName": "Otso Terästalia",
+      "displayName": "Otso Terästalia"
+    },
+    {
+      "gameCharacterId": 283,
+      "internalName": "Eila Hellamäki",
+      "displayName": "Eila Hellamäki"
+    },
+    {
+      "gameCharacterId": 284,
+      "internalName": "Jarppi Puukko",
+      "displayName": "Jarppi Puukko"
+    },
+    {
+      "gameCharacterId": 285,
+      "internalName": "Maximo Utedass",
+      "displayName": "Maximo Utedass"
+    },
+    {
+      "gameCharacterId": 286,
+      "internalName": "Julia Stensson",
+      "displayName": "Julia Stensson"
+    },
+    {
+      "gameCharacterId": 287,
+      "internalName": "Tina Myrtorp",
+      "displayName": "Tina Myrtorp"
+    },
+    {
+      "gameCharacterId": 288,
+      "internalName": "Ellen Skovfyr",
+      "displayName": "Ellen Skovfyr"
+    },
+    {
+      "gameCharacterId": 289,
+      "internalName": "Jaana Ahovaara",
+      "displayName": "Jaana Ahovaara"
+    },
+    {
+      "gameCharacterId": 999,
+      "internalName": "Tenant",
+      "displayName": "Tenant"
+    },
+    {
+      "gameCharacterId": 10001,
+      "internalName": "Default Male",
+      "displayName": "Default Male"
+    }
+  ]
+}

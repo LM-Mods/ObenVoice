@@ -1,0 +1,27 @@
+OBENVOICE - STALBURG VOICES VOL. 1 - ATTRIBUTION / MODIFICATIONS
+
+Source material:
+  hexgrad/Kokoro-82M (voice tensor styles)
+  https://huggingface.co/hexgrad/Kokoro-82M
+  Upstream repository declares Apache License 2.0.
+
+Modifications:
+  20 new Kokoro-compatible .pt style tensor files were computed from the
+  upstream voice tensor files using original procedural PCA/orthogonal style
+  steering code. They are derivative modifications, not independently trained
+  speakers. These new derivative files differ from their upstream source anchors.
+  The original input voice tensors are NOT included unchanged in this ZIP.
+  See PROVENANCE.json for each input/source SHA-256 and each output SHA-256.
+  Generator source: GENERATOR.py.
+
+Upstream training acknowledgements reported in the Kokoro-82M model card:
+  - SIWIS French Speech Synthesis Database; CC BY 4.0; University of Edinburgh,
+    Centre for Speech Technology Research; data DOI 10.7488/ds/1705;
+    https://datashare.ed.ac.uk/handle/10283/2353
+  - Koniwa tnc audio; CC BY 3.0 (per the upstream model card).
+  In particular, the new Vika voice uses modified style data derived from the
+  official ff_siwis French-style voice. These source acknowledgements do not
+  imply that SIWIS, Koniwa or Kokoro's authors endorse ObenVoice.
+
+Review upstream terms and credits before public release; included here to keep
+attribution and provenance available for the main project reviewer.

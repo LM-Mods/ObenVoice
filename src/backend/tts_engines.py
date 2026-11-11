@@ -31,8 +31,22 @@ PACK_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]{0,63}$")
 
 
 def _voice_pack_root():
+    """Legacy voice-pack root retained for existing installations and tests."""
     tts_root = Path(os.environ.get("TTS_ROOT", Path(__file__).resolve().parent.parent)).resolve()
     return (tts_root / "voice-packs").resolve()
+
+
+def _voice_pack_roots(engine_id):
+    tts_root = Path(os.environ.get("TTS_ROOT", Path(__file__).resolve().parent.parent)).resolve()
+    obenvoice_root = Path(os.environ.get("OBENVOICE_ROOT", tts_root.parent / "ObenVoice")).resolve()
+    legacy_root = Path(os.environ.get("OBENVOICE_LEGACY_ROOT", tts_root)).resolve()
+    primary = (obenvoice_root / "VoicePacks").resolve()
+    legacy = (legacy_root / "voice-packs" / engine_id).resolve()
+    roots = []
+    for root in (primary, legacy):
+        if root not in roots:
+            roots.append(root)
+    return roots
 
 
 def discover_external_voices(engine_name="kokoro"):
@@ -40,47 +54,54 @@ def discover_external_voices(engine_name="kokoro"):
     engine_id = (engine_name or "").strip().lower()
     if not PACK_ID_PATTERN.fullmatch(engine_id):
         return {}
-    engine_root = (_voice_pack_root() / engine_id).resolve()
-    if not engine_root.is_dir():
-        return {}
-
     discovered = {}
-    for pack_root in sorted((path for path in engine_root.iterdir() if path.is_dir()), key=lambda path: path.name.lower()):
-        manifest_path = pack_root / "manifest.json"
-        if not manifest_path.is_file():
+    seen_pack_ids = set()
+    for engine_root in _voice_pack_roots(engine_id):
+        if not engine_root.is_dir():
             continue
-        try:
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            pack_id = str(manifest.get("id", "")).strip().lower()
-            manifest_engine = str(manifest.get("engine", "")).strip().lower()
-            if manifest.get("manifestVersion") != 1 or pack_id != pack_root.name.lower() or manifest_engine != engine_id:
-                raise ValueError("manifest version, id, or engine does not match its folder")
-            voices = manifest.get("voices", [])
-            if not isinstance(voices, list):
-                raise ValueError("voices must be a list")
-            for item in voices:
-                if not isinstance(item, dict):
+        for pack_root in sorted(
+            (path for path in engine_root.iterdir() if path.is_dir()),
+            key=lambda path: (path.name.lower(), path.name),
+        ):
+            manifest_path = pack_root / "manifest.json"
+            if not manifest_path.is_file():
+                continue
+            try:
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                pack_id = str(manifest.get("id", "")).strip().lower()
+                manifest_engine = str(manifest.get("engine", "")).strip().lower()
+                if manifest.get("manifestVersion") != 1 or not PACK_ID_PATTERN.fullmatch(pack_id) or manifest_engine != engine_id:
+                    raise ValueError("manifest version, id, or engine is invalid")
+                if pack_id in seen_pack_ids:
+                    logging.warning("Ignoring duplicate Kokoro voice-pack id: %s", pack_id)
                     continue
-                voice_id = str(item.get("id", "")).strip().lower()
-                gender = str(item.get("gender", "")).strip().lower()
-                relative_file = str(item.get("file", "")).strip()
-                if not VOICE_ID_PATTERN.fullmatch(voice_id) or gender not in ("male", "female"):
-                    continue
-                voice_path = (pack_root / relative_file).resolve()
-                if pack_root.resolve() not in voice_path.parents or voice_path.suffix.lower() != ".pt" or not voice_path.is_file():
-                    continue
-                if voice_id in AVAILABLE_VOICES or voice_id in discovered:
-                    logging.warning("Ignoring duplicate external Kokoro voice id: %s", voice_id)
-                    continue
-                discovered[voice_id] = {
-                    "path": voice_path,
-                    "gender": gender,
-                    "display_name": str(item.get("displayName", voice_id)).strip() or voice_id,
-                    "pack_id": pack_id,
-                    "pack_name": str(manifest.get("name", pack_id)).strip() or pack_id,
-                }
-        except Exception as exc:
-            logging.warning("Ignoring invalid voice-pack manifest %s: %s", manifest_path, exc)
+                seen_pack_ids.add(pack_id)
+                voices = manifest.get("voices", [])
+                if not isinstance(voices, list):
+                    raise ValueError("voices must be a list")
+                for item in voices:
+                    if not isinstance(item, dict):
+                        continue
+                    voice_id = str(item.get("id", "")).strip().lower()
+                    gender = str(item.get("gender", "")).strip().lower()
+                    relative_file = str(item.get("file", "")).strip()
+                    if not VOICE_ID_PATTERN.fullmatch(voice_id) or gender not in ("male", "female"):
+                        continue
+                    voice_path = (pack_root / relative_file).resolve()
+                    if pack_root.resolve() not in voice_path.parents or voice_path.suffix.lower() != ".pt" or not voice_path.is_file():
+                        continue
+                    if voice_id in AVAILABLE_VOICES or voice_id in discovered:
+                        logging.warning("Ignoring duplicate external Kokoro voice id: %s", voice_id)
+                        continue
+                    discovered[voice_id] = {
+                        "path": voice_path,
+                        "gender": gender,
+                        "display_name": str(item.get("displayName", voice_id)).strip() or voice_id,
+                        "pack_id": pack_id,
+                        "pack_name": str(manifest.get("name", pack_id)).strip() or pack_id,
+                    }
+            except Exception as exc:
+                logging.warning("Ignoring invalid voice-pack manifest %s: %s", manifest_path, exc)
     return discovered
 
 
@@ -230,10 +251,16 @@ def _load_addon_engine(lang, engine_name):
         raise RuntimeError("Invalid TTS engine add-on id")
 
     tts_root = Path(os.environ.get("TTS_ROOT", Path(__file__).resolve().parent.parent)).resolve()
-    addons_root = (tts_root / "engine-addons").resolve()
-    addon_root = (addons_root / engine_name).resolve()
-    if addon_root.parent != addons_root:
-        raise RuntimeError("TTS engine add-on path is outside engine-addons")
+    obenvoice_root = Path(os.environ.get("OBENVOICE_ROOT", tts_root)).resolve()
+    legacy_root = Path(os.environ.get("OBENVOICE_LEGACY_ROOT", tts_root)).resolve()
+    addon_root = None
+    for addons_root in ((obenvoice_root / "engine-addons").resolve(), (legacy_root / "engine-addons").resolve()):
+        candidate = (addons_root / engine_name).resolve()
+        if candidate.parent == addons_root and candidate.is_dir():
+            addon_root = candidate
+            break
+    if addon_root is None:
+        raise RuntimeError("TTS engine add-on folder was not found")
 
     manifest_path = addon_root / "manifest.json"
     entry_path = addon_root / "engine.py"

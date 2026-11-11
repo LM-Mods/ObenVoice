@@ -1,0 +1,2347 @@
+{
+  "presetVersion": 1,
+  "id": "default",
+  "name": "Default",
+  "description": "Standard Kokoro English voices; game-scanned 0.5.19 casting.",
+  "provisional": true,
+  "fallbackMode": "active",
+  "assignments": [
+    {
+      "gameCharacterId": -1,
+      "internalName": "Name",
+      "displayName": "Name",
+      "voice": "am_michael",
+      "speed": 1.04,
+      "pitch": 0.3
+    },
+    {
+      "gameCharacterId": 0,
+      "internalName": "Player",
+      "displayName": "Player",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 2,
+      "internalName": "Mirjam Freighter",
+      "displayName": "Mirjam Freighter",
+      "voice": "af_heart",
+      "speed": 1.026,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 3,
+      "internalName": "Ivan Kapustanov",
+      "displayName": "Ivan Kapustanov",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 4,
+      "internalName": "Marjukka Sieni",
+      "displayName": "Marjukka Sieni",
+      "voice": "af_bella",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 5,
+      "internalName": "Hilla Palo",
+      "displayName": "Hilla Palo",
+      "voice": "af_bella",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 6,
+      "internalName": "Oliver Berggren",
+      "displayName": "Oliver Berggren",
+      "voice": "am_michael",
+      "speed": 1.075,
+      "pitch": 0.55
+    },
+    {
+      "gameCharacterId": 7,
+      "internalName": "Ritva Sumppi",
+      "displayName": "Ritva Sumppi",
+      "voice": "af_sarah",
+      "speed": 0.991,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 8,
+      "internalName": "Sofija Pisula",
+      "displayName": "Sofija Pisula",
+      "voice": "af_sarah",
+      "speed": 0.981,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 9,
+      "internalName": "Gustav Sågspånberg",
+      "displayName": "Gustav Sågspånberg",
+      "voice": "am_adam",
+      "speed": 1.023,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 10,
+      "internalName": "Astrid Vinsjö",
+      "displayName": "Astrid Vinsjö",
+      "voice": "af_sarah",
+      "speed": 1.018,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 11,
+      "internalName": "Pentti Penttilä",
+      "displayName": "Pentti Penttilä",
+      "voice": "am_michael",
+      "speed": 0.96,
+      "pitch": -0.2
+    },
+    {
+      "gameCharacterId": 12,
+      "internalName": "Ville Sköldgangster",
+      "displayName": "Ville Sköldgangster",
+      "voice": "am_onyx",
+      "speed": 0.985,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 13,
+      "internalName": "Toni Mayer",
+      "displayName": "Toni Mayer",
+      "voice": "am_onyx",
+      "speed": 0.955,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 14,
+      "internalName": "The doctor",
+      "displayName": "The doctor",
+      "voice": "af_sarah",
+      "speed": 1.063,
+      "pitch": 0.4
+    },
+    {
+      "gameCharacterId": 15,
+      "internalName": "Ella Karlsson",
+      "displayName": "Ella Karlsson",
+      "voice": "af_sarah",
+      "speed": 0.983,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 16,
+      "internalName": "Elias Karlsson",
+      "displayName": "Elias Karlsson",
+      "voice": "am_onyx",
+      "speed": 0.995,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 17,
+      "internalName": "Lucas Karlsson",
+      "displayName": "Lucas Karlsson",
+      "voice": "am_michael",
+      "speed": 1.049,
+      "pitch": 0.35
+    },
+    {
+      "gameCharacterId": 18,
+      "internalName": "Luna Karlsson",
+      "displayName": "Luna Karlsson",
+      "voice": "af_heart",
+      "speed": 1.055,
+      "pitch": 0.45
+    },
+    {
+      "gameCharacterId": 19,
+      "internalName": "Leah Karlsson",
+      "displayName": "Leah Karlsson",
+      "voice": "af_heart",
+      "speed": 1.081,
+      "pitch": 0.75
+    },
+    {
+      "gameCharacterId": 20,
+      "internalName": "Junk trader",
+      "displayName": "Junk trader",
+      "voice": "am_michael",
+      "speed": 0.982,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 21,
+      "internalName": "Mr. House",
+      "displayName": "Mr. House",
+      "voice": "am_onyx",
+      "speed": 0.953,
+      "pitch": -0.35
+    },
+    {
+      "gameCharacterId": 22,
+      "internalName": "Johan Wider",
+      "displayName": "Johan Wider",
+      "voice": "am_onyx",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 23,
+      "internalName": "Omari Solheim",
+      "displayName": "Omari Solheim",
+      "voice": "am_onyx",
+      "speed": 0.95,
+      "pitch": -0.45
+    },
+    {
+      "gameCharacterId": 24,
+      "internalName": "Oscar Nilsson",
+      "displayName": "Oscar Nilsson",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 25,
+      "internalName": "Rob Madsen",
+      "displayName": "Rob Madsen",
+      "voice": "am_michael",
+      "speed": 0.976,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 26,
+      "internalName": "Pate Rantanen",
+      "displayName": "Pate Rantanen",
+      "voice": "am_onyx",
+      "speed": 0.961,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 27,
+      "internalName": "Mr. Duck",
+      "displayName": "Mr. Duck",
+      "voice": "am_michael",
+      "speed": 0.972,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 28,
+      "internalName": "Hostel Placeholder guy",
+      "displayName": "Hostel Placeholder guy",
+      "voice": "af_heart",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 29,
+      "internalName": "Adam Holmgren",
+      "displayName": "Adam Holmgren",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 30,
+      "internalName": "Samuel Jonasson",
+      "displayName": "Samuel Jonasson",
+      "voice": "am_michael",
+      "speed": 0.972,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 31,
+      "internalName": "Test Map Female Npc",
+      "displayName": "Test Map Female Npc",
+      "voice": "af_heart",
+      "speed": 1.031,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 32,
+      "internalName": "Mr. Bag",
+      "displayName": "Mr. Bag",
+      "voice": "am_adam",
+      "speed": 1.042,
+      "pitch": 0.5
+    },
+    {
+      "gameCharacterId": 33,
+      "internalName": "Jomppe Kurahaara",
+      "displayName": "Jomppe Kurahaara",
+      "voice": "am_onyx",
+      "speed": 0.98,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 34,
+      "internalName": "Yuri Takahashi",
+      "displayName": "Yuri Takahashi",
+      "voice": "af_heart",
+      "speed": 1.034,
+      "pitch": 0.2
+    },
+    {
+      "gameCharacterId": 35,
+      "internalName": "Aleksi Kivi",
+      "displayName": "Aleksi Kivi",
+      "voice": "am_michael",
+      "speed": 1.055,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 36,
+      "internalName": "Pera Harju",
+      "displayName": "Pera Harju",
+      "voice": "am_michael",
+      "speed": 0.969,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 37,
+      "internalName": "Malone Petronis",
+      "displayName": "Malone Petronis",
+      "voice": "am_onyx",
+      "speed": 0.952,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 38,
+      "internalName": "Nina Lund",
+      "displayName": "Nina Lund",
+      "voice": "af_heart",
+      "speed": 1.022,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 39,
+      "internalName": "Martta Lapinjoki",
+      "displayName": "Martta Lapinjoki",
+      "voice": "af_sarah",
+      "speed": 0.942,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 40,
+      "internalName": "Jarmo Pettinen",
+      "displayName": "Jarmo Pettinen",
+      "voice": "am_onyx",
+      "speed": 0.973,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 41,
+      "internalName": "Daniel Nilsson",
+      "displayName": "Daniel Nilsson",
+      "voice": "am_adam",
+      "speed": 1.034,
+      "pitch": 0.4
+    },
+    {
+      "gameCharacterId": 42,
+      "internalName": "Amanda Korhonen",
+      "displayName": "Amanda Korhonen",
+      "voice": "af_heart",
+      "speed": 1.052,
+      "pitch": 0.2
+    },
+    {
+      "gameCharacterId": 43,
+      "internalName": "Tea Henderson",
+      "displayName": "Tea Henderson",
+      "voice": "af_heart",
+      "speed": 1.061,
+      "pitch": 0.45
+    },
+    {
+      "gameCharacterId": 44,
+      "internalName": "Burt Kraut",
+      "displayName": "Burt Kraut",
+      "voice": "am_michael",
+      "speed": 1.009,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 45,
+      "internalName": "Test Map Police",
+      "displayName": "Test Map Police",
+      "voice": "af_heart",
+      "speed": 1.028,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 46,
+      "internalName": "Mona Hall",
+      "displayName": "Mona Hall",
+      "voice": "af_sarah",
+      "speed": 1.005,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 47,
+      "internalName": "Patrik Axelsson",
+      "displayName": "Patrik Axelsson",
+      "voice": "am_michael",
+      "speed": 0.973,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 48,
+      "internalName": "Hank Möbelmann",
+      "displayName": "Hank Möbelmann",
+      "voice": "am_adam",
+      "speed": 1.018,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 49,
+      "internalName": "Tatyana Gopnikova",
+      "displayName": "Tatyana Gopnikova",
+      "voice": "af_bella",
+      "speed": 1.034,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 50,
+      "internalName": "Dr. Pena MD",
+      "displayName": "Dr. Pena MD",
+      "voice": "am_michael",
+      "speed": 0.99,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 51,
+      "internalName": "Martha Freighter",
+      "displayName": "Martha Freighter",
+      "voice": "af_heart",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 52,
+      "internalName": "Max Masher",
+      "displayName": "Max Masher",
+      "voice": "am_onyx",
+      "speed": 0.996,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 53,
+      "internalName": "Jim Nilsen",
+      "displayName": "Jim Nilsen",
+      "voice": "am_michael",
+      "speed": 1.019,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 54,
+      "internalName": "Keijo Korsonen",
+      "displayName": "Keijo Korsonen",
+      "voice": "am_onyx",
+      "speed": 0.955,
+      "pitch": -0.35
+    },
+    {
+      "gameCharacterId": 55,
+      "internalName": "David Lund",
+      "displayName": "David Lund",
+      "voice": "am_adam",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 56,
+      "internalName": "Kaisa Wirta",
+      "displayName": "Kaisa Wirta",
+      "voice": "af_heart",
+      "speed": 0.997,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 57,
+      "internalName": "Noomi Palo",
+      "displayName": "Noomi Palo",
+      "voice": "af_sarah",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 58,
+      "internalName": "Fidan Tanner",
+      "displayName": "Fidan Tanner",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 59,
+      "internalName": "Agnes Takala",
+      "displayName": "Agnes Takala",
+      "voice": "af_sarah",
+      "speed": 0.984,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 60,
+      "internalName": "Jesper Kumpula",
+      "displayName": "Jesper Kumpula",
+      "voice": "am_onyx",
+      "speed": 0.991,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 61,
+      "internalName": "Ingrid Claesson",
+      "displayName": "Ingrid Claesson",
+      "voice": "af_sarah",
+      "speed": 0.97,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 62,
+      "internalName": "Ulrik Takala",
+      "displayName": "Ulrik Takala",
+      "voice": "am_michael",
+      "speed": 0.968,
+      "pitch": -0.3
+    },
+    {
+      "gameCharacterId": 63,
+      "internalName": "Leon Borg",
+      "displayName": "Leon Borg",
+      "voice": "am_onyx",
+      "speed": 0.959,
+      "pitch": -0.2
+    },
+    {
+      "gameCharacterId": 64,
+      "internalName": "Olle Leino",
+      "displayName": "Olle Leino",
+      "voice": "am_michael",
+      "speed": 0.965,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 65,
+      "internalName": "Sara Claine",
+      "displayName": "Sara Claine",
+      "voice": "af_heart",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 66,
+      "internalName": "Vivi Bondar",
+      "displayName": "Vivi Bondar",
+      "voice": "af_heart",
+      "speed": 0.986,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 67,
+      "internalName": "Sami Claesson",
+      "displayName": "Sami Claesson",
+      "voice": "am_adam",
+      "speed": 0.989,
+      "pitch": -0.3
+    },
+    {
+      "gameCharacterId": 68,
+      "internalName": "Daan Claesson",
+      "displayName": "Daan Claesson",
+      "voice": "am_michael",
+      "speed": 1.067,
+      "pitch": 0.45
+    },
+    {
+      "gameCharacterId": 69,
+      "internalName": "Levo Claesson",
+      "displayName": "Levo Claesson",
+      "voice": "am_michael",
+      "speed": 1.073,
+      "pitch": 0.55
+    },
+    {
+      "gameCharacterId": 70,
+      "internalName": "Aino Pettinen",
+      "displayName": "Aino Pettinen",
+      "voice": "af_sarah",
+      "speed": 0.952,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 71,
+      "internalName": "Ilona Pettinen",
+      "displayName": "Ilona Pettinen",
+      "voice": "af_heart",
+      "speed": 1.07,
+      "pitch": 0.45
+    },
+    {
+      "gameCharacterId": 72,
+      "internalName": "Leena Borg",
+      "displayName": "Leena Borg",
+      "voice": "af_bella",
+      "speed": 1.043,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 73,
+      "internalName": "Jaska Virtanen",
+      "displayName": "Jaska Virtanen",
+      "voice": "am_michael",
+      "speed": 0.986,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 74,
+      "internalName": "Simppa Kurahaara",
+      "displayName": "Simppa Kurahaara",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 75,
+      "internalName": "Lönkka Kurahaara",
+      "displayName": "Lönkka Kurahaara",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 76,
+      "internalName": "Axel Norberg",
+      "displayName": "Axel Norberg",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 77,
+      "internalName": "Eija Lurppu",
+      "displayName": "Eija Lurppu",
+      "voice": "af_heart",
+      "speed": 1.015,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 78,
+      "internalName": "Teuvo Skogman",
+      "displayName": "Teuvo Skogman",
+      "voice": "am_onyx",
+      "speed": 0.935,
+      "pitch": -0.6
+    },
+    {
+      "gameCharacterId": 79,
+      "internalName": "Petro Blokuvati",
+      "displayName": "Petro Blokuvati",
+      "voice": "am_onyx",
+      "speed": 1.011,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 80,
+      "internalName": "Henning Torskvær",
+      "displayName": "Henning Torskvær",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 81,
+      "internalName": "Sirkku Maltanen",
+      "displayName": "Sirkku Maltanen",
+      "voice": "af_sarah",
+      "speed": 0.956,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 82,
+      "internalName": "Kalpana Selma",
+      "displayName": "Kalpana Selma",
+      "voice": "af_sarah",
+      "speed": 0.917,
+      "pitch": -0.5
+    },
+    {
+      "gameCharacterId": 83,
+      "internalName": "Guard",
+      "displayName": "Guard",
+      "voice": "am_onyx",
+      "speed": 0.95,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 84,
+      "internalName": "Tenement Market Square Police",
+      "displayName": "Tenement Market Square Police",
+      "voice": "am_michael",
+      "speed": 0.971,
+      "pitch": -0.3
+    },
+    {
+      "gameCharacterId": 85,
+      "internalName": "Tenement Backyard Police",
+      "displayName": "Tenement Backyard Police",
+      "voice": "am_michael",
+      "speed": 0.962,
+      "pitch": -0.2
+    },
+    {
+      "gameCharacterId": 86,
+      "internalName": "Rauha Taisto",
+      "displayName": "Rauha Taisto",
+      "voice": "af_sarah",
+      "speed": 0.904,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 87,
+      "internalName": "Jörge Af Guldskjöld",
+      "displayName": "Jörge Af Guldskjöld",
+      "voice": "am_adam",
+      "speed": 0.924,
+      "pitch": -0.45
+    },
+    {
+      "gameCharacterId": 88,
+      "internalName": "Urban Leggett",
+      "displayName": "Urban Leggett",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 89,
+      "internalName": "Walt Bondar",
+      "displayName": "Walt Bondar",
+      "voice": "am_michael",
+      "speed": 1.005,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 90,
+      "internalName": "Sam Morton",
+      "displayName": "Sam Morton",
+      "voice": "am_adam",
+      "speed": 1.085,
+      "pitch": 0.2
+    },
+    {
+      "gameCharacterId": 91,
+      "internalName": "Taneli Kurju",
+      "displayName": "Taneli Kurju",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 92,
+      "internalName": "Milla Kolleen",
+      "displayName": "Milla Kolleen",
+      "voice": "af_sarah",
+      "speed": 0.989,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 93,
+      "internalName": "Hall Kääbus",
+      "displayName": "Hall Kääbus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 94,
+      "internalName": "Kirka Kääbus",
+      "displayName": "Kirka Kääbus",
+      "voice": "af_sarah",
+      "speed": 0.979,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 95,
+      "internalName": "Fenella Hunt",
+      "displayName": "Fenella Hunt",
+      "voice": "af_heart",
+      "speed": 1.025,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 96,
+      "internalName": "Börje Nyberg",
+      "displayName": "Börje Nyberg",
+      "voice": "am_michael",
+      "speed": 1.018,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 97,
+      "internalName": "Liouba Bennett",
+      "displayName": "Liouba Bennett",
+      "voice": "af_sarah",
+      "speed": 0.997,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 98,
+      "internalName": "Moray Larson",
+      "displayName": "Moray Larson",
+      "voice": "am_adam",
+      "speed": 1.028,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 99,
+      "internalName": "Meri Haka",
+      "displayName": "Meri Haka",
+      "voice": "af_sarah",
+      "speed": 0.9,
+      "pitch": -0.5
+    },
+    {
+      "gameCharacterId": 100,
+      "internalName": "Ami Kunkka",
+      "displayName": "Ami Kunkka",
+      "voice": "am_adam",
+      "speed": 1.024,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 101,
+      "internalName": "Julius Öberg",
+      "displayName": "Julius Öberg",
+      "voice": "am_onyx",
+      "speed": 0.945,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 102,
+      "internalName": "Henrik Korpinen",
+      "displayName": "Henrik Korpinen",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 103,
+      "internalName": "Arvid Vinter",
+      "displayName": "Arvid Vinter",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 104,
+      "internalName": "Teuvo Sorvi",
+      "displayName": "Teuvo Sorvi",
+      "voice": "am_michael",
+      "speed": 1.009,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 105,
+      "internalName": "Fredrik",
+      "displayName": "Fredrik",
+      "voice": "am_michael",
+      "speed": 0.961,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 106,
+      "internalName": "Torsten Dvergsson",
+      "displayName": "Torsten Dvergsson",
+      "voice": "am_adam",
+      "speed": 0.959,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 107,
+      "internalName": "Crazy Neighbor",
+      "displayName": "Crazy Neighbor",
+      "voice": "am_michael",
+      "speed": 0.975,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 108,
+      "internalName": "Eliana",
+      "displayName": "Eliana",
+      "voice": "af_heart",
+      "speed": 1.047,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 109,
+      "internalName": "Bazaar Bank",
+      "displayName": "Bazaar Bank",
+      "voice": "am_onyx",
+      "speed": 0.972,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 110,
+      "internalName": "Mason Jokinen",
+      "displayName": "Mason Jokinen",
+      "voice": "af_sarah",
+      "speed": 1.02,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 111,
+      "internalName": "Louie Green",
+      "displayName": "Louie Green",
+      "voice": "am_onyx",
+      "speed": 0.986,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 112,
+      "internalName": "Ayla Green",
+      "displayName": "Ayla Green",
+      "voice": "af_sarah",
+      "speed": 0.992,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 113,
+      "internalName": "Johannes Eskola",
+      "displayName": "Johannes Eskola",
+      "voice": "am_michael",
+      "speed": 0.983,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 114,
+      "internalName": "Jonne Reis",
+      "displayName": "Jonne Reis",
+      "voice": "am_michael",
+      "speed": 1.029,
+      "pitch": 0.4
+    },
+    {
+      "gameCharacterId": 115,
+      "internalName": "Emma-Maija Taylor",
+      "displayName": "Emma-Maija Taylor",
+      "voice": "af_sarah",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 116,
+      "internalName": "Pia",
+      "displayName": "Pia",
+      "voice": "af_bella",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 117,
+      "internalName": "Heska Pavonen",
+      "displayName": "Heska Pavonen",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 118,
+      "internalName": "Joran Kallio",
+      "displayName": "Joran Kallio",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 119,
+      "internalName": "Anna Markkanen",
+      "displayName": "Anna Markkanen",
+      "voice": "af_heart",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 120,
+      "internalName": "Veikko Martinsen",
+      "displayName": "Veikko Martinsen",
+      "voice": "am_onyx",
+      "speed": 1.023,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 121,
+      "internalName": "Einar Kaivuri",
+      "displayName": "Einar Kaivuri",
+      "voice": "am_onyx",
+      "speed": 0.989,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 122,
+      "internalName": "Reijo Rautakaivos",
+      "displayName": "Reijo Rautakaivos",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 123,
+      "internalName": "Tanja Nypan",
+      "displayName": "Tanja Nypan",
+      "voice": "af_heart",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 124,
+      "internalName": "Mikkel Purola",
+      "displayName": "Mikkel Purola",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 125,
+      "internalName": "Seamus Liepa",
+      "displayName": "Seamus Liepa",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 126,
+      "internalName": "Lizzy Mopper",
+      "displayName": "Lizzy Mopper",
+      "voice": "af_sarah",
+      "speed": 0.967,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 127,
+      "internalName": "Ivar Pihl",
+      "displayName": "Ivar Pihl",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 128,
+      "internalName": "Vera Hietala",
+      "displayName": "Vera Hietala",
+      "voice": "af_sarah",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 129,
+      "internalName": "Kalle Suutari",
+      "displayName": "Kalle Suutari",
+      "voice": "am_onyx",
+      "speed": 0.977,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 130,
+      "internalName": "Olavi Hyypiö",
+      "displayName": "Olavi Hyypiö",
+      "voice": "am_onyx",
+      "speed": 0.986,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 131,
+      "internalName": "Laura Markkanen",
+      "displayName": "Laura Markkanen",
+      "voice": "af_heart",
+      "speed": 0.992,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 132,
+      "internalName": "Ken Nakahara",
+      "displayName": "Ken Nakahara",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 133,
+      "internalName": "Toivo Malmijoki",
+      "displayName": "Toivo Malmijoki",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 134,
+      "internalName": "Antero Erikson",
+      "displayName": "Antero Erikson",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 135,
+      "internalName": "Emil Kauha",
+      "displayName": "Emil Kauha",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 136,
+      "internalName": "Saunaklonkku",
+      "displayName": "Saunaklonkku",
+      "voice": "am_michael",
+      "speed": 0.975,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 137,
+      "internalName": "Anders Terva",
+      "displayName": "Anders Terva",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 138,
+      "internalName": "Maunu Gren",
+      "displayName": "Maunu Gren",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 139,
+      "internalName": "Caroline",
+      "displayName": "Caroline",
+      "voice": "af_heart",
+      "speed": 0.995,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 140,
+      "internalName": "Ines Hietala",
+      "displayName": "Ines Hietala",
+      "voice": "af_sarah",
+      "speed": 0.986,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 141,
+      "internalName": "Welhö",
+      "displayName": "Welhö",
+      "voice": "am_onyx",
+      "speed": 0.93,
+      "pitch": -0.35
+    },
+    {
+      "gameCharacterId": 142,
+      "internalName": "Rob Rosso",
+      "displayName": "Rob Rosso",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 143,
+      "internalName": "Arvo Kirkastaja",
+      "displayName": "Arvo Kirkastaja",
+      "voice": "am_onyx",
+      "speed": 0.953,
+      "pitch": -0.3
+    },
+    {
+      "gameCharacterId": 144,
+      "internalName": "Empty Test Map NPC",
+      "displayName": "Empty Test Map NPC",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 145,
+      "internalName": "Empty Test Map NPC Follower",
+      "displayName": "Empty Test Map NPC Follower",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 146,
+      "internalName": "Empty Test Map Police",
+      "displayName": "Empty Test Map Police",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 147,
+      "internalName": "Minh Thienlong",
+      "displayName": "Minh Thienlong",
+      "voice": "af_sarah",
+      "speed": 0.986,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 148,
+      "internalName": "Irma Kött",
+      "displayName": "Irma Kött",
+      "voice": "af_bella",
+      "speed": 1.005,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 149,
+      "internalName": "Kauko Poronen",
+      "displayName": "Kauko Poronen",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 150,
+      "internalName": "Timo Löyly",
+      "displayName": "Timo Löyly",
+      "voice": "am_onyx",
+      "speed": 1.045,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 151,
+      "internalName": "Jasper Sporefield",
+      "displayName": "Jasper Sporefield",
+      "voice": "am_onyx",
+      "speed": 0.987,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 152,
+      "internalName": "Niko Kerava",
+      "displayName": "Niko Kerava",
+      "voice": "am_adam",
+      "speed": 0.98,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 153,
+      "internalName": "Jappe Järvenpää",
+      "displayName": "Jappe Järvenpää",
+      "voice": "am_michael",
+      "speed": 0.992,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 154,
+      "internalName": "Harri Hyvinkää",
+      "displayName": "Harri Hyvinkää",
+      "voice": "am_adam",
+      "speed": 1.022,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 155,
+      "internalName": "Juha Tuusula",
+      "displayName": "Juha Tuusula",
+      "voice": "am_michael",
+      "speed": 0.983,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 156,
+      "internalName": "Robin Madsen",
+      "displayName": "Robin Madsen",
+      "voice": "am_onyx",
+      "speed": 0.953,
+      "pitch": -0.45
+    },
+    {
+      "gameCharacterId": 157,
+      "internalName": "Tero Verkko",
+      "displayName": "Tero Verkko",
+      "voice": "am_onyx",
+      "speed": 1.013,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 158,
+      "internalName": "Ms. Lotina",
+      "displayName": "Ms. Lotina",
+      "voice": "af_heart",
+      "speed": 1.012,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 159,
+      "internalName": "Muscle Max",
+      "displayName": "Muscle Max",
+      "voice": "af_bella",
+      "speed": 1.057,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 160,
+      "internalName": "Hazmat Guy",
+      "displayName": "Hazmat Guy",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 161,
+      "internalName": "Urho Siltanen",
+      "displayName": "Urho Siltanen",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 162,
+      "internalName": "Warden",
+      "displayName": "Warden",
+      "voice": "af_bella",
+      "speed": 0.947,
+      "pitch": -0.45
+    },
+    {
+      "gameCharacterId": 163,
+      "internalName": "Cajsa Mörk",
+      "displayName": "Cajsa Mörk",
+      "voice": "af_sarah",
+      "speed": 1.027,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 164,
+      "internalName": "Elsa Varis",
+      "displayName": "Elsa Varis",
+      "voice": "af_heart",
+      "speed": 1.065,
+      "pitch": 0.55
+    },
+    {
+      "gameCharacterId": 165,
+      "internalName": "Jooseppi Tuoppi",
+      "displayName": "Jooseppi Tuoppi",
+      "voice": "af_sarah",
+      "speed": 1.009,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 166,
+      "internalName": "Reiska Remppa",
+      "displayName": "Reiska Remppa",
+      "voice": "am_michael",
+      "speed": 1.018,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 167,
+      "internalName": "Larry Goatbridge",
+      "displayName": "Larry Goatbridge",
+      "voice": "am_onyx",
+      "speed": 0.989,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 168,
+      "internalName": "Sirpa Kvenlayson",
+      "displayName": "Sirpa Kvenlayson",
+      "voice": "af_sarah",
+      "speed": 1.0,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 169,
+      "internalName": "Samuel Godman",
+      "displayName": "Samuel Godman",
+      "voice": "am_adam",
+      "speed": 0.958,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 170,
+      "internalName": "Jens Brom",
+      "displayName": "Jens Brom",
+      "voice": "am_adam",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 171,
+      "internalName": "Irmeli Nakkila",
+      "displayName": "Irmeli Nakkila",
+      "voice": "af_heart",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 172,
+      "internalName": "Gold Store Police",
+      "displayName": "Gold Store Police",
+      "voice": "am_onyx",
+      "speed": 0.982,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 173,
+      "internalName": "Bazaar Police",
+      "displayName": "Bazaar Police",
+      "voice": "am_michael",
+      "speed": 0.988,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 174,
+      "internalName": "Elias Karhu",
+      "displayName": "Elias Karhu",
+      "voice": "am_onyx",
+      "speed": 0.933,
+      "pitch": -0.5
+    },
+    {
+      "gameCharacterId": 175,
+      "internalName": "Toini Karhu",
+      "displayName": "Toini Karhu",
+      "voice": "af_sarah",
+      "speed": 0.904,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 176,
+      "internalName": "Arto Neulakoski",
+      "displayName": "Arto Neulakoski",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 177,
+      "internalName": "Miko Poltinvuori",
+      "displayName": "Miko Poltinvuori",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 178,
+      "internalName": "Gary Lind",
+      "displayName": "Gary Lind",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 179,
+      "internalName": "Ethan Ward",
+      "displayName": "Ethan Ward",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 180,
+      "internalName": "Helena Neulakoski",
+      "displayName": "Helena Neulakoski",
+      "voice": "af_sarah",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 181,
+      "internalName": "Zoya Gubenko",
+      "displayName": "Zoya Gubenko",
+      "voice": "af_bella",
+      "speed": 1.031,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 182,
+      "internalName": "Rita Korjus",
+      "displayName": "Rita Korjus",
+      "voice": "af_bella",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 183,
+      "internalName": "Filippa Pajusalu",
+      "displayName": "Filippa Pajusalu",
+      "voice": "af_sarah",
+      "speed": 0.994,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 184,
+      "internalName": "Ahmed Rahman",
+      "displayName": "Ahmed Rahman",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 185,
+      "internalName": "Marko Mainisto",
+      "displayName": "Marko Mainisto",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 186,
+      "internalName": "Maria Yrtikäinen",
+      "displayName": "Maria Yrtikäinen",
+      "voice": "af_heart",
+      "speed": 0.997,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 187,
+      "internalName": "Kalle Ketku",
+      "displayName": "Kalle Ketku",
+      "voice": "am_onyx",
+      "speed": 0.964,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 188,
+      "internalName": "Slum Police",
+      "displayName": "Slum Police",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 189,
+      "internalName": "Finlay Bjorkman",
+      "displayName": "Finlay Bjorkman",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 190,
+      "internalName": "Topias Iisalmi",
+      "displayName": "Topias Iisalmi",
+      "voice": "af_heart",
+      "speed": 0.998,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 191,
+      "internalName": "Ulla Svendsen",
+      "displayName": "Ulla Svendsen",
+      "voice": "af_sarah",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 192,
+      "internalName": "Karri Backman",
+      "displayName": "Karri Backman",
+      "voice": "af_heart",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 193,
+      "internalName": "Alexandra Kattila",
+      "displayName": "Alexandra Kattila",
+      "voice": "af_heart",
+      "speed": 1.006,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 194,
+      "internalName": "Tapani Kattila",
+      "displayName": "Tapani Kattila",
+      "voice": "am_onyx",
+      "speed": 0.992,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 195,
+      "internalName": "Tähti Kattila",
+      "displayName": "Tähti Kattila",
+      "voice": "af_heart",
+      "speed": 1.084,
+      "pitch": 0.55
+    },
+    {
+      "gameCharacterId": 196,
+      "internalName": "Viljo Kattila",
+      "displayName": "Viljo Kattila",
+      "voice": "am_michael",
+      "speed": 1.09,
+      "pitch": 0.65
+    },
+    {
+      "gameCharacterId": 197,
+      "internalName": "Kössi Kelmi",
+      "displayName": "Kössi Kelmi",
+      "voice": "am_onyx",
+      "speed": 0.952,
+      "pitch": -0.2
+    },
+    {
+      "gameCharacterId": 198,
+      "internalName": "Lasse Lurjus",
+      "displayName": "Lasse Lurjus",
+      "voice": "am_michael",
+      "speed": 1.009,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 199,
+      "internalName": "Kari Hämäläinen",
+      "displayName": "Kari Hämäläinen",
+      "voice": "af_sarah",
+      "speed": 0.995,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 200,
+      "internalName": "Jari Mäkinen",
+      "displayName": "Jari Mäkinen",
+      "voice": "af_heart",
+      "speed": 0.986,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 201,
+      "internalName": "Jarkko Tulimäki",
+      "displayName": "Jarkko Tulimäki",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 202,
+      "internalName": "Erkki Kianen",
+      "displayName": "Erkki Kianen",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 203,
+      "internalName": "Pertti Parju",
+      "displayName": "Pertti Parju",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 204,
+      "internalName": "Reino Littinen",
+      "displayName": "Reino Littinen",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 205,
+      "internalName": "Remontti-Repe",
+      "displayName": "Remontti-Repe",
+      "voice": "am_michael",
+      "speed": 1.018,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 206,
+      "internalName": "Raimo Stalreg",
+      "displayName": "Raimo Stalreg",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 207,
+      "internalName": "Hugo Björnson",
+      "displayName": "Hugo Björnson",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 208,
+      "internalName": "Jonas Elström",
+      "displayName": "Jonas Elström",
+      "voice": "am_adam",
+      "speed": 1.012,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 209,
+      "internalName": "Penni-Pena",
+      "displayName": "Penni-Pena",
+      "voice": "am_onyx",
+      "speed": 0.952,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 210,
+      "internalName": "Private Lötjönen",
+      "displayName": "Private Lötjönen",
+      "voice": "am_michael",
+      "speed": 1.035,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 211,
+      "internalName": "Ruth McTrosg",
+      "displayName": "Ruth McTrosg",
+      "voice": "af_sarah",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 212,
+      "internalName": "Tor Bergstahl",
+      "displayName": "Tor Bergstahl",
+      "voice": "am_onyx",
+      "speed": 0.971,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 213,
+      "internalName": "Aune Korsborg",
+      "displayName": "Aune Korsborg",
+      "voice": "af_sarah",
+      "speed": 0.965,
+      "pitch": -0.3
+    },
+    {
+      "gameCharacterId": 214,
+      "internalName": "Anneli Tuoppi",
+      "displayName": "Anneli Tuoppi",
+      "voice": "af_sarah",
+      "speed": 1.03,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 215,
+      "internalName": "Denys Moskalenko",
+      "displayName": "Denys Moskalenko",
+      "voice": "am_michael",
+      "speed": 1.037,
+      "pitch": 0.2
+    },
+    {
+      "gameCharacterId": 216,
+      "internalName": "Anders Aadlärkjörts",
+      "displayName": "Anders Aadlärkjörts",
+      "voice": "am_michael",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 217,
+      "internalName": "Rosario Rootto",
+      "displayName": "Rosario Rootto",
+      "voice": "am_onyx",
+      "speed": 0.978,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 218,
+      "internalName": "Riina Pamppumäki",
+      "displayName": "Riina Pamppumäki",
+      "voice": "af_heart",
+      "speed": 1.025,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 219,
+      "internalName": "Casper Colikke",
+      "displayName": "Casper Colikke",
+      "voice": "am_onyx",
+      "speed": 1.03,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 220,
+      "internalName": "Zara Nkosi",
+      "displayName": "Zara Nkosi",
+      "voice": "af_bella",
+      "speed": 1.046,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 221,
+      "internalName": "Gérard Dujardin",
+      "displayName": "Gérard Dujardin",
+      "voice": "am_michael",
+      "speed": 1.018,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 222,
+      "internalName": "Raimo Räyhä",
+      "displayName": "Raimo Räyhä",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 223,
+      "internalName": "Pertti Korhonen",
+      "displayName": "Pertti Korhonen",
+      "voice": "am_michael",
+      "speed": 0.995,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 224,
+      "internalName": "Hygge Svamprad",
+      "displayName": "Hygge Svamprad",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 225,
+      "internalName": "Meri Hostari",
+      "displayName": "Meri Hostari",
+      "voice": "af_heart",
+      "speed": 1.012,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 226,
+      "internalName": "Giacobbe Bolognese",
+      "displayName": "Giacobbe Bolognese",
+      "voice": "am_michael",
+      "speed": 1.018,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 227,
+      "internalName": "Dolores Bolognese",
+      "displayName": "Dolores Bolognese",
+      "voice": "am_michael",
+      "speed": 1.021,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 228,
+      "internalName": "Keke Roinaneva",
+      "displayName": "Keke Roinaneva",
+      "voice": "am_onyx",
+      "speed": 0.988,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 229,
+      "internalName": "Ari Pulsunmäki",
+      "displayName": "Ari Pulsunmäki",
+      "voice": "am_michael",
+      "speed": 0.991,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 230,
+      "internalName": "Jeppe Rinkmann",
+      "displayName": "Jeppe Rinkmann",
+      "voice": "am_adam",
+      "speed": 1.012,
+      "pitch": 0.15
+    },
+    {
+      "gameCharacterId": 231,
+      "internalName": "Denis Passmore",
+      "displayName": "Denis Passmore",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 232,
+      "internalName": "Aune Kirkastaja",
+      "displayName": "Aune Kirkastaja",
+      "voice": "af_sarah",
+      "speed": 0.982,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 233,
+      "internalName": "Johanna Faust",
+      "displayName": "Johanna Faust",
+      "voice": "af_heart",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 234,
+      "internalName": "Alfred Schweinstein",
+      "displayName": "Alfred Schweinstein",
+      "voice": "am_onyx",
+      "speed": 0.989,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 235,
+      "internalName": "Anatoli Mustaruoho",
+      "displayName": "Anatoli Mustaruoho",
+      "voice": "am_michael",
+      "speed": 0.961,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 236,
+      "internalName": "Justyna Krystiana",
+      "displayName": "Justyna Krystiana",
+      "voice": "af_heart",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 237,
+      "internalName": "Christian Sykkelsen",
+      "displayName": "Christian Sykkelsen",
+      "voice": "am_adam",
+      "speed": 1.012,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 238,
+      "internalName": "Marja Noukkinen",
+      "displayName": "Marja Noukkinen",
+      "voice": "af_sarah",
+      "speed": 0.941,
+      "pitch": -0.5
+    },
+    {
+      "gameCharacterId": 239,
+      "internalName": "Ragnar Stortorsk",
+      "displayName": "Ragnar Stortorsk",
+      "voice": "am_michael",
+      "speed": 1.009,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 240,
+      "internalName": "Eva Smörbulle",
+      "displayName": "Eva Smörbulle",
+      "voice": "af_sarah",
+      "speed": 1.0,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 241,
+      "internalName": "Olle Skatt",
+      "displayName": "Olle Skatt",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 242,
+      "internalName": "Akim Azizi",
+      "displayName": "Akim Azizi",
+      "voice": "am_adam",
+      "speed": 1.059,
+      "pitch": 0.25
+    },
+    {
+      "gameCharacterId": 243,
+      "internalName": "Tim Nickelson",
+      "displayName": "Tim Nickelson",
+      "voice": "am_michael",
+      "speed": 0.979,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 244,
+      "internalName": "Urpo Murhapuro",
+      "displayName": "Urpo Murhapuro",
+      "voice": "am_adam",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 245,
+      "internalName": "Matti Kiehinen",
+      "displayName": "Matti Kiehinen",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 246,
+      "internalName": "Minna Poreva",
+      "displayName": "Minna Poreva",
+      "voice": "af_heart",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 247,
+      "internalName": "Svana Wallmark",
+      "displayName": "Svana Wallmark",
+      "voice": "af_heart",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 248,
+      "internalName": "Sandra Klapi",
+      "displayName": "Sandra Klapi",
+      "voice": "af_heart",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 249,
+      "internalName": "Kama",
+      "displayName": "Kama",
+      "voice": "af_bella",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 250,
+      "internalName": "Lykke Tillbehör",
+      "displayName": "Lykke Tillbehör",
+      "voice": "af_sarah",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 251,
+      "internalName": "Dave Smiker",
+      "displayName": "Dave Smiker",
+      "voice": "am_michael",
+      "speed": 1.049,
+      "pitch": 0.2
+    },
+    {
+      "gameCharacterId": 252,
+      "internalName": "Karl Hagen",
+      "displayName": "Karl Hagen",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 253,
+      "internalName": "Bror Stjäla",
+      "displayName": "Bror Stjäla",
+      "voice": "am_onyx",
+      "speed": 0.978,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 254,
+      "internalName": "Per Otter",
+      "displayName": "Per Otter",
+      "voice": "am_onyx",
+      "speed": 0.901,
+      "pitch": -0.6
+    },
+    {
+      "gameCharacterId": 255,
+      "internalName": "Mikael Arnaldur",
+      "displayName": "Mikael Arnaldur",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 256,
+      "internalName": "Anu Otter",
+      "displayName": "Anu Otter",
+      "voice": "af_sarah",
+      "speed": 0.9,
+      "pitch": -0.4
+    },
+    {
+      "gameCharacterId": 257,
+      "internalName": "Jane Miller",
+      "displayName": "Jane Miller",
+      "voice": "af_heart",
+      "speed": 1.003,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 258,
+      "internalName": "Stella Polaris",
+      "displayName": "Stella Polaris",
+      "voice": "af_sarah",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 259,
+      "internalName": "Erto Lagerfeld",
+      "displayName": "Erto Lagerfeld",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 260,
+      "internalName": "Interviewer",
+      "displayName": "Interviewer",
+      "voice": "am_michael",
+      "speed": 0.954,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 261,
+      "internalName": "Dr. Martti",
+      "displayName": "Dr. Martti",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 262,
+      "internalName": "Teppo Tulppa",
+      "displayName": "Teppo Tulppa",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 263,
+      "internalName": "Vincent Hjermann",
+      "displayName": "Vincent Hjermann",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 264,
+      "internalName": "Heikki Mailanen",
+      "displayName": "Heikki Mailanen",
+      "voice": "am_michael",
+      "speed": 0.995,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 265,
+      "internalName": "Theo Tammi",
+      "displayName": "Theo Tammi",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 266,
+      "internalName": "Sigvard Caune",
+      "displayName": "Sigvard Caune",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 267,
+      "internalName": "Miina-Ansa Virtanen",
+      "displayName": "Miina-Ansa Virtanen",
+      "voice": "af_bella",
+      "speed": 0.976,
+      "pitch": -0.05
+    },
+    {
+      "gameCharacterId": 268,
+      "internalName": "Lätty",
+      "displayName": "Lätty",
+      "voice": "am_onyx",
+      "speed": 0.958,
+      "pitch": -0.25
+    },
+    {
+      "gameCharacterId": 269,
+      "internalName": "Eetu Rymy",
+      "displayName": "Eetu Rymy",
+      "voice": "am_adam",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 270,
+      "internalName": "Kalevi Harvakattu",
+      "displayName": "Kalevi Harvakattu",
+      "voice": "am_onyx",
+      "speed": 0.947,
+      "pitch": -0.2
+    },
+    {
+      "gameCharacterId": 271,
+      "internalName": "Veeti Pärisevä",
+      "displayName": "Veeti Pärisevä",
+      "voice": "am_michael",
+      "speed": 1.07,
+      "pitch": 0.35
+    },
+    {
+      "gameCharacterId": 272,
+      "internalName": "Jussi Pöhinä",
+      "displayName": "Jussi Pöhinä",
+      "voice": "am_michael",
+      "speed": 0.973,
+      "pitch": -0.15
+    },
+    {
+      "gameCharacterId": 273,
+      "internalName": "Katriina Vermund",
+      "displayName": "Katriina Vermund",
+      "voice": "af_heart",
+      "speed": 1.0,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 274,
+      "internalName": "Vanja Bjorkman",
+      "displayName": "Vanja Bjorkman",
+      "voice": "am_onyx",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 275,
+      "internalName": "Svein Regnell",
+      "displayName": "Svein Regnell",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 276,
+      "internalName": "Anni Kiinteistö",
+      "displayName": "Anni Kiinteistö",
+      "voice": "af_heart",
+      "speed": 1.002,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 277,
+      "internalName": "Lotta Savisaar",
+      "displayName": "Lotta Savisaar",
+      "voice": "af_bella",
+      "speed": 0.994,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 278,
+      "internalName": "Matias Savisaar",
+      "displayName": "Matias Savisaar",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 279,
+      "internalName": "Tonie Savisaar",
+      "displayName": "Tonie Savisaar",
+      "voice": "am_michael",
+      "speed": 0.998,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 280,
+      "internalName": "Ilona Rummo",
+      "displayName": "Ilona Rummo",
+      "voice": "af_sarah",
+      "speed": 0.997,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 281,
+      "internalName": "Rami Nousukainen",
+      "displayName": "Rami Nousukainen",
+      "voice": "am_onyx",
+      "speed": 1.003,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 282,
+      "internalName": "Otso Terästalia",
+      "displayName": "Otso Terästalia",
+      "voice": "am_michael",
+      "speed": 0.994,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 283,
+      "internalName": "Eila Hellamäki",
+      "displayName": "Eila Hellamäki",
+      "voice": "af_bella",
+      "speed": 1.0,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 284,
+      "internalName": "Jarppi Puukko",
+      "displayName": "Jarppi Puukko",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 285,
+      "internalName": "Maximo Utedass",
+      "displayName": "Maximo Utedass",
+      "voice": "am_michael",
+      "speed": 0.997,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 286,
+      "internalName": "Julia Stensson",
+      "displayName": "Julia Stensson",
+      "voice": "af_heart",
+      "speed": 1.006,
+      "pitch": 0.1
+    },
+    {
+      "gameCharacterId": 287,
+      "internalName": "Tina Myrtorp",
+      "displayName": "Tina Myrtorp",
+      "voice": "af_heart",
+      "speed": 1.022,
+      "pitch": 0.05
+    },
+    {
+      "gameCharacterId": 288,
+      "internalName": "Ellen Skovfyr",
+      "displayName": "Ellen Skovfyr",
+      "voice": "af_sarah",
+      "speed": 1.003,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 289,
+      "internalName": "Jaana Ahovaara",
+      "displayName": "Jaana Ahovaara",
+      "voice": "af_bella",
+      "speed": 0.959,
+      "pitch": -0.1
+    },
+    {
+      "gameCharacterId": 999,
+      "internalName": "Tenant",
+      "displayName": "Tenant",
+      "voice": "am_michael",
+      "speed": 1.006,
+      "pitch": 0
+    },
+    {
+      "gameCharacterId": 10001,
+      "internalName": "Default Male",
+      "displayName": "Default Male",
+      "voice": "af_bella",
+      "speed": 0.981,
+      "pitch": -0.1
+    }
+  ],
+  "packId": "core"
+}

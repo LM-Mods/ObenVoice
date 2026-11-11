@@ -20,10 +20,14 @@ def load_engines():
 def main():
     engines = load_engines()
     original_root = os.environ.get("TTS_ROOT")
+    original_obenvoice_root = os.environ.get("OBENVOICE_ROOT")
+    original_legacy_root = os.environ.get("OBENVOICE_LEGACY_ROOT")
     try:
         with tempfile.TemporaryDirectory(dir=SOURCE_ROOT / "tests") as temporary:
             root = Path(temporary)
             os.environ["TTS_ROOT"] = str(root)
+            os.environ["OBENVOICE_ROOT"] = str(root / "ObenVoice")
+            os.environ["OBENVOICE_LEGACY_ROOT"] = str(root)
             assert engines.discover_external_voices("kokoro") == {}
             assert list(engines.AVAILABLE_VOICES) == engines.get_available_voices()
 
@@ -54,7 +58,54 @@ def main():
             assert found["bm_test"]["path"] == (voices / "bm_test.pt").resolve()
             assert engines.get_available_voices()[-2:] == ["bf_test", "bm_test"]
 
+            primary_pack = root / "ObenVoice" / "VoicePacks" / "Friendly Pack Folder"
+            primary_voices = primary_pack / "voices"
+            primary_voices.mkdir(parents=True)
+            (primary_voices / "af_primary.pt").write_bytes(b"primary")
+            (primary_pack / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "manifestVersion": 1,
+                        "id": "primary-pack",
+                        "name": "Primary Pack",
+                        "engine": "kokoro",
+                        "voices": [
+                            {"id": "af_primary", "displayName": "Primary", "gender": "female", "file": "voices/af_primary.pt"}
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            found = engines.discover_external_voices("kokoro")
+            assert set(found) == {"af_primary", "bf_test", "bm_test"}
+            assert found["af_primary"]["pack_id"] == "primary-pack"
+
+            for pack_name in ("z-pack", "a-pack"):
+                duplicate_pack = root / "voice-packs" / "kokoro" / pack_name
+                duplicate_voices = duplicate_pack / "voices"
+                duplicate_voices.mkdir(parents=True)
+                (duplicate_voices / "af_duplicate.pt").write_bytes(pack_name.encode("ascii"))
+                (duplicate_pack / "manifest.json").write_text(
+                    json.dumps(
+                        {
+                            "manifestVersion": 1,
+                            "id": pack_name,
+                            "name": pack_name,
+                            "engine": "kokoro",
+                            "voices": [
+                                {"id": "af_duplicate", "displayName": "Duplicate", "gender": "female", "file": "voices/af_duplicate.pt"}
+                            ],
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+            found = engines.discover_external_voices("kokoro")
+            assert found["af_duplicate"]["pack_id"] == "a-pack", "alphabetically first pack must win duplicate voice IDs"
+
             shutil.rmtree(pack)
+            shutil.rmtree(root / "ObenVoice")
+            shutil.rmtree(root / "voice-packs" / "kokoro" / "a-pack")
+            shutil.rmtree(root / "voice-packs" / "kokoro" / "z-pack")
             assert engines.discover_external_voices("kokoro") == {}
             assert list(engines.AVAILABLE_VOICES) == engines.get_available_voices()
     finally:
@@ -62,6 +113,14 @@ def main():
             os.environ.pop("TTS_ROOT", None)
         else:
             os.environ["TTS_ROOT"] = original_root
+        if original_obenvoice_root is None:
+            os.environ.pop("OBENVOICE_ROOT", None)
+        else:
+            os.environ["OBENVOICE_ROOT"] = original_obenvoice_root
+        if original_legacy_root is None:
+            os.environ.pop("OBENVOICE_LEGACY_ROOT", None)
+        else:
+            os.environ["OBENVOICE_LEGACY_ROOT"] = original_legacy_root
 
     print("external voice-pack discovery/removal tests passed")
 

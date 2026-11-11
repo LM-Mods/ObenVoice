@@ -25,10 +25,10 @@ The Core release also contains PyTorch, NumPy, Transformers, Hugging Face Hub, s
 
 Obenseuer, its characters and associated trademarks belong to their respective owners. ObenVoice is unofficial. Game and Unity assemblies are local build references and are not included in this source repository or intended release packages. BepInEx, Harmony, Obenseuer Modding Framework, Unity and Pixel Crushers Dialogue System remain under their respective terms.
 
-`characters.json` is an adapted offline identification database derived from
-the Stalburg Wiki character index and supplemented with curated gameplay
-observations. It is separately distributed under CC BY-SA 4.0 with source
-credit, change disclosure and share-alike terms in
+`characters.json` is an offline identification database compiled from a local
+Obenseuer 0.5.19 character-registry scan. It is separately distributed under
+CC BY-SA 4.0 compilation terms, to the extent applicable, with provenance and
+data boundaries in
 [data/LICENSE.md](data/LICENSE.md).
 
 ## Optional packages
@@ -36,5 +36,7 @@ credit, change disclosure and share-alike terms in
 External voice packs are separate distributions and require package-specific
 notices. The optional British voice pack's two unmodified files match Kokoro-82M revision
 `f3ff3571791e39611d31c381e3a41a3af07b4987` and retain Apache-2.0 attribution.
+Stalburg Voices Vol. 1 contains modified Kokoro-compatible tensors and ships
+its Apache-2.0 text, NOTICE, generator source and per-file provenance record.
 
 This repository contains no third-party model or voice weights.

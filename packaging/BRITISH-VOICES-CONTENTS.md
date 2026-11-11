@@ -1,6 +1,6 @@
 # British voices package contents and gate
 
-Expected root: `ObenseuerTTS/voice-packs/kokoro/british-test`.
+Expected root: `ObenVoice/VoicePacks/Brit`.
 
 The preserved internal reference contains unmodified `bf_emma.pt`,
 `bm_george.pt`, manifest, local hashes, attribution and Apache-2.0 text.

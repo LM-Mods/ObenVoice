@@ -1,975 +1,2341 @@
 {
   "version": 1,
-  "generatedFor": "Obenseuer Dialogue TTS 4.0",
-  "offline": true,
   "characters": [
     {
-      "internalName": "Agnes Takala",
-      "displayName": "Agnes Takala",
-      "gender": "female",
-      "aliases": [
-        "Agnes"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "internalName": "Name",
+      "displayName": "Name",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": -1,
+      "verificationStatus": "test-placeholder"
     },
     {
-      "internalName": "Amanda Korhonen",
-      "displayName": "Amanda Korhonen",
-      "gender": "female",
-      "aliases": [
-        "Amanda"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Anya",
-      "displayName": "Anya",
-      "gender": "female",
-      "aliases": [
-        "Anya"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Ayla Green",
-      "displayName": "Ayla Green",
-      "gender": "female",
-      "aliases": [
-        "Ayla"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Caroline",
-      "displayName": "Caroline",
-      "gender": "female",
-      "aliases": [
-        "Caroline"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Eija Lurppu",
-      "displayName": "Eija Lurppu",
-      "gender": "female",
-      "aliases": [
-        "Eija"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Eliana",
-      "displayName": "Eliana",
-      "gender": "female",
-      "aliases": [
-        "Eliana"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Elli Horn",
-      "displayName": "Elli Horn",
-      "gender": "female",
-      "aliases": [
-        "Elli"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Elsa Varis",
-      "displayName": "Elsa Varis",
-      "gender": "female",
-      "aliases": [
-        "Elsa"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Emilie",
-      "displayName": "Emilie",
-      "gender": "female",
-      "aliases": [
-        "Emilie"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Fenella Hunt",
-      "displayName": "Fenella Hunt",
-      "gender": "female",
-      "aliases": [
-        "Fenella"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Ines Hietala",
-      "displayName": "Ines Hietala",
-      "gender": "female",
-      "aliases": [
-        "Ines"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Ingrid Claesson",
-      "displayName": "Ingrid Claesson",
-      "gender": "female",
-      "aliases": [
-        "Ingrid"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Leena Borg",
-      "displayName": "Leena Borg",
-      "gender": "female",
-      "aliases": [
-        "Leena"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Liouba Bennett",
-      "displayName": "Liouba Bennett",
-      "gender": "female",
-      "aliases": [
-        "Liouba"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Lizzy Mopper",
-      "displayName": "Lizzy Mopper",
-      "gender": "female",
-      "aliases": [
-        "Lizzy"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Martta Lapinjoki",
-      "displayName": "Martta Lapinjoki",
-      "gender": "female",
-      "aliases": [
-        "Martta"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Meri Haka",
-      "displayName": "Meri Haka",
-      "gender": "female",
-      "aliases": [
-        "Meri"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Milla Kolleen",
-      "displayName": "Milla Kolleen",
-      "gender": "female",
-      "aliases": [
-        "Milla"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "internalName": "Player",
+      "displayName": "Player",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 0,
+      "verificationStatus": "game-scanned"
     },
     {
       "internalName": "Mirjam Freighter",
       "displayName": "Mirjam Freighter",
       "gender": "female",
-      "aliases": [
-        "Mirjam"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 2,
+      "verificationStatus": "game-scanned"
     },
     {
-      "internalName": "Mona Hall",
-      "displayName": "Mona Hall",
+      "internalName": "Ivan Kapustanov",
+      "displayName": "Ivan Kapustanov",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 3,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Marjukka Sieni",
+      "displayName": "Marjukka Sieni",
       "gender": "female",
-      "aliases": [
-        "Mona"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 4,
+      "verificationStatus": "game-scanned"
     },
     {
-      "internalName": "Nina Lund",
-      "displayName": "Nina Lund",
+      "internalName": "Hilla Palo",
+      "displayName": "Hilla Palo",
       "gender": "female",
-      "aliases": [
-        "Nina"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 5,
+      "verificationStatus": "game-scanned"
     },
     {
-      "internalName": "Pia Horn",
-      "displayName": "Pia Horn",
+      "internalName": "Oliver Berggren",
+      "displayName": "Oliver Berggren",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 6,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ritva Sumppi",
+      "displayName": "Ritva Sumppi",
       "gender": "female",
-      "aliases": [
-        "Pia"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 7,
+      "verificationStatus": "game-scanned"
     },
     {
-      "internalName": "Sara Claine",
-      "displayName": "Sara Claine",
+      "internalName": "Sofija Pisula",
+      "displayName": "Sofija Pisula",
       "gender": "female",
-      "aliases": [
-        "Sara"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 8,
+      "verificationStatus": "game-scan-review"
     },
     {
-      "internalName": "Sirkku Maltanen",
-      "displayName": "Sirkku Maltanen",
+      "internalName": "Gustav Sågspånberg",
+      "displayName": "Gustav Sågspånberg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 9,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Astrid Vinsjö",
+      "displayName": "Astrid Vinsjö",
       "gender": "female",
-      "aliases": [
-        "Sirkku"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Tatyana Gopnikova",
-      "displayName": "Tatyana Gopnikova",
-      "gender": "female",
-      "aliases": [
-        "Tatyana"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Tea Henderson",
-      "displayName": "Tea Henderson",
-      "gender": "female",
-      "aliases": [
-        "Tea"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Vivi Bondar",
-      "displayName": "Vivi Bondar",
-      "gender": "female",
-      "aliases": [
-        "Vivi"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Zoya Gubenko",
-      "displayName": "Zoya Gubenko",
-      "gender": "female",
-      "aliases": [
-        "Zoya"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Adam Holmgren",
-      "displayName": "Adam Holmgren",
-      "gender": "male",
-      "aliases": [
-        "Adam"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Aleksi Kivi",
-      "displayName": "Aleksi Kivi",
-      "gender": "male",
-      "aliases": [
-        "Aleksi"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Axel Norberg",
-      "displayName": "Axel Norberg",
-      "gender": "male",
-      "aliases": [
-        "Axel"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Börje Nyberg",
-      "displayName": "Börje Nyberg",
-      "gender": "male",
-      "aliases": [
-        "Börje"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Crazy Neighbor",
-      "displayName": "Crazy Neighbor",
-      "gender": "male",
-      "aliases": [
-        "Crazy"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Daan Claesson",
-      "displayName": "Daan Claesson",
-      "gender": "male",
-      "aliases": [
-        "Daan"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "David Lund",
-      "displayName": "David Lund",
-      "gender": "male",
-      "aliases": [
-        "David"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Director Murhapuro",
-      "displayName": "Director Murhapuro",
-      "gender": "male",
-      "aliases": [
-        "Director"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Einar Kaivuri",
-      "displayName": "Einar Kaivuri",
-      "gender": "male",
-      "aliases": [
-        "Einar"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Elias Karhu",
-      "displayName": "Elias Karhu",
-      "gender": "male",
-      "aliases": [
-        "Elias"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Father Tobias",
-      "displayName": "Father Tobias",
-      "gender": "male",
-      "aliases": [
-        "Father"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Fredrik Walker",
-      "displayName": "Fredrik Walker",
-      "gender": "male",
-      "aliases": [
-        "Fredrik"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Hall Kääbus",
-      "displayName": "Hall Kääbus",
-      "gender": "male",
-      "aliases": [
-        "Hall"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Hank Möbelmann",
-      "displayName": "Hank Möbelmann",
-      "gender": "male",
-      "aliases": [
-        "Hank"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Hanss",
-      "displayName": "Hanss",
-      "gender": "male",
-      "aliases": [
-        "Hanss"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Harri Hyvinkää",
-      "displayName": "Harri Hyvinkää",
-      "gender": "male",
-      "aliases": [
-        "Harri"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Heikki Horn",
-      "displayName": "Heikki Horn",
-      "gender": "male",
-      "aliases": [
-        "Heikki"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Heikki Mailanen",
-      "displayName": "Heikki Mailanen",
-      "gender": "male",
-      "aliases": [
-        "Heikki"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Henrik Korpinen",
-      "displayName": "Henrik Korpinen",
-      "gender": "male",
-      "aliases": [
-        "Henrik"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jappe Järvenpää",
-      "displayName": "Jappe Järvenpää",
-      "gender": "male",
-      "aliases": [
-        "Jappe"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jarmo Pettinen",
-      "displayName": "Jarmo Pettinen",
-      "gender": "male",
-      "aliases": [
-        "Jarmo"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jaska Virtanen",
-      "displayName": "Jaska Virtanen",
-      "gender": "male",
-      "aliases": [
-        "Jaska"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jesper Kumpula",
-      "displayName": "Jesper Kumpula",
-      "gender": "male",
-      "aliases": [
-        "Jesper"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jim Nilsen",
-      "displayName": "Jim Nilsen",
-      "gender": "male",
-      "aliases": [
-        "Jim"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Joel Hietala",
-      "displayName": "Joel Hietala",
-      "gender": "male",
-      "aliases": [
-        "Joel"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Johannes Eskola",
-      "displayName": "Johannes Eskola",
-      "gender": "male",
-      "aliases": [
-        "Johannes"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jonne Reis",
-      "displayName": "Jonne Reis",
-      "gender": "male",
-      "aliases": [
-        "Jonne"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Jörge Af Guldsköld",
-      "displayName": "Jörge Af Guldsköld",
-      "gender": "male",
-      "aliases": [
-        "Jörge"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Juha Tuusula",
-      "displayName": "Juha Tuusula",
-      "gender": "male",
-      "aliases": [
-        "Juha"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Kalle Ketku",
-      "displayName": "Kalle Ketku",
-      "gender": "male",
-      "aliases": [
-        "Kalle"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Karl Hagen",
-      "displayName": "Karl Hagen",
-      "gender": "male",
-      "aliases": [
-        "Karl"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Keijo Korsonen",
-      "displayName": "Keijo Korsonen",
-      "gender": "male",
-      "aliases": [
-        "Keijo"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Kirka Kääbus",
-      "displayName": "Kirka Kääbus",
-      "gender": "male",
-      "aliases": [
-        "Kirka"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Kössi Kelmi",
-      "displayName": "Kössi Kelmi",
-      "gender": "male",
-      "aliases": [
-        "Kössi"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Lasse Lurjus",
-      "displayName": "Lasse Lurjus",
-      "gender": "male",
-      "aliases": [
-        "Lasse"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Leon Borg",
-      "displayName": "Leon Borg",
-      "gender": "male",
-      "aliases": [
-        "Leon"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Levo Claesson",
-      "displayName": "Levo Claesson",
-      "gender": "male",
-      "aliases": [
-        "Levo"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Louie Green",
-      "displayName": "Louie Green",
-      "gender": "male",
-      "aliases": [
-        "Louie"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Lukas",
-      "displayName": "Lukas",
-      "gender": "male",
-      "aliases": [
-        "Lukas"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Malone Petronis",
-      "displayName": "Malone Petronis",
-      "gender": "male",
-      "aliases": [
-        "Malone"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Mason Jokinen",
-      "displayName": "Mason Jokinen",
-      "gender": "male",
-      "aliases": [
-        "Mason"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Max Masher",
-      "displayName": "Max Masher",
-      "gender": "male",
-      "aliases": [
-        "Max"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Mike Palmer",
-      "displayName": "Mike Palmer",
-      "gender": "male",
-      "aliases": [
-        "Mike"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Moray Larson",
-      "displayName": "Moray Larson",
-      "gender": "male",
-      "aliases": [
-        "Moray"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Niko Kerava",
-      "displayName": "Niko Kerava",
-      "gender": "male",
-      "aliases": [
-        "Niko"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Olle Leino",
-      "displayName": "Olle Leino",
-      "gender": "male",
-      "aliases": [
-        "Olle"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Pate Rantanen",
-      "displayName": "Pate Rantanen",
-      "gender": "male",
-      "aliases": [
-        "Pate"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Patrik Axelsson",
-      "displayName": "Patrik Axelsson",
-      "gender": "male",
-      "aliases": [
-        "Patrik"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 10,
+      "verificationStatus": "game-scanned"
     },
     {
       "internalName": "Pentti Penttilä",
       "displayName": "Pentti Penttilä",
       "gender": "male",
-      "aliases": [
-        "Pentti"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Pera Harju",
-      "displayName": "Pera Harju",
-      "gender": "male",
-      "aliases": [
-        "Pera"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Per Otter",
-      "displayName": "Per Otter",
-      "gender": "male",
-      "aliases": [
-        "Per"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Petro Blokuvati",
-      "displayName": "Petro Blokuvati",
-      "gender": "male",
-      "aliases": [
-        "Petro"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Samuel Jonasson",
-      "displayName": "Samuel Jonasson",
-      "gender": "male",
-      "aliases": [
-        "Samuel"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Sami Claesson",
-      "displayName": "Sami Claesson",
-      "gender": "male",
-      "aliases": [
-        "Sami"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Taneli Kurju",
-      "displayName": "Taneli Kurju",
-      "gender": "male",
-      "aliases": [
-        "Taneli"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Tapani Kattila",
-      "displayName": "Tapani Kattila",
-      "gender": "male",
-      "aliases": [
-        "Tapani"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
-    },
-    {
-      "internalName": "Veeti Pärisevä",
-      "displayName": "Veeti Pärisevä",
-      "gender": "male",
-      "aliases": [
-        "Veeti"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 11,
+      "verificationStatus": "game-scanned"
     },
     {
       "internalName": "Ville Sköldgangster",
       "displayName": "Ville Sköldgangster",
       "gender": "male",
-      "aliases": [
-        "Ville"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 12,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Toni Mayer",
+      "displayName": "Toni Mayer",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 13,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "The doctor",
+      "displayName": "The doctor",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 14,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ella Karlsson",
+      "displayName": "Ella Karlsson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 15,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Elias Karlsson",
+      "displayName": "Elias Karlsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 16,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lucas Karlsson",
+      "displayName": "Lucas Karlsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 17,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Luna Karlsson",
+      "displayName": "Luna Karlsson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 18,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Leah Karlsson",
+      "displayName": "Leah Karlsson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 19,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Junk trader",
+      "displayName": "Junk trader",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 20,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Mr. House",
+      "displayName": "Mr. House",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 21,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Johan Wider",
+      "displayName": "Johan Wider",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 22,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Omari Solheim",
+      "displayName": "Omari Solheim",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 23,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Oscar Nilsson",
+      "displayName": "Oscar Nilsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 24,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rob Madsen",
+      "displayName": "Rob Madsen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 25,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Pate Rantanen",
+      "displayName": "Pate Rantanen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 26,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Mr. Duck",
+      "displayName": "Mr. Duck",
+      "gender": "unknown",
+      "aliases": [],
+      "gameCharacterId": 27,
+      "verificationStatus": "game-scan-review"
+    },
+    {
+      "internalName": "Hostel Placeholder guy",
+      "displayName": "Hostel Placeholder guy",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 28,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Adam Holmgren",
+      "displayName": "Adam Holmgren",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 29,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Samuel Jonasson",
+      "displayName": "Samuel Jonasson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 30,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Test Map Female Npc",
+      "displayName": "Test Map Female Npc",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 31,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Mr. Bag",
+      "displayName": "Mr. Bag",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 32,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jomppe Kurahaara",
+      "displayName": "Jomppe Kurahaara",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 33,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Yuri Takahashi",
+      "displayName": "Yuri Takahashi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 34,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Aleksi Kivi",
+      "displayName": "Aleksi Kivi",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 35,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Pera Harju",
+      "displayName": "Pera Harju",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 36,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Malone Petronis",
+      "displayName": "Malone Petronis",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 37,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Nina Lund",
+      "displayName": "Nina Lund",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 38,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Martta Lapinjoki",
+      "displayName": "Martta Lapinjoki",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 39,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jarmo Pettinen",
+      "displayName": "Jarmo Pettinen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 40,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Daniel Nilsson",
+      "displayName": "Daniel Nilsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 41,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Amanda Korhonen",
+      "displayName": "Amanda Korhonen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 42,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tea Henderson",
+      "displayName": "Tea Henderson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 43,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Burt Kraut",
+      "displayName": "Burt Kraut",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 44,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Test Map Police",
+      "displayName": "Test Map Police",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 45,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Mona Hall",
+      "displayName": "Mona Hall",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 46,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Patrik Axelsson",
+      "displayName": "Patrik Axelsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 47,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Hank Möbelmann",
+      "displayName": "Hank Möbelmann",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 48,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tatyana Gopnikova",
+      "displayName": "Tatyana Gopnikova",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 49,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Dr. Pena MD",
+      "displayName": "Dr. Pena MD",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 50,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Martha Freighter",
+      "displayName": "Martha Freighter",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 51,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Max Masher",
+      "displayName": "Max Masher",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 52,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jim Nilsen",
+      "displayName": "Jim Nilsen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 53,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Keijo Korsonen",
+      "displayName": "Keijo Korsonen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 54,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "David Lund",
+      "displayName": "David Lund",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 55,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kaisa Wirta",
+      "displayName": "Kaisa Wirta",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 56,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Noomi Palo",
+      "displayName": "Noomi Palo",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 57,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Fidan Tanner",
+      "displayName": "Fidan Tanner",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 58,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Agnes Takala",
+      "displayName": "Agnes Takala",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 59,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jesper Kumpula",
+      "displayName": "Jesper Kumpula",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 60,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ingrid Claesson",
+      "displayName": "Ingrid Claesson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 61,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ulrik Takala",
+      "displayName": "Ulrik Takala",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 62,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Leon Borg",
+      "displayName": "Leon Borg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 63,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Olle Leino",
+      "displayName": "Olle Leino",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 64,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sara Claine",
+      "displayName": "Sara Claine",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 65,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Vivi Bondar",
+      "displayName": "Vivi Bondar",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 66,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sami Claesson",
+      "displayName": "Sami Claesson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 67,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Daan Claesson",
+      "displayName": "Daan Claesson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 68,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Levo Claesson",
+      "displayName": "Levo Claesson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 69,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Aino Pettinen",
+      "displayName": "Aino Pettinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 70,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ilona Pettinen",
+      "displayName": "Ilona Pettinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 71,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Leena Borg",
+      "displayName": "Leena Borg",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 72,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jaska Virtanen",
+      "displayName": "Jaska Virtanen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 73,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Simppa Kurahaara",
+      "displayName": "Simppa Kurahaara",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 74,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lönkka Kurahaara",
+      "displayName": "Lönkka Kurahaara",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 75,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Axel Norberg",
+      "displayName": "Axel Norberg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 76,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Eija Lurppu",
+      "displayName": "Eija Lurppu",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 77,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Teuvo Skogman",
+      "displayName": "Teuvo Skogman",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 78,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Petro Blokuvati",
+      "displayName": "Petro Blokuvati",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 79,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Henning Torskvær",
+      "displayName": "Henning Torskvær",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 80,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sirkku Maltanen",
+      "displayName": "Sirkku Maltanen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 81,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kalpana Selma",
+      "displayName": "Kalpana Selma",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 82,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Guard",
+      "displayName": "Guard",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 83,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tenement Market Square Police",
+      "displayName": "Tenement Market Square Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 84,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tenement Backyard Police",
+      "displayName": "Tenement Backyard Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 85,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rauha Taisto",
+      "displayName": "Rauha Taisto",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 86,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jörge Af Guldskjöld",
+      "displayName": "Jörge Af Guldskjöld",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 87,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Urban Leggett",
+      "displayName": "Urban Leggett",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 88,
+      "verificationStatus": "game-scanned"
     },
     {
       "internalName": "Walt Bondar",
       "displayName": "Walt Bondar",
       "gender": "male",
-      "aliases": [
-        "Walt"
-      ],
-      "region": "",
-      "source": "stalburg-wiki:https://stalburg.net/Obenseuer/Characters",
-      "preferredVoice": ""
+      "aliases": [],
+      "gameCharacterId": 89,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sam Morton",
+      "displayName": "Sam Morton",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 90,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Taneli Kurju",
+      "displayName": "Taneli Kurju",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 91,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Milla Kolleen",
+      "displayName": "Milla Kolleen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 92,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Hall Kääbus",
+      "displayName": "Hall Kääbus",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 93,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kirka Kääbus",
+      "displayName": "Kirka Kääbus",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 94,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Fenella Hunt",
+      "displayName": "Fenella Hunt",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 95,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Börje Nyberg",
+      "displayName": "Börje Nyberg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 96,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Liouba Bennett",
+      "displayName": "Liouba Bennett",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 97,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Moray Larson",
+      "displayName": "Moray Larson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 98,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Meri Haka",
+      "displayName": "Meri Haka",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 99,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ami Kunkka",
+      "displayName": "Ami Kunkka",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 100,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Julius Öberg",
+      "displayName": "Julius Öberg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 101,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Henrik Korpinen",
+      "displayName": "Henrik Korpinen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 102,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Arvid Vinter",
+      "displayName": "Arvid Vinter",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 103,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Teuvo Sorvi",
+      "displayName": "Teuvo Sorvi",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 104,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Fredrik",
+      "displayName": "Fredrik",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 105,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Torsten Dvergsson",
+      "displayName": "Torsten Dvergsson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 106,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Crazy Neighbor",
+      "displayName": "Crazy Neighbor",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 107,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Eliana",
+      "displayName": "Eliana",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 108,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Bazaar Bank",
+      "displayName": "Bazaar Bank",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 109,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Mason Jokinen",
+      "displayName": "Mason Jokinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 110,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Louie Green",
+      "displayName": "Louie Green",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 111,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ayla Green",
+      "displayName": "Ayla Green",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 112,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Johannes Eskola",
+      "displayName": "Johannes Eskola",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 113,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jonne Reis",
+      "displayName": "Jonne Reis",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 114,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Emma-Maija Taylor",
+      "displayName": "Emma-Maija Taylor",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 115,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Pia",
+      "displayName": "Pia",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 116,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Heska Pavonen",
+      "displayName": "Heska Pavonen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 117,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Joran Kallio",
+      "displayName": "Joran Kallio",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 118,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anna Markkanen",
+      "displayName": "Anna Markkanen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 119,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Veikko Martinsen",
+      "displayName": "Veikko Martinsen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 120,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Einar Kaivuri",
+      "displayName": "Einar Kaivuri",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 121,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Reijo Rautakaivos",
+      "displayName": "Reijo Rautakaivos",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 122,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tanja Nypan",
+      "displayName": "Tanja Nypan",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 123,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Mikkel Purola",
+      "displayName": "Mikkel Purola",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 124,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Seamus Liepa",
+      "displayName": "Seamus Liepa",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 125,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lizzy Mopper",
+      "displayName": "Lizzy Mopper",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 126,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ivar Pihl",
+      "displayName": "Ivar Pihl",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 127,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Vera Hietala",
+      "displayName": "Vera Hietala",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 128,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kalle Suutari",
+      "displayName": "Kalle Suutari",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 129,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Olavi Hyypiö",
+      "displayName": "Olavi Hyypiö",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 130,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Laura Markkanen",
+      "displayName": "Laura Markkanen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 131,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ken Nakahara",
+      "displayName": "Ken Nakahara",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 132,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Toivo Malmijoki",
+      "displayName": "Toivo Malmijoki",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 133,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Antero Erikson",
+      "displayName": "Antero Erikson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 134,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Emil Kauha",
+      "displayName": "Emil Kauha",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 135,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Saunaklonkku",
+      "displayName": "Saunaklonkku",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 136,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anders Terva",
+      "displayName": "Anders Terva",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 137,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Maunu Gren",
+      "displayName": "Maunu Gren",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 138,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Caroline",
+      "displayName": "Caroline",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 139,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ines Hietala",
+      "displayName": "Ines Hietala",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 140,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Welhö",
+      "displayName": "Welhö",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 141,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rob Rosso",
+      "displayName": "Rob Rosso",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 142,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Arvo Kirkastaja",
+      "displayName": "Arvo Kirkastaja",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 143,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Empty Test Map NPC",
+      "displayName": "Empty Test Map NPC",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 144,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Empty Test Map NPC Follower",
+      "displayName": "Empty Test Map NPC Follower",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 145,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Empty Test Map Police",
+      "displayName": "Empty Test Map Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 146,
+      "verificationStatus": "test-placeholder"
+    },
+    {
+      "internalName": "Minh Thienlong",
+      "displayName": "Minh Thienlong",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 147,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Irma Kött",
+      "displayName": "Irma Kött",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 148,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kauko Poronen",
+      "displayName": "Kauko Poronen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 149,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Timo Löyly",
+      "displayName": "Timo Löyly",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 150,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jasper Sporefield",
+      "displayName": "Jasper Sporefield",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 151,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Niko Kerava",
+      "displayName": "Niko Kerava",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 152,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jappe Järvenpää",
+      "displayName": "Jappe Järvenpää",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 153,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Harri Hyvinkää",
+      "displayName": "Harri Hyvinkää",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 154,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Juha Tuusula",
+      "displayName": "Juha Tuusula",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 155,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Robin Madsen",
+      "displayName": "Robin Madsen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 156,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tero Verkko",
+      "displayName": "Tero Verkko",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 157,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ms. Lotina",
+      "displayName": "Ms. Lotina",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 158,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Muscle Max",
+      "displayName": "Muscle Max",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 159,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Hazmat Guy",
+      "displayName": "Hazmat Guy",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 160,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Urho Siltanen",
+      "displayName": "Urho Siltanen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 161,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Warden",
+      "displayName": "Warden",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 162,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Cajsa Mörk",
+      "displayName": "Cajsa Mörk",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 163,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Elsa Varis",
+      "displayName": "Elsa Varis",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 164,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jooseppi Tuoppi",
+      "displayName": "Jooseppi Tuoppi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 165,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Reiska Remppa",
+      "displayName": "Reiska Remppa",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 166,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Larry Goatbridge",
+      "displayName": "Larry Goatbridge",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 167,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sirpa Kvenlayson",
+      "displayName": "Sirpa Kvenlayson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 168,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Samuel Godman",
+      "displayName": "Samuel Godman",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 169,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jens Brom",
+      "displayName": "Jens Brom",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 170,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Irmeli Nakkila",
+      "displayName": "Irmeli Nakkila",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 171,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Gold Store Police",
+      "displayName": "Gold Store Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 172,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Bazaar Police",
+      "displayName": "Bazaar Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 173,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Elias Karhu",
+      "displayName": "Elias Karhu",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 174,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Toini Karhu",
+      "displayName": "Toini Karhu",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 175,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Arto Neulakoski",
+      "displayName": "Arto Neulakoski",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 176,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Miko Poltinvuori",
+      "displayName": "Miko Poltinvuori",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 177,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Gary Lind",
+      "displayName": "Gary Lind",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 178,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ethan Ward",
+      "displayName": "Ethan Ward",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 179,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Helena Neulakoski",
+      "displayName": "Helena Neulakoski",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 180,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Zoya Gubenko",
+      "displayName": "Zoya Gubenko",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 181,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rita Korjus",
+      "displayName": "Rita Korjus",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 182,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Filippa Pajusalu",
+      "displayName": "Filippa Pajusalu",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 183,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ahmed Rahman",
+      "displayName": "Ahmed Rahman",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 184,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Marko Mainisto",
+      "displayName": "Marko Mainisto",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 185,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Maria Yrtikäinen",
+      "displayName": "Maria Yrtikäinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 186,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kalle Ketku",
+      "displayName": "Kalle Ketku",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 187,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Slum Police",
+      "displayName": "Slum Police",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 188,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Finlay Bjorkman",
+      "displayName": "Finlay Bjorkman",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 189,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Topias Iisalmi",
+      "displayName": "Topias Iisalmi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 190,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ulla Svendsen",
+      "displayName": "Ulla Svendsen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 191,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Karri Backman",
+      "displayName": "Karri Backman",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 192,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Alexandra Kattila",
+      "displayName": "Alexandra Kattila",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 193,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tapani Kattila",
+      "displayName": "Tapani Kattila",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 194,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tähti Kattila",
+      "displayName": "Tähti Kattila",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 195,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Viljo Kattila",
+      "displayName": "Viljo Kattila",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 196,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kössi Kelmi",
+      "displayName": "Kössi Kelmi",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 197,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lasse Lurjus",
+      "displayName": "Lasse Lurjus",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 198,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kari Hämäläinen",
+      "displayName": "Kari Hämäläinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 199,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jari Mäkinen",
+      "displayName": "Jari Mäkinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 200,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jarkko Tulimäki",
+      "displayName": "Jarkko Tulimäki",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 201,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Erkki Kianen",
+      "displayName": "Erkki Kianen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 202,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Pertti Parju",
+      "displayName": "Pertti Parju",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 203,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Reino Littinen",
+      "displayName": "Reino Littinen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 204,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Remontti-Repe",
+      "displayName": "Remontti-Repe",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 205,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Raimo Stalreg",
+      "displayName": "Raimo Stalreg",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 206,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Hugo Björnson",
+      "displayName": "Hugo Björnson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 207,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jonas Elström",
+      "displayName": "Jonas Elström",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 208,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Penni-Pena",
+      "displayName": "Penni-Pena",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 209,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Private Lötjönen",
+      "displayName": "Private Lötjönen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 210,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ruth McTrosg",
+      "displayName": "Ruth McTrosg",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 211,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tor Bergstahl",
+      "displayName": "Tor Bergstahl",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 212,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Aune Korsborg",
+      "displayName": "Aune Korsborg",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 213,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anneli Tuoppi",
+      "displayName": "Anneli Tuoppi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 214,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Denys Moskalenko",
+      "displayName": "Denys Moskalenko",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 215,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anders Aadlärkjörts",
+      "displayName": "Anders Aadlärkjörts",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 216,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rosario Rootto",
+      "displayName": "Rosario Rootto",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 217,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Riina Pamppumäki",
+      "displayName": "Riina Pamppumäki",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 218,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Casper Colikke",
+      "displayName": "Casper Colikke",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 219,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Zara Nkosi",
+      "displayName": "Zara Nkosi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 220,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Gérard Dujardin",
+      "displayName": "Gérard Dujardin",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 221,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Raimo Räyhä",
+      "displayName": "Raimo Räyhä",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 222,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Pertti Korhonen",
+      "displayName": "Pertti Korhonen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 223,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Hygge Svamprad",
+      "displayName": "Hygge Svamprad",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 224,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Meri Hostari",
+      "displayName": "Meri Hostari",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 225,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Giacobbe Bolognese",
+      "displayName": "Giacobbe Bolognese",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 226,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Dolores Bolognese",
+      "displayName": "Dolores Bolognese",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 227,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Keke Roinaneva",
+      "displayName": "Keke Roinaneva",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 228,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ari Pulsunmäki",
+      "displayName": "Ari Pulsunmäki",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 229,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jeppe Rinkmann",
+      "displayName": "Jeppe Rinkmann",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 230,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Denis Passmore",
+      "displayName": "Denis Passmore",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 231,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Aune Kirkastaja",
+      "displayName": "Aune Kirkastaja",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 232,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Johanna Faust",
+      "displayName": "Johanna Faust",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 233,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Alfred Schweinstein",
+      "displayName": "Alfred Schweinstein",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 234,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anatoli Mustaruoho",
+      "displayName": "Anatoli Mustaruoho",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 235,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Justyna Krystiana",
+      "displayName": "Justyna Krystiana",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 236,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Christian Sykkelsen",
+      "displayName": "Christian Sykkelsen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 237,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Marja Noukkinen",
+      "displayName": "Marja Noukkinen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 238,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ragnar Stortorsk",
+      "displayName": "Ragnar Stortorsk",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 239,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Eva Smörbulle",
+      "displayName": "Eva Smörbulle",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 240,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Olle Skatt",
+      "displayName": "Olle Skatt",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 241,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Akim Azizi",
+      "displayName": "Akim Azizi",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 242,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tim Nickelson",
+      "displayName": "Tim Nickelson",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 243,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Urpo Murhapuro",
+      "displayName": "Urpo Murhapuro",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 244,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Matti Kiehinen",
+      "displayName": "Matti Kiehinen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 245,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Minna Poreva",
+      "displayName": "Minna Poreva",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 246,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Svana Wallmark",
+      "displayName": "Svana Wallmark",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 247,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sandra Klapi",
+      "displayName": "Sandra Klapi",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 248,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kama",
+      "displayName": "Kama",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 249,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lykke Tillbehör",
+      "displayName": "Lykke Tillbehör",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 250,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Dave Smiker",
+      "displayName": "Dave Smiker",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 251,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Karl Hagen",
+      "displayName": "Karl Hagen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 252,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Bror Stjäla",
+      "displayName": "Bror Stjäla",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 253,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Per Otter",
+      "displayName": "Per Otter",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 254,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Mikael Arnaldur",
+      "displayName": "Mikael Arnaldur",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 255,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anu Otter",
+      "displayName": "Anu Otter",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 256,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jane Miller",
+      "displayName": "Jane Miller",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 257,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Stella Polaris",
+      "displayName": "Stella Polaris",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 258,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Erto Lagerfeld",
+      "displayName": "Erto Lagerfeld",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 259,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Interviewer",
+      "displayName": "Interviewer",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 260,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Dr. Martti",
+      "displayName": "Dr. Martti",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 261,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Teppo Tulppa",
+      "displayName": "Teppo Tulppa",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 262,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Vincent Hjermann",
+      "displayName": "Vincent Hjermann",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 263,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Heikki Mailanen",
+      "displayName": "Heikki Mailanen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 264,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Theo Tammi",
+      "displayName": "Theo Tammi",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 265,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Sigvard Caune",
+      "displayName": "Sigvard Caune",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 266,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Miina-Ansa Virtanen",
+      "displayName": "Miina-Ansa Virtanen",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 267,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lätty",
+      "displayName": "Lätty",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 268,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Eetu Rymy",
+      "displayName": "Eetu Rymy",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 269,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Kalevi Harvakattu",
+      "displayName": "Kalevi Harvakattu",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 270,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Veeti Pärisevä",
+      "displayName": "Veeti Pärisevä",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 271,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jussi Pöhinä",
+      "displayName": "Jussi Pöhinä",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 272,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Katriina Vermund",
+      "displayName": "Katriina Vermund",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 273,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Vanja Bjorkman",
+      "displayName": "Vanja Bjorkman",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 274,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Svein Regnell",
+      "displayName": "Svein Regnell",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 275,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Anni Kiinteistö",
+      "displayName": "Anni Kiinteistö",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 276,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Lotta Savisaar",
+      "displayName": "Lotta Savisaar",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 277,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Matias Savisaar",
+      "displayName": "Matias Savisaar",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 278,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tonie Savisaar",
+      "displayName": "Tonie Savisaar",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 279,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ilona Rummo",
+      "displayName": "Ilona Rummo",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 280,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Rami Nousukainen",
+      "displayName": "Rami Nousukainen",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 281,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Otso Terästalia",
+      "displayName": "Otso Terästalia",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 282,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Eila Hellamäki",
+      "displayName": "Eila Hellamäki",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 283,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jarppi Puukko",
+      "displayName": "Jarppi Puukko",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 284,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Maximo Utedass",
+      "displayName": "Maximo Utedass",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 285,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Julia Stensson",
+      "displayName": "Julia Stensson",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 286,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tina Myrtorp",
+      "displayName": "Tina Myrtorp",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 287,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Ellen Skovfyr",
+      "displayName": "Ellen Skovfyr",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 288,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Jaana Ahovaara",
+      "displayName": "Jaana Ahovaara",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 289,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Tenant",
+      "displayName": "Tenant",
+      "gender": "male",
+      "aliases": [],
+      "gameCharacterId": 999,
+      "verificationStatus": "game-scanned"
+    },
+    {
+      "internalName": "Default Male",
+      "displayName": "Default Male",
+      "gender": "female",
+      "aliases": [],
+      "gameCharacterId": 10001,
+      "verificationStatus": "test-placeholder"
     }
   ]
 }

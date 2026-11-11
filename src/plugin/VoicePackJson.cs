@@ -10,6 +10,7 @@ namespace ObenseuerTts
         public int manifestVersion = 0;
         public string id = string.Empty;
         public string name = string.Empty;
+        public string shortCode = string.Empty;
         public string engine = string.Empty;
         public VoicePackVoice[] voices = new VoicePackVoice[0];
     }
@@ -32,6 +33,7 @@ namespace ObenseuerTts
             manifest.manifestVersion = ReadJsonInt(source, "manifestVersion");
             manifest.id = ReadJsonString(source, "id");
             manifest.name = ReadJsonString(source, "name");
+            manifest.shortCode = ReadJsonString(source, "shortCode");
             manifest.engine = ReadJsonString(source, "engine");
 
             List<VoicePackVoice> voices = new List<VoicePackVoice>();
@@ -108,6 +110,15 @@ namespace ObenseuerTts
                 }
             }
             return objects;
+        }
+    }
+
+    internal static class VoicePackOrdering
+    {
+        internal static int CompareNames(string left, string right)
+        {
+            int compared = string.Compare(left ?? string.Empty, right ?? string.Empty, StringComparison.OrdinalIgnoreCase);
+            return compared != 0 ? compared : string.Compare(left ?? string.Empty, right ?? string.Empty, StringComparison.Ordinal);
         }
     }
 }

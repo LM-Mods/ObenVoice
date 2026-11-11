@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.2-beta.1 — 11 November 2026
+
+- Expanded the local NPC identity database to 292 game-scanned records with
+  ambiguity-safe alias matching and optional verified game-ID support.
+- Added five complete 292-character casting configurations, dynamically
+  discovered NPC presets and a single local
+  `npc-voice-overrides.json` source for explicit NPC voice, speed and pitch.
+- Added Default, installed-pack and Custom automatic voice-pool selection.
+- Added manifest short codes and friendly F8/F9 voice labels without changing
+  internal voice IDs.
+- Made duplicate pack and voice-ID resolution deterministic across Core and the
+  Python backend.
+- Kept optional engine integration generic and stopped creating new
+  engine-specific legacy voice folders.
+- Consolidated new installations under `ObenVoice` while retaining safe
+  read-only compatibility with established legacy paths.
+
 ## v1.0.1-beta.1 — 9 November 2026
 
 Public release label for internal build 4.1.2.

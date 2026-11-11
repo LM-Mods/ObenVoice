@@ -1,0 +1,580 @@
+{
+  "status": "User gameplay-tested all 20 voices on 2026-11-10. Derived Kokoro voice style data; not independently trained or clinically/acoustically verified.",
+  "derivation": "9 male and 10 female native source anchors; bounded, seeded PCA style steering and a small orthogonal perturbation; M10 shares a source anchor with M02",
+  "anchorSource": "hexgrad/Kokoro-82M",
+  "license": "Apache-2.0",
+  "sourceFiles": [
+    {
+      "name": "af_aoede.pt",
+      "sha256": "c03bd1a4c3716c2d8eaa3d50022f62d5c31cfbd6e15933a00b17fefe13841cc4",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/af_aoede.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "af_kore.pt",
+      "sha256": "8bfbc512321c3db49dff984ac675fa5ac7eaed5a96cc31104d3a9080e179d69d",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/af_kore.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "af_nicole.pt",
+      "sha256": "c5561808bcf5250fe8c5f5de32caf2d94f27e57e95befdb098c5c85991d4c5da",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/af_nicole.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "af_nova.pt",
+      "sha256": "e0233676ddc21908c37a1f102f6b88a59e4e5c1bd764983616eb9eda629dbcd2",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/af_nova.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "am_echo.pt",
+      "sha256": "8bcfdc852bc985fb45c396c561e571ffb9183930071f962f1b50df5c97b161e8",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/am_echo.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "am_fenrir.pt",
+      "sha256": "98e507eca1db08230ae3b6232d59c10aec9630022d19accac4f5d12fcec3c37a",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/am_fenrir.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "am_puck.pt",
+      "sha256": "dd1d8973f4ce4b7d8ae407c77a435f485dabc052081b80ea75c4f30b84f36223",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/am_puck.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "bf_isabella.pt",
+      "sha256": "cdd4c37003805104d1d08fb1e05855c8fb2c68de24ca6e71f264a30aaa59eefd",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/bf_isabella.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "bm_fable.pt",
+      "sha256": "d44935f3135257a9064df99f007fc1342ff1aa767552b4a4fa4c3b2e6e59079c",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/bm_fable.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "bm_lewis.pt",
+      "sha256": "b5204750dcba01029d2ac9cec17aec3b20a6d64073c579d694a23cb40effbd0e",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/bm_lewis.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "em_alex.pt",
+      "sha256": "5eac53f767c3f31a081918ba531969aea850bed18fe56419b804d642c6973431",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/em_alex.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "ff_siwis.pt",
+      "sha256": "8073bf2d2c4b9543a90f2f0fd2144de4ed157e2d4b79ddeb0d5123066171fbc9",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/voices/ff_siwis.pt",
+      "sourceRevision": "unverified revision; file identified by SHA256"
+    },
+    {
+      "name": "hf_alpha.pt",
+      "sha256": "06906fe05746d13a79c5c01e21fd7233b05027221a933c9ada650f5aafc8f044",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/voices/hf_alpha.pt",
+      "sourceRevision": "unverified revision; file identified by SHA256"
+    },
+    {
+      "name": "hm_omega.pt",
+      "sha256": "b55f02a8e8483fffe0afa566e7d22ed8013acf47ad4f6bbee2795a840155703e",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/voices/hm_omega.pt",
+      "sourceRevision": "unverified revision; file identified by SHA256"
+    },
+    {
+      "name": "if_sara.pt",
+      "sha256": "6c0b253b955fe32f1a1a86006aebe83d050ea95afd0e7be15182f087deedbf55",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/if_sara.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "im_nicola.pt",
+      "sha256": "234ed06648649f9bd874b37508ea17560b9c993ef85b4ddb3e3a71e062bd2c12",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/im_nicola.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "jf_alpha.pt",
+      "sha256": "1bf4c9dc69e45ee46183b071f4db766349aac5592acbcfeaf051018048a5d787",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/voices/jf_alpha.pt",
+      "sourceRevision": "unverified revision; file identified by SHA256"
+    },
+    {
+      "name": "pf_dora.pt",
+      "sha256": "07e4ff987c5d5a8c3995efd15cc4f0db7c4c15e881b198d8ab7f67ecf51f5eb7",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/pf_dora.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    },
+    {
+      "name": "pm_alex.pt",
+      "sha256": "cf0ba8c573c2480fc54123683a35cf1e2ae130428e441eb91f9149bdb188a526",
+      "origin": "https://huggingface.co/hexgrad/Kokoro-82M/blob/b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19/voices/pm_alex.pt",
+      "sourceRevision": "b0bbc5ad2fbb5c0164e809871c41b00c0c3b0b19"
+    }
+  ],
+  "outputs": [
+    {
+      "number": "M01",
+      "id": "am_oben20_brann",
+      "sourceAnchor": "am_fenrir",
+      "inspiredBy": "Malone Petronis",
+      "intentNotConfirmed": "weathered biker, restrained rather than cheerful",
+      "styleSteering": {
+        "first128": [
+          -0.22,
+          0.11
+        ],
+        "last128": [
+          -0.26,
+          -0.1
+        ],
+        "amount": 0.23,
+        "seed": 6101
+      },
+      "sha256": "2cb4d3181449c7aacd0b40c45b65030f4a633a2e73ef8f8ec61357125f608a25",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M02",
+      "id": "am_oben20_eero",
+      "sourceAnchor": "bm_lewis",
+      "inspiredBy": "Pate Rantanen",
+      "intentNotConfirmed": "tired older tenement resident",
+      "styleSteering": {
+        "first128": [
+          -0.33,
+          -0.1
+        ],
+        "last128": [
+          -0.4,
+          -0.12
+        ],
+        "amount": 0.22,
+        "seed": 6102
+      },
+      "sha256": "79d0ad88f66e5af9949c34647a1265c846baa3977db92ec3b2353a005accafce",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M03",
+      "id": "am_oben20_kemal",
+      "sourceAnchor": "em_alex",
+      "inspiredBy": "Akim Azizi",
+      "intentNotConfirmed": "busy street food vendor; non-Nordic candidate",
+      "styleSteering": {
+        "first128": [
+          0.23,
+          -0.13
+        ],
+        "last128": [
+          0.18,
+          -0.06
+        ],
+        "amount": 0.23,
+        "seed": 6103
+      },
+      "sha256": "98df8d8c027e54c7dab8959bf55020610468547ee0262e65c7e1a7507a3f0915",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M04",
+      "id": "am_oben20_vasko",
+      "sourceAnchor": "im_nicola",
+      "inspiredBy": "Pentti Penttilä",
+      "intentNotConfirmed": "unhurried basement bar proprietor",
+      "styleSteering": {
+        "first128": [
+          -0.12,
+          0.24
+        ],
+        "last128": [
+          -0.28,
+          0.04
+        ],
+        "amount": 0.2,
+        "seed": 6104
+      },
+      "sha256": "436868c2c73726ff2e3f6ebfdecc4bab79988002692556c5e85820a40b052fe9",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M05",
+      "id": "am_oben20_kiro",
+      "sourceAnchor": "pm_alex",
+      "inspiredBy": "Ivan Kapustanov",
+      "intentNotConfirmed": "practical bazaar trader; stronger exploration",
+      "styleSteering": {
+        "first128": [
+          -0.75,
+          0.58
+        ],
+        "last128": [
+          -0.72,
+          -0.47
+        ],
+        "amount": 0.75,
+        "seed": 6105
+      },
+      "sha256": "61e62747e2c1ec12be16e4c3fc725874660e5c40308f517cec06c2b5a8c29e6a",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M06",
+      "id": "am_oben20_hakon",
+      "sourceAnchor": "bm_fable",
+      "inspiredBy": "Prison Guard (generic label)",
+      "intentNotConfirmed": "controlled and stern authority figure",
+      "styleSteering": {
+        "first128": [
+          -0.35,
+          0.17
+        ],
+        "last128": [
+          -0.27,
+          0.14
+        ],
+        "amount": 0.18,
+        "seed": 6106
+      },
+      "sha256": "699d92cc5b7b7b6a3618340c2b286b5f3b57af79cba848c9d0a86c14052c031d",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M07",
+      "id": "am_oben20_niko",
+      "sourceAnchor": "am_puck",
+      "inspiredBy": "Aleksi Kivi",
+      "intentNotConfirmed": "restless young resident",
+      "styleSteering": {
+        "first128": [
+          0.25,
+          -0.2
+        ],
+        "last128": [
+          0.19,
+          0.26
+        ],
+        "amount": 0.21,
+        "seed": 6107
+      },
+      "sha256": "a8cb3641b357eacc28db0e946b5ff85ca6202d77510d56de843978a97c8a7aa6",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M08",
+      "id": "am_oben20_veld",
+      "sourceAnchor": "am_echo",
+      "inspiredBy": "Wizard Welhö",
+      "intentNotConfirmed": "dry eccentric storyteller",
+      "styleSteering": {
+        "first128": [
+          0.17,
+          0.24
+        ],
+        "last128": [
+          -0.22,
+          0.15
+        ],
+        "amount": 0.25,
+        "seed": 6108
+      },
+      "sha256": "504b3c3024ba6707e4f0d12822ccb3e66898b7bde4a8ccace86e1fcadf3790d8",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M09",
+      "id": "am_oben20_kram",
+      "sourceAnchor": "hm_omega",
+      "inspiredBy": "Golem / strange creature archetype",
+      "intentNotConfirmed": "unusual, deliberate, nonhuman-inspired",
+      "styleSteering": {
+        "first128": [
+          0.28,
+          -0.22
+        ],
+        "last128": [
+          -0.41,
+          -0.2
+        ],
+        "amount": 0.27,
+        "seed": 6109
+      },
+      "sha256": "0752e54236c1fb13249a4c803e0f32cd04735d69d8ec816ad71b5fd1b9504fcd",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "M10",
+      "id": "am_oben20_otto",
+      "sourceAnchor": "bm_lewis",
+      "inspiredBy": "Gustav",
+      "intentNotConfirmed": "sociable bakery regular; alternate-style stress test",
+      "styleSteering": {
+        "first128": [
+          0.82,
+          -0.74
+        ],
+        "last128": [
+          0.84,
+          0.62
+        ],
+        "amount": 0.83,
+        "seed": 6110
+      },
+      "sha256": "c3e953c58760690200f29dff75a3fd242cb3664addb621cfa42c8f41113e76ba",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F01",
+      "id": "af_oben20_aila",
+      "sourceAnchor": "bf_isabella",
+      "inspiredBy": "Agnes Takala",
+      "intentNotConfirmed": "calm pragmatic resident",
+      "styleSteering": {
+        "first128": [
+          -0.21,
+          -0.15
+        ],
+        "last128": [
+          -0.36,
+          0.1
+        ],
+        "amount": 0.2,
+        "seed": 6201
+      },
+      "sha256": "26127155925b7a195b7c5babde8439969934c25dc610f4a60d26477a0ecefe87",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F02",
+      "id": "af_oben20_nessa",
+      "sourceAnchor": "af_nicole",
+      "inspiredBy": "Pia Horn",
+      "intentNotConfirmed": "low-key, grounded local",
+      "styleSteering": {
+        "first128": [
+          -0.35,
+          0.12
+        ],
+        "last128": [
+          -0.43,
+          -0.08
+        ],
+        "amount": 0.2,
+        "seed": 6202
+      },
+      "sha256": "9bc2079d61c600caf41418d4a4969cdf196b3430049bd73f5f49a6fb5c0fb843",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F03",
+      "id": "af_oben20_zora",
+      "sourceAnchor": "pf_dora",
+      "inspiredBy": "Zoya Gubenko",
+      "intentNotConfirmed": "direct bazaar visitor; non-Nordic candidate",
+      "styleSteering": {
+        "first128": [
+          0.19,
+          -0.24
+        ],
+        "last128": [
+          0.15,
+          -0.09
+        ],
+        "amount": 0.22,
+        "seed": 6203
+      },
+      "sha256": "e3f0cb07e0e720044756e8bc153ed2eb71022e100a034deb765dde29e93c2440",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F04",
+      "id": "af_oben20_vika",
+      "sourceAnchor": "ff_siwis",
+      "inspiredBy": "Irmeli Nakkila",
+      "intentNotConfirmed": "brisk no-nonsense shopkeeper; French-anchor trial",
+      "styleSteering": {
+        "first128": [
+          0.2,
+          0.17
+        ],
+        "last128": [
+          0.32,
+          -0.11
+        ],
+        "amount": 0.23,
+        "seed": 6204
+      },
+      "sha256": "0e38fea874b2e01a7554a1adafab5859b69871856d503fa0e5909634e6503aa5",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F05",
+      "id": "af_oben20_hilde",
+      "sourceAnchor": "af_kore",
+      "inspiredBy": "Anneli Tuoppi",
+      "intentNotConfirmed": "measured mature voice",
+      "styleSteering": {
+        "first128": [
+          -0.24,
+          0.21
+        ],
+        "last128": [
+          -0.35,
+          0.15
+        ],
+        "amount": 0.18,
+        "seed": 6205
+      },
+      "sha256": "0781fb446574e569da0b05025ac300e3dd529679d7c79731afeddded3a4f377d",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F06",
+      "id": "af_oben20_oona",
+      "sourceAnchor": "af_aoede",
+      "inspiredBy": "Aune Korsborg",
+      "intentNotConfirmed": "alert and professional employee",
+      "styleSteering": {
+        "first128": [
+          0.18,
+          -0.16
+        ],
+        "last128": [
+          0.18,
+          0.22
+        ],
+        "amount": 0.21,
+        "seed": 6206
+      },
+      "sha256": "8b933c0f6cc6fc04a0384b99ca95ef0c2c0384603924cbb4b28048e237ae4a81",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F07",
+      "id": "af_oben20_tasha",
+      "sourceAnchor": "if_sara",
+      "inspiredBy": "Tatyana Gopnikova",
+      "intentNotConfirmed": "distinct visiting voice with non-English background",
+      "styleSteering": {
+        "first128": [
+          -0.16,
+          0.27
+        ],
+        "last128": [
+          -0.15,
+          -0.21
+        ],
+        "amount": 0.23,
+        "seed": 6207
+      },
+      "sha256": "72b1669f9edd4edfff0e060f5d0529071332b57dfb8bc71121500eb01cf6b615",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F08",
+      "id": "af_oben20_minna",
+      "sourceAnchor": "af_nova",
+      "inspiredBy": "Toinu Karhu",
+      "intentNotConfirmed": "younger everyday resident",
+      "styleSteering": {
+        "first128": [
+          0.28,
+          -0.08
+        ],
+        "last128": [
+          0.25,
+          0.18
+        ],
+        "amount": 0.2,
+        "seed": 6208
+      },
+      "sha256": "fdb850b26200482716b0860cc700ddc0a0353a79c1098e0f36e9114e072f8049",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F09",
+      "id": "af_oben20_shade",
+      "sourceAnchor": "jf_alpha",
+      "inspiredBy": "Shadow Woman",
+      "intentNotConfirmed": "uncanny, deliberately unusual candidate",
+      "styleSteering": {
+        "first128": [
+          -0.33,
+          -0.23
+        ],
+        "last128": [
+          -0.4,
+          -0.21
+        ],
+        "amount": 0.24,
+        "seed": 6209
+      },
+      "sha256": "cb4b2e9e38bcba17b9efd40e194f89f263a1fb8a66b5adb67fdb3036530fef7a",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    },
+    {
+      "number": "F10",
+      "id": "af_oben20_rima",
+      "sourceAnchor": "hf_alpha",
+      "inspiredBy": "Tonie Savisaar",
+      "intentNotConfirmed": "warm but worldly restaurant trader",
+      "styleSteering": {
+        "first128": [
+          0.25,
+          0.19
+        ],
+        "last128": [
+          0.21,
+          -0.18
+        ],
+        "amount": 0.21,
+        "seed": 6210
+      },
+      "sha256": "738e6289a3626eb8989c3da311d1094496ee7edd199ef51b2395f5decdc7e144",
+      "audioVerified": true,
+      "verificationMethod": "User gameplay listening; no independent listening analysis"
+    }
+  ],
+  "testing": {
+    "method": "Direct listening during Obenseuer gameplay using existing ObenVoice Kokoro engine",
+    "date": "2026-11-10",
+    "result": "All 10 female and all 10 male profiles accepted by user; no change to the voice tensor bytes from first tested private lab pack",
+    "limitations": "No independent auditory/accent validation; character-casting and accent descriptions are creative suggestions.",
+    "observations": {
+      "F09 Shade": "distinct; user perceived possible East Asian-sounding qualities",
+      "F10 Rima": "distinctive",
+      "M02 Eero": "good",
+      "M03 Kemal": "not bad",
+      "M04 Vasko": "good accent impression",
+      "M06 Hakon": "somewhat feminine but suitable",
+      "M09 Kram": "user perceived somewhat Indian-sounding quality",
+      "M10 Otto": "narrator/game-voiceover quality"
+    }
+  }
+}

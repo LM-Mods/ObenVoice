@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "packageVersion": "1.0.1",
+  "id": "british-test",
+  "name": "British Voices",
+  "shortCode": "BR",
+  "engine": "kokoro",
+  "voices": [
+    {
+      "id": "bf_emma",
+      "displayName": "Emma",
+      "gender": "female",
+      "file": "voices/bf_emma.pt"
+    },
+    {
+      "id": "bm_george",
+      "displayName": "George",
+      "gender": "male",
+      "file": "voices/bm_george.pt"
+    }
+  ]
+}

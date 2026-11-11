@@ -1,0 +1,130 @@
+{
+  "manifestVersion": 1,
+  "packageVersion": "1.0.1",
+  "id": "oben-npc-voice-lab-20",
+  "name": "Stalburg Voices Vol. 1",
+  "engine": "kokoro",
+  "voices": [
+    {
+      "id": "am_oben20_brann",
+      "displayName": "Brann",
+      "gender": "male",
+      "file": "voices/am_oben20_brann.pt"
+    },
+    {
+      "id": "am_oben20_eero",
+      "displayName": "Eero",
+      "gender": "male",
+      "file": "voices/am_oben20_eero.pt"
+    },
+    {
+      "id": "am_oben20_kemal",
+      "displayName": "Kemal",
+      "gender": "male",
+      "file": "voices/am_oben20_kemal.pt"
+    },
+    {
+      "id": "am_oben20_vasko",
+      "displayName": "Vasko",
+      "gender": "male",
+      "file": "voices/am_oben20_vasko.pt"
+    },
+    {
+      "id": "am_oben20_kiro",
+      "displayName": "Kiro",
+      "gender": "male",
+      "file": "voices/am_oben20_kiro.pt"
+    },
+    {
+      "id": "am_oben20_hakon",
+      "displayName": "Hakon",
+      "gender": "male",
+      "file": "voices/am_oben20_hakon.pt"
+    },
+    {
+      "id": "am_oben20_niko",
+      "displayName": "Niko",
+      "gender": "male",
+      "file": "voices/am_oben20_niko.pt"
+    },
+    {
+      "id": "am_oben20_veld",
+      "displayName": "Veld",
+      "gender": "male",
+      "file": "voices/am_oben20_veld.pt"
+    },
+    {
+      "id": "am_oben20_kram",
+      "displayName": "Kram",
+      "gender": "male",
+      "file": "voices/am_oben20_kram.pt"
+    },
+    {
+      "id": "am_oben20_otto",
+      "displayName": "Otto",
+      "gender": "male",
+      "file": "voices/am_oben20_otto.pt"
+    },
+    {
+      "id": "af_oben20_aila",
+      "displayName": "Aila",
+      "gender": "female",
+      "file": "voices/af_oben20_aila.pt"
+    },
+    {
+      "id": "af_oben20_nessa",
+      "displayName": "Nessa",
+      "gender": "female",
+      "file": "voices/af_oben20_nessa.pt"
+    },
+    {
+      "id": "af_oben20_zora",
+      "displayName": "Zora",
+      "gender": "female",
+      "file": "voices/af_oben20_zora.pt"
+    },
+    {
+      "id": "af_oben20_vika",
+      "displayName": "Vika",
+      "gender": "female",
+      "file": "voices/af_oben20_vika.pt"
+    },
+    {
+      "id": "af_oben20_hilde",
+      "displayName": "Hilde",
+      "gender": "female",
+      "file": "voices/af_oben20_hilde.pt"
+    },
+    {
+      "id": "af_oben20_oona",
+      "displayName": "Oona",
+      "gender": "female",
+      "file": "voices/af_oben20_oona.pt"
+    },
+    {
+      "id": "af_oben20_tasha",
+      "displayName": "Tasha",
+      "gender": "female",
+      "file": "voices/af_oben20_tasha.pt"
+    },
+    {
+      "id": "af_oben20_minna",
+      "displayName": "Minna",
+      "gender": "female",
+      "file": "voices/af_oben20_minna.pt"
+    },
+    {
+      "id": "af_oben20_shade",
+      "displayName": "Shade",
+      "gender": "female",
+      "file": "voices/af_oben20_shade.pt"
+    },
+    {
+      "id": "af_oben20_rima",
+      "displayName": "Rima",
+      "gender": "female",
+      "file": "voices/af_oben20_rima.pt"
+    }
+  ],
+  "shortCode": "SV1"
+}

@@ -20,7 +20,7 @@ Release arrangement:
 3. Ship the applicable licence and notice files inside each release asset.
 4. Do not describe the complete runtime or optional packages as MIT-licensed.
 
-The adapted `data/characters.json` database is separately available under CC
+The compiled `data/characters.json` database is separately available under CC
 BY-SA 4.0; see [its attribution and modification notice](../data/LICENSE.md).
 That data licence does not apply to the program code.
 

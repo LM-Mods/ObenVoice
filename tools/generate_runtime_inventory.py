@@ -85,13 +85,13 @@ def main():
     parser.add_argument(
         "release_root",
         type=Path,
-        help="Folder containing ObenseuerTTS/runtime (for example an assembled core release)",
+        help="Folder containing ObenVoice/runtime (for example an assembled core release)",
     )
     args = parser.parse_args()
     root = args.release_root.resolve()
-    site_packages = root / "ObenseuerTTS" / "runtime" / "Lib" / "site-packages"
-    output = root / "RUNTIME_DEPENDENCIES.md"
-    license_root = root / "licenses" / "python-packages"
+    site_packages = root / "ObenVoice" / "runtime" / "Lib" / "site-packages"
+    output = root / "ObenVoice" / "Docs" / "RUNTIME_DEPENDENCIES.md"
+    license_root = root / "ObenVoice" / "Docs" / "licenses" / "python-packages"
     if not site_packages.is_dir():
         parser.error(f"bundled site-packages directory not found: {site_packages}")
     if str(site_packages) not in sys.path:

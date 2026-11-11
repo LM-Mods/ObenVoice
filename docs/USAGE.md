@@ -42,6 +42,6 @@ The editable defaults include `Any speaker => ...` and `Any speaker => AAAAH!`. 
 
 ## Dialogue diagnostics
 
-Press **End** by default to append the four most recent dialogue outcomes to `ObenseuerTTS\dialogue-diagnostics.log`. A short top-left confirmation reports the number saved. The log is bounded and remains separate from `tts_server.log` in the same folder.
+Press **End** by default to append the four most recent dialogue outcomes to `ObenVoice\Logs\dialogue-diagnostics.log`. A short top-left confirmation reports the number saved. The log is bounded and remains separate from `tts_server.log` in the same folder.
 
-Unknown speakers are deduplicated in `ObenseuerTTS\unknown-speakers.tsv` for later manual character-database review. The popup supports stable Male, Female, Random, selected-voice, default and ignore choices; remembered choices continue to use the existing assignment file.
+Unknown speakers are deduplicated in `ObenVoice\Logs\unknown-speakers.tsv` for later manual character-database review. The popup supports stable Male, Female, Random, selected-voice, default and ignore choices; remembered choices use the local Overrides file.
