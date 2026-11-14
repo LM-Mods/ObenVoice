@@ -49,6 +49,12 @@ def _voice_pack_roots(engine_id):
     return roots
 
 
+def _player_voice_root():
+    tts_root = Path(os.environ.get("TTS_ROOT", Path(__file__).resolve().parent.parent)).resolve()
+    obenvoice_root = Path(os.environ.get("OBENVOICE_ROOT", tts_root.parent / "ObenVoice")).resolve()
+    return (obenvoice_root / "PlayerVoices").resolve()
+
+
 def discover_external_voices(engine_name="kokoro"):
     """Return validated external voices for one engine, keyed by voice id."""
     engine_id = (engine_name or "").strip().lower()
@@ -105,8 +111,70 @@ def discover_external_voices(engine_name="kokoro"):
     return discovered
 
 
+def discover_player_voices(engine_name="kokoro"):
+    """Return validated Core player-only voices, keyed by voice id."""
+    engine_id = (engine_name or "").strip().lower()
+    if not PACK_ID_PATTERN.fullmatch(engine_id):
+        return {}
+    root = _player_voice_root()
+    manifest_path = root / "manifest.json"
+    if not manifest_path.is_file():
+        return {}
+    discovered = {}
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        pack_id = str(manifest.get("id", "")).strip().lower()
+        manifest_engine = str(manifest.get("engine", "")).strip().lower()
+        role = str(manifest.get("role", "")).strip().lower()
+        if (
+            manifest.get("manifestVersion") != 1
+            or not PACK_ID_PATTERN.fullmatch(pack_id)
+            or manifest_engine != engine_id
+            or role != "player"
+        ):
+            raise ValueError("manifest version, id, engine, or role is invalid")
+        voices = manifest.get("voices", [])
+        if not isinstance(voices, list):
+            raise ValueError("voices must be a list")
+        for item in voices:
+            if not isinstance(item, dict):
+                continue
+            voice_id = str(item.get("id", "")).strip().lower()
+            gender = str(item.get("gender", "")).strip().lower()
+            relative_file = str(item.get("file", "")).strip()
+            voice_path = (root / relative_file).resolve()
+            if not VOICE_ID_PATTERN.fullmatch(voice_id) or gender not in ("male", "female"):
+                continue
+            if root not in voice_path.parents or voice_path.suffix.lower() != ".pt" or not voice_path.is_file():
+                continue
+            if voice_id in AVAILABLE_VOICES or voice_id in discovered:
+                logging.warning("Ignoring duplicate player voice id: %s", voice_id)
+                continue
+            discovered[voice_id] = {
+                "path": voice_path,
+                "gender": gender,
+                "display_name": str(item.get("displayName", voice_id)).strip() or voice_id,
+                "pack_id": pack_id,
+                "pack_name": str(manifest.get("name", pack_id)).strip() or pack_id,
+                "role": "player",
+            }
+    except Exception as exc:
+        logging.warning("Ignoring invalid player-voice manifest %s: %s", manifest_path, exc)
+    return discovered
+
+
+def discover_file_voices(engine_name="kokoro"):
+    discovered = discover_player_voices(engine_name)
+    for voice_id, details in discover_external_voices(engine_name).items():
+        if voice_id in discovered:
+            logging.warning("Ignoring normal voice-pack id reserved by a Core player voice: %s", voice_id)
+            continue
+        discovered[voice_id] = details
+    return discovered
+
+
 def get_available_voices():
-    return list(AVAILABLE_VOICES) + sorted(discover_external_voices("kokoro"))
+    return list(AVAILABLE_VOICES) + sorted(discover_file_voices("kokoro"))
 
 
 class KokoroEngine:
@@ -117,7 +185,7 @@ class KokoroEngine:
 
         self.engine_id = "kokoro"
         self._pipeline = KPipeline(lang_code=lang or "a", repo_id="hexgrad/Kokoro-82M")
-        self._external_voices = discover_external_voices("kokoro")
+        self._external_voices = discover_file_voices("kokoro")
         self.available_voices = list(AVAILABLE_VOICES) + sorted(self._external_voices)
         self._voice_cache = {}
         self._cancel_lock = threading.Lock()

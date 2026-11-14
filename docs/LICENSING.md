@@ -29,6 +29,14 @@ as an independent implementation for Obenseuer. No Universal TTS Mod source
 was found in the curated repository. This is evidence from the reviewed files,
 not a guarantee about material that was unavailable to the audit.
 
+Rowan and Mara are procedurally generated player-voice tensors derived through
+the documented Stalburg/Kokoro style-tensor chain. Their release treatment
+retains Apache-2.0, modification notices, exact output and contributing-source
+hashes, the pinned upstream revision and inherited acknowledgements. The
+player-voice generation program was not supplied, so the project does not
+claim exact reproducibility or independent training. This treatment is a
+release-compliance assessment, not legal certification.
+
 Release packaging checks are tracked in
 [RELEASE-PACKAGING.md](RELEASE-PACKAGING.md). The British voice files have
 verified pinned provenance.

@@ -1,0 +1,28 @@
+OBENVOICE - ROWAN AND MARA PLAYER VOICES - ATTRIBUTION / MODIFICATIONS
+
+Upstream source material:
+  hexgrad/Kokoro-82M voice tensor styles
+  https://huggingface.co/hexgrad/Kokoro-82M
+  Upstream repository declaration: Apache License 2.0
+
+Intermediate source material:
+  Stalburg Voices Vol. 1 v1.0.1
+  20 procedurally modified Kokoro-compatible style tensors generated from
+  the pinned upstream tensors recorded in that pack's PROVENANCE.json.
+
+Modifications:
+  Rowan and Mara were generated offline by gender-conditioned statistical
+  style-space sampling across the corresponding Stalburg style tensors with
+  seeded stochastic innovation. They are derivative style tensors, not
+  independently trained speakers, recorded human voices or voice clones.
+  The exact player-generation program was not supplied with the candidate;
+  the recorded method, source/output hashes and technical validation are in
+  PROVENANCE.json.
+
+Upstream acknowledgements retained from the Kokoro/Stalburg source chain:
+  - SIWIS French Speech Synthesis Database; CC BY 4.0; University of
+    Edinburgh, Centre for Speech Technology Research; DOI 10.7488/ds/1705.
+  - Koniwa tnc audio; CC BY 3.0, as reported by the Kokoro-82M model card.
+
+These acknowledgements do not imply endorsement by the upstream authors,
+datasets or projects. Apache License 2.0 text accompanies these files.

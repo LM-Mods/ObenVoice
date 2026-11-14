@@ -12,6 +12,7 @@ namespace ObenseuerTts
         public string name = string.Empty;
         public string shortCode = string.Empty;
         public string engine = string.Empty;
+        public string role = string.Empty;
         public VoicePackVoice[] voices = new VoicePackVoice[0];
     }
 
@@ -35,6 +36,7 @@ namespace ObenseuerTts
             manifest.name = ReadJsonString(source, "name");
             manifest.shortCode = ReadJsonString(source, "shortCode");
             manifest.engine = ReadJsonString(source, "engine");
+            manifest.role = ReadJsonString(source, "role");
 
             List<VoicePackVoice> voices = new List<VoicePackVoice>();
             foreach (string item in ReadObjectArray(source, "voices"))

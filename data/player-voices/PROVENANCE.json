@@ -1,0 +1,46 @@
+{
+  "status": "Gameplay-approved procedural Kokoro-compatible player voices",
+  "reviewDate": "2026-11-14",
+  "derivation": "Offline gender-conditioned statistical style-space sampling over all corresponding Stalburg Voices Vol. 1 tensors, with seeded prior sampling and stochastic innovation. No source pair was selected or weighted. Outputs are derivatives, not independently trained speakers or audio clones.",
+  "generatorSourceAvailable": false,
+  "generatorSourceNote": "The candidate archive supplied technical method notes and exact tensors but did not include the player-generation program. Exact regeneration is therefore not claimed.",
+  "upstream": {
+    "project": "hexgrad/Kokoro-82M",
+    "source": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "license": "Apache-2.0",
+    "intermediatePack": "Stalburg Voices Vol. 1 v1.0.1",
+    "intermediateProvenance": "packaging/stalburg-voices/PROVENANCE.json"
+  },
+  "sourceTensors": [
+    { "id": "am_oben20_brann", "sha256": "2CB4D3181449C7AACD0B40C45B65030F4A633A2E73EF8F8EC61357125F608A25", "upstreamAnchor": "am_fenrir" },
+    { "id": "am_oben20_eero", "sha256": "79D0AD88F66E5AF9949C34647A1265C846BAA3977DB92EC3B2353A005ACCAFCE", "upstreamAnchor": "bm_lewis" },
+    { "id": "am_oben20_kemal", "sha256": "98DF8D8C027E54C7DAB8959BF55020610468547EE0262E65C7E1A7507A3F0915", "upstreamAnchor": "em_alex" },
+    { "id": "am_oben20_vasko", "sha256": "436868C2C73726FF2E3F6EBFDECC4BAB79988002692556C5E85820A40B052FE9", "upstreamAnchor": "im_nicola" },
+    { "id": "am_oben20_kiro", "sha256": "61E62747E2C1EC12BE16E4C3FC725874660E5C40308F517CEC06C2B5A8C29E6A", "upstreamAnchor": "pm_alex" },
+    { "id": "am_oben20_hakon", "sha256": "699D92CC5B7B7B6A3618340C2B286B5F3B57AF79CBA848C9D0A86C14052C031D", "upstreamAnchor": "bm_fable" },
+    { "id": "am_oben20_niko", "sha256": "A8CB3641B357EACC28DB0E946B5FF85CA6202D77510D56DE843978A97C8A7AA6", "upstreamAnchor": "am_puck" },
+    { "id": "am_oben20_veld", "sha256": "504B3C3024BA6707E4F0D12822CCB3E66898B7BDE4A8CCACE86E1FCADF3790D8", "upstreamAnchor": "am_echo" },
+    { "id": "am_oben20_kram", "sha256": "0752E54236C1FB13249A4C803E0F32CD04735D69D8EC816AD71B5FD1B9504FCD", "upstreamAnchor": "hm_omega" },
+    { "id": "am_oben20_otto", "sha256": "C3E953C58760690200F29DFF75A3FD242CB3664ADDB621CFA42C8F41113E76BA", "upstreamAnchor": "bm_lewis" },
+    { "id": "af_oben20_aila", "sha256": "26127155925B7A195B7C5BABDE8439969934C25DC610F4A60D26477A0ECEFE87", "upstreamAnchor": "bf_isabella" },
+    { "id": "af_oben20_nessa", "sha256": "9BC2079D61C600CAF41418D4A4969CDF196B3430049BD73F5F49A6FB5C0FB843", "upstreamAnchor": "af_nicole" },
+    { "id": "af_oben20_zora", "sha256": "E3F0CB07E0E720044756E8BC153ED2EB71022E100A034DEB765DDE29E93C2440", "upstreamAnchor": "pf_dora" },
+    { "id": "af_oben20_vika", "sha256": "0E38FEA874B2E01A7554A1ADAFAB5859B69871856D503FA0E5909634E6503AA5", "upstreamAnchor": "ff_siwis" },
+    { "id": "af_oben20_hilde", "sha256": "0781FB446574E569DA0B05025AC300E3DD529679D7C79731AFEDDD3A4F377D", "upstreamAnchor": "af_kore" },
+    { "id": "af_oben20_oona", "sha256": "8B933C0F6CC6FC04A0384B99CA95EF0C2C0384603924CBB4B28048E237AE4A81", "upstreamAnchor": "af_aoede" },
+    { "id": "af_oben20_tasha", "sha256": "72B1669F9EDD4EDFFF0E060F5D0529071332B57DFB8BC71121500EB01CF6B615", "upstreamAnchor": "if_sara" },
+    { "id": "af_oben20_minna", "sha256": "FDB850B26200482716B0860CC700DDC0A0353A79C1098E0F36E9114E072F8049", "upstreamAnchor": "af_nova" },
+    { "id": "af_oben20_shade", "sha256": "CB4B2E9E38BCBA17B9E40E194F89F263A1FB8A66B5ADB67FDB3036530FEF7A", "upstreamAnchor": "jf_alpha" },
+    { "id": "af_oben20_rima", "sha256": "738E6289A3626EB8989C3DA311D1094496EE7EDD199EF51B2395F5DECDC7E144", "upstreamAnchor": "hf_alpha" }
+  ],
+  "outputs": [
+    { "id": "am_obv_player_rowan_test", "displayName": "Rowan — Male Player", "sha256": "7BA45221106AF56B95437820297E4EC287EC0EC9F76716DD32BECCEBC7091C89", "shape": [510, 1, 256], "dtype": "float32" },
+    { "id": "af_obv_player_mara_test", "displayName": "Mara — Female Player", "sha256": "F9218B9E5711D93B76B5B0B83281099ADD69B7412C0199BB8B3EC56C81D830B3", "shape": [510, 1, 256], "dtype": "float32" }
+  ],
+  "validation": {
+    "allFinite": true,
+    "kokoroWeightsOnlyLoad": true,
+    "userGameplayListeningApproved": true,
+    "acousticUniquenessClaimed": false
+  }
+}

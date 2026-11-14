@@ -149,6 +149,7 @@ namespace ObenseuerTts
         private readonly List<DiscoveredVoicePack> discoveredKokoroPacks = new List<DiscoveredVoicePack>();
         private readonly List<NpcVoicePreset> discoveredNpcPresets = new List<NpcVoicePreset>();
         private readonly HashSet<string> installedKokoroVoiceIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> installedNpcVoiceIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private string[] femaleVoices = new string[0];
         private string[] maleVoices = new string[0];
         private string[] unknownVoices = new string[0];
@@ -201,7 +202,6 @@ namespace ObenseuerTts
         private bool showVoicePackChoices;
         private bool showNpcPresetChoices;
         private bool showOverrideVoiceChoices;
-        private bool showAutomaticVariation;
         private bool overrideAddMode;
         private string overrideSearch = string.Empty;
         private NpcIdentityRecord overrideSelectedNpc;
@@ -236,6 +236,7 @@ namespace ObenseuerTts
         private bool typingInRuleEditor;
         private const string DefaultPronunciationFile = "# Speech-only pronunciation replacements. Format: source => spoken replacement\r\n# Matching is case-insensitive and respects word boundaries.\r\n\r\nHmh => Hmm\r\n";
         private const string DefaultExclusionFile = SpeechExclusionDefaults.DefaultContent;
+        private const string RandomNpcVoicesMode = "random";
         private static readonly string[] BundledKokoroVoices = new string[] { "af_heart", "af_bella", "af_sarah", "am_adam", "am_michael", "am_onyx" };
 
         private enum DialogueKind
@@ -279,6 +280,7 @@ namespace ObenseuerTts
             internal string PackName;
             internal string ShortCode;
             internal bool External;
+            internal bool PlayerOnly;
         }
 
         private sealed class DiscoveredVoicePack
@@ -349,7 +351,7 @@ namespace ObenseuerTts
             selectedEngineVoicePack = Config.Bind("Voice packs", "SelectedPocketVoicePack", "", "Engine Voice Pack. Optional folder used by a compatible voice engine add-on. Leave blank for that engine's default voice; applied on the next engine start.");
             kokoroVoiceMode = Config.Bind("Voice packs", "KokoroVoiceMode", "custom", "Automatic Kokoro voice source: default, all, pack or custom. Custom preserves the individual voice toggles.");
             selectedKokoroVoicePack = Config.Bind("Voice packs", "SelectedKokoroVoicePack", "", "Stable ID of the external Kokoro pack used when KokoroVoiceMode is pack.");
-            selectedNpcVoicePreset = Config.Bind("NPC voices", "SelectedPreset", "", "Stable ID of the selected installed NPC voice preset. Blank uses Default automatic behaviour.");
+            selectedNpcVoicePreset = Config.Bind("NPC voices", "SelectedPreset", "", "Stable ID of the selected NPC casting. Blank uses the Default casting; random uses saved one-time assignments.");
             debugLogging = Config.Bind("Diagnostics", "DebugLogging", false, "Write continuous detailed troubleshooting messages to the game log. Leave off during normal play.");
             showStatusOverlay = Config.Bind("Diagnostics", "ShowStatusOverlay", true, "Show brief messages while the voice service starts, reconnects or needs attention.");
             settingsHotkey = Config.Bind("General", "SettingsHotkey", "F8", "Open or close the full ObenVoice settings menu.");
@@ -416,14 +418,14 @@ namespace ObenseuerTts
             {
                 List<string> defaults = new List<string>();
                 foreach (DiscoveredVoice item in availableKokoroVoices)
-                    if (!item.External && string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase)) defaults.Add(item.Id);
+                    if (!item.PlayerOnly && !item.External && string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase)) defaults.Add(item.Id);
                 return defaults.Count == 0 ? new string[] { fallback } : defaults.ToArray();
             }
             if (mode == "all")
             {
                 List<string> all = new List<string>();
                 foreach (DiscoveredVoice item in availableKokoroVoices)
-                    if (string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase) && !all.Contains(item.Id)) all.Add(item.Id);
+                    if (!item.PlayerOnly && string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase) && !all.Contains(item.Id)) all.Add(item.Id);
                 return all.Count == 0 ? new string[] { fallback } : all.ToArray();
             }
             if (mode == "pack")
@@ -440,14 +442,14 @@ namespace ObenseuerTts
                 return BuildDefaultVoicePool(gender, fallback);
             }
             string configured = string.Equals(gender, "male", StringComparison.OrdinalIgnoreCase) ? maleVoicePool.Value : femaleVoicePool.Value;
-            return VoiceSelectionRules.BuildRuntimePool(configured, installedKokoroVoiceIds, fallback);
+            return VoiceSelectionRules.BuildRuntimePool(configured, installedNpcVoiceIds, fallback);
         }
 
         private string[] BuildDefaultVoicePool(string gender, string fallback)
         {
             List<string> values = new List<string>();
             foreach (DiscoveredVoice item in availableKokoroVoices)
-                if (!item.External && string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase)) values.Add(item.Id);
+                if (!item.PlayerOnly && !item.External && string.Equals(item.Gender, gender, StringComparison.OrdinalIgnoreCase)) values.Add(item.Id);
             return values.Count == 0 ? new string[] { fallback } : values.ToArray();
         }
 
@@ -814,7 +816,7 @@ namespace ObenseuerTts
             }
 
             SpeechProfile profile = new SpeechProfile(
-                ResolveInstalledVoiceSpec(string.IsNullOrEmpty(playerVoice.Value) ? voice.Value : playerVoice.Value.Trim(), "af_heart"),
+                ResolvePlayerVoiceSpec(string.IsNullOrEmpty(playerVoice.Value) ? voice.Value : playerVoice.Value.Trim(), "af_heart"),
                 Clamp(playerSpeed.Value, 0.5f, 2.0f),
                 Clamp(playerPitch.Value, -4.0f, 4.0f));
             DebugLog("Player line detection=confirmed response selection raw text=" + rawText + " clean text=" + text + " voice=" + profile.Voice);
@@ -848,7 +850,7 @@ namespace ObenseuerTts
             if (string.IsNullOrEmpty(resolution.RawName))
             {
                 resolution.MatchMethod = "blank speaker";
-                resolution.Profile = new SpeechProfile(ResolveInstalledVoiceSpec(voice.Value, "af_heart"), 1.0f, 0.0f);
+                resolution.Profile = new SpeechProfile(ResolveNpcVoiceSpec(voice.Value, "af_heart"), 1.0f, 0.0f);
                 return true;
             }
 
@@ -887,6 +889,38 @@ namespace ObenseuerTts
             }
             resolution.Identity = identity;
             resolution.GameCharacterId = gameId;
+
+            if (IsRandomNpcVoicesSelected())
+            {
+                NpcVoiceEntry existingAssignment = npcVoiceOverrides.FindAny(gameId, resolution.SpeakerId, resolution.RawName, identity);
+                if (existingAssignment != null)
+                {
+                    ApplyNpcVoiceEntry(resolution, existingAssignment, "NPC assignment", true);
+                    return true;
+                }
+
+                if (!IsKnownGender(resolution.Gender))
+                {
+                    if (maleNames.Contains(resolution.RawName))
+                    {
+                        resolution.Gender = "male";
+                        resolution.GenderSource = "MaleCharacters";
+                    }
+                    else if (femaleNames.Contains(resolution.RawName))
+                    {
+                        resolution.Gender = "female";
+                        resolution.GenderSource = "FemaleCharacters";
+                    }
+                }
+
+                string[] candidates = GetInstalledNpcPool(resolution.Gender);
+                string selectedVoice = candidates.Length == 0 ? ResolveNpcVoiceSpec(voice.Value, "af_heart") : candidates[UnityEngine.Random.Range(0, candidates.Length)];
+                resolution.Profile = BuildProfile(resolution.MatchedName, resolution.Gender, selectedVoice, false);
+                resolution.MatchMethod = "Random Voices assignment";
+                resolution.VoiceSource = "Random Voices";
+                SaveRandomVoiceAssignment(resolution);
+                return true;
+            }
 
             NpcVoiceEntry explicitOverride = npcVoiceOverrides.FindUser(gameId, resolution.SpeakerId, resolution.RawName, identity);
             NpcVoicePreset selectedPreset = FindSelectedNpcPreset();
@@ -941,7 +975,7 @@ namespace ObenseuerTts
                 resolution.MatchMethod = "unknown safe default";
                 resolution.GenderSource = "unknown";
                 resolution.VoiceSource = "DefaultVoice";
-                resolution.Profile = BuildProfile(resolution.RawName, "unknown", ResolveInstalledVoiceSpec(voice.Value, "af_heart"), false);
+                resolution.Profile = BuildProfile(resolution.RawName, "unknown", ResolveNpcVoiceSpec(voice.Value, "af_heart"), false);
                 resolution.NeedsAutomaticSave = true;
                 return true;
             }
@@ -962,7 +996,7 @@ namespace ObenseuerTts
             resolution.Ignore = entry.Ignore;
             resolution.MatchMethod = source;
             resolution.VoiceSource = source;
-            if (requestedVoice.Length > 0 && !VoiceSelectionRules.IsVoiceSpecAvailable(requestedVoice, installedKokoroVoiceIds))
+            if (requestedVoice.Length > 0 && !VoiceSelectionRules.IsVoiceSpecAvailable(requestedVoice, installedNpcVoiceIds))
                 resolution.VoiceSource += " (missing voice fallback)";
             if (explicitOverride) resolution.GenderSource = "NPC Voice Overrides";
         }
@@ -970,9 +1004,37 @@ namespace ObenseuerTts
         private NpcVoicePreset FindSelectedNpcPreset()
         {
             string selected = selectedNpcVoicePreset == null ? string.Empty : selectedNpcVoicePreset.Value ?? string.Empty;
+            if (string.Equals(selected.Trim(), RandomNpcVoicesMode, StringComparison.OrdinalIgnoreCase)) return null;
             if (selected.Trim().Length == 0)
                 return discoveredNpcPresets.Find(item => string.Equals(item.StableId, "core/default", StringComparison.OrdinalIgnoreCase));
             return discoveredNpcPresets.Find(item => string.Equals(item.StableId, selected, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private bool IsRandomNpcVoicesSelected()
+        {
+            return selectedNpcVoicePreset != null && string.Equals((selectedNpcVoicePreset.Value ?? string.Empty).Trim(), RandomNpcVoicesMode, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private string[] GetInstalledNpcPool(string gender)
+        {
+            List<string> candidates = new List<string>();
+            foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
+            {
+                if (voiceInfo.PlayerOnly) continue;
+                if (IsKnownGender(gender) && !string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase)) continue;
+                candidates.Add(voiceInfo.Id);
+            }
+            return candidates.ToArray();
+        }
+
+        private void SaveRandomVoiceAssignment(SpeakerResolution resolution)
+        {
+            if (resolution == null || !npcVoiceOverridesLoadValid || string.IsNullOrEmpty(resolution.RawName)) return;
+            if (npcVoiceOverrides.FindAny(resolution.GameCharacterId, resolution.SpeakerId, resolution.RawName, resolution.Identity) != null) return;
+            NpcVoiceEntry entry = CreateNpcAssignmentEntry(resolution.GameCharacterId, resolution.SpeakerId,
+                resolution.RawName, resolution.MatchedName, resolution.Identity, resolution.Profile, false, false);
+            npcVoiceOverrides.Overrides.Add(entry);
+            SaveNpcVoiceOverrides();
         }
 
         private bool TryGetGameIdentity(PixelCrushers.DialogueSystem.CharacterInfo speaker, out string fullName, out string gender, out string characterId)
@@ -1014,13 +1076,13 @@ namespace ObenseuerTts
         {
             string[] pool = GetEnabledPool(gender);
 
-            if (!string.IsNullOrEmpty(forcedVoice) && !VoiceSelectionRules.IsVoiceSpecAvailable(forcedVoice, installedKokoroVoiceIds))
+            if (!string.IsNullOrEmpty(forcedVoice) && !VoiceSelectionRules.IsVoiceSpecAvailable(forcedVoice, installedNpcVoiceIds))
             {
                 forcedVoice = null;
                 allowBlend = true;
             }
 
-            string selectedVoice = string.IsNullOrEmpty(forcedVoice) ? StablePoolVoice(stableName, pool, ResolveInstalledVoiceSpec(voice.Value, "af_heart")) : forcedVoice;
+            string selectedVoice = string.IsNullOrEmpty(forcedVoice) ? StablePoolVoice(stableName, pool, ResolveNpcVoiceSpec(voice.Value, "af_heart")) : forcedVoice;
             if (allowBlend && enableStableVariation.Value && enableVoiceBlending.Value && pool != null && pool.Length > 1)
             {
                 int chance = Math.Max(0, Math.Min(100, voiceBlendChancePercent.Value));
@@ -1077,7 +1139,14 @@ namespace ObenseuerTts
             return StablePoolVoice(stableName, pool, string.Equals(gender, "male", StringComparison.OrdinalIgnoreCase) ? "am_adam" : "af_heart");
         }
 
-        private string ResolveInstalledVoiceSpec(string requested, string fallback)
+        private string ResolveNpcVoiceSpec(string requested, string fallback)
+        {
+            if (VoiceSelectionRules.IsVoiceSpecAvailable(requested, installedNpcVoiceIds)) return requested;
+            if (installedNpcVoiceIds.Contains(fallback)) return fallback;
+            return "af_heart";
+        }
+
+        private string ResolvePlayerVoiceSpec(string requested, string fallback)
         {
             if (VoiceSelectionRules.IsVoiceSpecAvailable(requested, installedKokoroVoiceIds)) return requested;
             if (installedKokoroVoiceIds.Contains(fallback)) return fallback;
@@ -1224,8 +1293,8 @@ namespace ObenseuerTts
             if (!npcVoiceOverridesLoadValid) return;
             if (npcVoiceOverrides.FindUser(resolution.GameCharacterId, resolution.SpeakerId, resolution.RawName, resolution.Identity) != null) return;
 
-            NpcVoiceEntry entry = CreateAutomaticEntry(resolution.GameCharacterId, resolution.SpeakerId,
-                resolution.RawName, resolution.MatchedName, resolution.Identity, resolution.Profile, false);
+            NpcVoiceEntry entry = CreateNpcAssignmentEntry(resolution.GameCharacterId, resolution.SpeakerId,
+                resolution.RawName, resolution.MatchedName, resolution.Identity, resolution.Profile, false, true);
             NpcVoiceEntry existing = npcVoiceOverrides.FindAutomatic(resolution.GameCharacterId, resolution.SpeakerId,
                 resolution.RawName, resolution.Identity);
             if (NpcVoiceEntriesEqual(existing, entry)) return;
@@ -1234,8 +1303,8 @@ namespace ObenseuerTts
             SaveNpcVoiceOverrides();
         }
 
-        private static NpcVoiceEntry CreateAutomaticEntry(string gameCharacterId, string speakerId, string rawName,
-            string displayName, NpcIdentityRecord identity, SpeechProfile profile, bool ignore)
+        private static NpcVoiceEntry CreateNpcAssignmentEntry(string gameCharacterId, string speakerId, string rawName,
+            string displayName, NpcIdentityRecord identity, SpeechProfile profile, bool ignore, bool automatic)
         {
             NpcVoiceEntry entry = new NpcVoiceEntry();
             entry.GameCharacterId = gameCharacterId ?? string.Empty;
@@ -1247,7 +1316,7 @@ namespace ObenseuerTts
             entry.Pitch = profile.Pitch;
             entry.HasSpeed = true;
             entry.HasPitch = true;
-            entry.Automatic = true;
+            entry.Automatic = automatic;
             entry.Ignore = ignore;
             return entry;
         }
@@ -1408,7 +1477,7 @@ namespace ObenseuerTts
             if (activeUnknown == null) return;
             string name = activeUnknown.Name;
             if (string.Equals(choiceMethod, "random compatible voice", StringComparison.Ordinal))
-                exactVoice = StablePoolVoice(name, unknownVoices, ResolveInstalledVoiceSpec(voice.Value, "af_heart"));
+                exactVoice = StablePoolVoice(name, unknownVoices, ResolveNpcVoiceSpec(voice.Value, "af_heart"));
             SpeechProfile profile = BuildProfile(name, gender, exactVoice, string.IsNullOrEmpty(exactVoice) && !ignore);
             if (rememberUnknownChoice)
             {
@@ -1417,7 +1486,7 @@ namespace ObenseuerTts
                 NpcVoiceEntry userEntry = npcVoiceOverrides.FindUser(string.Empty, activeUnknown.SpeakerId, name, null);
                 if (npcVoiceOverridesLoadValid && userEntry == null)
                 {
-                    NpcVoiceEntry entry = CreateAutomaticEntry(string.Empty, activeUnknown.SpeakerId, name, name, null, profile, ignore);
+                    NpcVoiceEntry entry = CreateNpcAssignmentEntry(string.Empty, activeUnknown.SpeakerId, name, name, null, profile, ignore, true);
                     NpcVoiceEntry existing = npcVoiceOverrides.FindAutomatic(string.Empty, activeUnknown.SpeakerId, name, null);
                     if (!NpcVoiceEntriesEqual(existing, entry))
                     {
@@ -1495,16 +1564,15 @@ namespace ObenseuerTts
         private void DrawSettingsWindow(int id)
         {
             GUI.Label(new Rect(20, 30, 710, 22), "Backend: " + backendState + "    |    Selected: " + preferredTtsEngine.Value + "    |    Running: " + runningTtsEngine);
-            string[] pages = new string[] { "General", "Voice Packs", "NPC Voices", "Pronunciation", "Advanced" };
+            string[] pages = new string[] { "General", "NPC Voices", "Pronunciation", "Advanced" };
             settingsPage = GUI.Toolbar(new Rect(16, 58, 728, 28), settingsPage, pages);
 
             if (settingsPage == 0) DrawGeneralSettings();
-            else if (settingsPage == 1) DrawVoicePackSettings();
-            else if (settingsPage == 2) DrawVoiceSettings();
-            else if (settingsPage == 3) DrawPronunciationSettings();
+            else if (settingsPage == 1) DrawVoiceSettings();
+            else if (settingsPage == 2) DrawPronunciationSettings();
             else DrawAdvancedSettings();
 
-            if (settingsPage != 3) typingInRuleEditor = false;
+            if (settingsPage != 2) typingInRuleEditor = false;
 
             GUI.Label(new Rect(20, 434, 300, 22), "Changes are saved automatically.");
             if (GUI.Button(new Rect(620, 430, 112, 26), "Close")) SetSettingsWindowVisible(false);
@@ -1608,7 +1676,7 @@ namespace ObenseuerTts
             {
                 showNpcOverridesWindow = false;
                 showSettingsWindow = true;
-                settingsPage = 2;
+                settingsPage = 1;
                 showOverrideVoiceChoices = false;
                 RefreshMenuInputCapture();
             }
@@ -1618,16 +1686,21 @@ namespace ObenseuerTts
         private void DrawOverrideVoiceChoices()
         {
             GUI.Box(new Rect(335, 120, 365, 332), "Choose voice");
-            float contentHeight = Math.Max(300f, availableKokoroVoices.Count * 28f + 4f);
+            int eligibleCount = 0;
+            foreach (DiscoveredVoice voiceInfo in availableKokoroVoices) if (!voiceInfo.PlayerOnly) eligibleCount++;
+            float contentHeight = Math.Max(300f, eligibleCount * 28f + 4f);
             overrideVoiceScroll = GUI.BeginScrollView(new Rect(342, 146, 350, 297), overrideVoiceScroll, new Rect(0, 0, 330, contentHeight));
+            int row = 0;
             for (int i = 0; i < availableKokoroVoices.Count; i++)
             {
                 DiscoveredVoice item = availableKokoroVoices[i];
-                if (GUI.Button(new Rect(2, 2 + i * 28f, 322, 26), FriendlyVoiceLabel(item)))
+                if (item.PlayerOnly) continue;
+                if (GUI.Button(new Rect(2, 2 + row * 28f, 322, 26), FriendlyVoiceLabel(item)))
                 {
                     overrideVoice = item.Id;
                     showOverrideVoiceChoices = false;
                 }
+                row++;
             }
             GUI.EndScrollView();
         }
@@ -1740,6 +1813,8 @@ namespace ObenseuerTts
             if (!visible)
             {
                 showDefaultVoiceChoices = false;
+                showVoicePackChoices = false;
+                showNpcPresetChoices = false;
                 capturingHotkey = 0;
                 typingInRuleEditor = false;
                 Config.Save();
@@ -1943,48 +2018,44 @@ namespace ObenseuerTts
                 return;
             }
 
-            GUI.Label(new Rect(20, 105, 105, 22), "NPC preset");
-            if (GUI.Button(new Rect(125, 101, 300, 26), SelectedNpcPresetLabel() + "  ▼")) showNpcPresetChoices = !showNpcPresetChoices;
-            if (GUI.Button(new Rect(445, 101, 150, 26), "Overrides..."))
+            GUI.Box(new Rect(20, 96, 700, 56), InstalledVoiceSourcesLabel());
+
+            GUI.Label(new Rect(20, 174, 105, 22), "NPC Casting");
+            if (GUI.Button(new Rect(130, 170, 400, 28), SelectedNpcPresetLabel() + "  ▼")) showNpcPresetChoices = !showNpcPresetChoices;
+            if (GUI.Button(new Rect(550, 170, 170, 28), "Overrides..."))
             {
                 showNpcOverridesWindow = true;
                 showSettingsWindow = false;
                 overrideEditorStatus = npcVoiceOverridesStatus;
                 RefreshMenuInputCapture();
             }
-            unknownSpeakerPrompt.Value = GUI.Toggle(new Rect(20, 142, 430, 24), unknownSpeakerPrompt.Value, "Ask when an unknown speaker is encountered");
-            GUI.Label(new Rect(20, 174, 700, 42), "Priority: personal override → selected preset → saved automatic voice → new automatic voice.");
-            showAutomaticVariation = GUI.Toggle(new Rect(20, 215, 300, 24), showAutomaticVariation, "Automatic variation controls");
-            if (showAutomaticVariation)
-            {
-                GUI.Box(new Rect(20, 244, 700, 136), string.Empty);
-                GUI.Label(new Rect(35, 252, 125, 22), "Speed minimum");
-                minimumSpeed.Value = GUI.HorizontalSlider(new Rect(170, 257, 310, 18), minimumSpeed.Value, 0.5f, 2.0f);
-                GUI.Label(new Rect(495, 252, 55, 22), minimumSpeed.Value.ToString("0.00"));
-                if (GUI.Button(new Rect(565, 250, 62, 24), "Reset")) minimumSpeed.Value = minimumSpeed.Default;
-
-                GUI.Label(new Rect(35, 282, 125, 22), "Speed maximum");
-                maximumSpeed.Value = GUI.HorizontalSlider(new Rect(170, 287, 310, 18), maximumSpeed.Value, 0.5f, 2.0f);
-                GUI.Label(new Rect(495, 282, 55, 22), maximumSpeed.Value.ToString("0.00"));
-                if (GUI.Button(new Rect(565, 280, 62, 24), "Reset")) maximumSpeed.Value = maximumSpeed.Default;
-
-                GUI.Label(new Rect(35, 312, 125, 22), "Tone minimum");
-                minimumPitch.Value = GUI.HorizontalSlider(new Rect(170, 317, 310, 18), minimumPitch.Value, -4.0f, 4.0f);
-                GUI.Label(new Rect(495, 312, 55, 22), minimumPitch.Value.ToString("0.0"));
-                if (GUI.Button(new Rect(565, 310, 62, 24), "Reset")) minimumPitch.Value = minimumPitch.Default;
-
-                GUI.Label(new Rect(35, 342, 125, 22), "Tone maximum");
-                maximumPitch.Value = GUI.HorizontalSlider(new Rect(170, 347, 310, 18), maximumPitch.Value, -4.0f, 4.0f);
-                GUI.Label(new Rect(495, 342, 55, 22), maximumPitch.Value.ToString("0.0"));
-                if (GUI.Button(new Rect(565, 340, 62, 24), "Reset")) maximumPitch.Value = maximumPitch.Default;
-            }
             DrawNpcPresetChoices();
+        }
+
+        private string InstalledVoiceSourcesLabel()
+        {
+            List<string> sources = new List<string>();
+            int coreVoiceCount = 0;
+            foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
+                if (!voiceInfo.PlayerOnly && !voiceInfo.External) coreVoiceCount++;
+            sources.Add("Core (" + coreVoiceCount.ToString(CultureInfo.InvariantCulture) + ")");
+            foreach (DiscoveredVoicePack pack in discoveredKokoroPacks)
+                sources.Add(pack.Name + " (" + pack.VoiceIds.Count.ToString(CultureInfo.InvariantCulture) + ")");
+            return "Installed voices\n" + string.Join("  |  ", sources.ToArray());
+        }
+
+        private static string NpcPresetDisplayName(NpcVoicePreset preset)
+        {
+            string name = preset == null ? string.Empty : (preset.Name ?? string.Empty).Trim();
+            if (name.Length == 0 && preset != null) name = preset.Id;
+            return name.Replace(" - ", " ");
         }
 
         private string SelectedNpcPresetLabel()
         {
+            if (IsRandomNpcVoicesSelected()) return "Random Voices";
             NpcVoicePreset preset = FindSelectedNpcPreset();
-            if (preset != null) return preset.Name + (preset.Provisional ? " [Provisional]" : string.Empty);
+            if (preset != null) return NpcPresetDisplayName(preset);
             string selected = selectedNpcVoicePreset == null ? string.Empty : selectedNpcVoicePreset.Value ?? string.Empty;
             return selected.Length == 0 ? "Default" : "Missing preset: " + selected;
         }
@@ -1992,25 +2063,33 @@ namespace ObenseuerTts
         private void DrawNpcPresetChoices()
         {
             if (!showNpcPresetChoices) return;
-            float height = Math.Min(245f, 40f + discoveredNpcPresets.Count * 30f);
-            GUI.Box(new Rect(125, 156, 360, height), string.Empty);
-            float contentHeight = 32f + discoveredNpcPresets.Count * 30f;
-            npcPresetSelectorScroll = GUI.BeginScrollView(new Rect(131, 162, 348, height - 12f), npcPresetSelectorScroll, new Rect(0, 0, 328, contentHeight));
-            if (GUI.Button(new Rect(2, 2, 320, 26), "Default"))
+            int optionCount = 2;
+            foreach (NpcVoicePreset preset in discoveredNpcPresets)
+                if (!string.Equals(preset.StableId, "core/default", StringComparison.OrdinalIgnoreCase)) optionCount++;
+            float height = Math.Min(220f, 10f + optionCount * 30f);
+            GUI.Box(new Rect(130, 200, 400, height), string.Empty);
+            float contentHeight = 4f + optionCount * 30f;
+            npcPresetSelectorScroll = GUI.BeginScrollView(new Rect(136, 206, 388, height - 12f), npcPresetSelectorScroll, new Rect(0, 0, 368, contentHeight));
+            if (GUI.Button(new Rect(2, 2, 360, 26), "Default"))
             {
                 selectedNpcVoicePreset.Value = string.Empty;
                 showNpcPresetChoices = false;
             }
-            for (int i = 0; i < discoveredNpcPresets.Count; i++)
+            int row = 1;
+            foreach (NpcVoicePreset preset in discoveredNpcPresets)
             {
-                NpcVoicePreset preset = discoveredNpcPresets[i];
                 if (string.Equals(preset.StableId, "core/default", StringComparison.OrdinalIgnoreCase)) continue;
-                string label = preset.Name + (preset.Provisional ? " [Provisional]" : string.Empty);
-                if (GUI.Button(new Rect(2, 32 + i * 30, 320, 26), label))
+                if (GUI.Button(new Rect(2, 2 + row * 30, 360, 26), NpcPresetDisplayName(preset)))
                 {
                     selectedNpcVoicePreset.Value = preset.StableId;
                     showNpcPresetChoices = false;
                 }
+                row++;
+            }
+            if (GUI.Button(new Rect(2, 2 + row * 30, 360, 26), "Random Voices"))
+            {
+                selectedNpcVoicePreset.Value = RandomNpcVoicesMode;
+                showNpcPresetChoices = false;
             }
             GUI.EndScrollView();
         }
@@ -2042,7 +2121,7 @@ namespace ObenseuerTts
             {
                 contentHeight += 24f;
                 foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
-                    if (string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase))
+                    if ((!selectFallback || !voiceInfo.PlayerOnly) && string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase))
                         contentHeight += selectFallback ? Math.Max(42f, buttonStyle.CalcHeight(new GUIContent(VoiceMenuLabel(voiceInfo)), rowWidth)) + 4f : 30f;
             }
 
@@ -2054,6 +2133,7 @@ namespace ObenseuerTts
                 y += 24f;
                 foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
                 {
+                    if (selectFallback && voiceInfo.PlayerOnly) continue;
                     if (!string.Equals(voiceInfo.Gender, gender, StringComparison.OrdinalIgnoreCase)) continue;
                     bool selected = string.Equals(selectFallback ? voice.Value : playerVoice.Value, voiceInfo.Id, StringComparison.OrdinalIgnoreCase);
                     string label = selectFallback ? VoiceMenuLabel(voiceInfo) : CompactVoiceMenuLabel(voiceInfo);
@@ -2114,9 +2194,9 @@ namespace ObenseuerTts
 
         private void DrawKokoroVoicePackSettings()
         {
-            GUI.Label(new Rect(20, 100, 120, 22), "Voice source");
+            GUI.Label(new Rect(20, 100, 120, 22), "Automatic fallback");
             if (GUI.Button(new Rect(140, 96, 350, 28), SelectedVoicePackLabel() + "  ▼")) showVoicePackChoices = !showVoicePackChoices;
-            GUI.Label(new Rect(20, 132, 700, 38), "Default uses built-in voices. All Voices combines defaults and installed packs. Custom preserves individual selections.");
+            GUI.Label(new Rect(20, 132, 700, 38), "Controls automatic fallback voices only. Casting assignments and personal Overrides may use any installed compatible voice.");
 
             if (!string.Equals(kokoroVoiceMode.Value, "custom", StringComparison.OrdinalIgnoreCase))
             {
@@ -2133,6 +2213,7 @@ namespace ObenseuerTts
             List<DiscoveredVoice> male = new List<DiscoveredVoice>();
             foreach (DiscoveredVoice voiceInfo in availableKokoroVoices)
             {
+                if (voiceInfo.PlayerOnly) continue;
                 if (string.Equals(voiceInfo.Gender, "male", StringComparison.OrdinalIgnoreCase)) male.Add(voiceInfo);
                 else female.Add(voiceInfo);
             }
@@ -2713,14 +2794,16 @@ namespace ObenseuerTts
         {
             availableKokoroVoices.Clear();
             installedKokoroVoiceIds.Clear();
+            installedNpcVoiceIds.Clear();
             discoveredKokoroPacks.Clear();
             discoveredNpcPresets.Clear();
-            AddDiscoveredKokoroVoice("af_heart", "Heart", "female", "default", "Default", "DF", false);
-            AddDiscoveredKokoroVoice("af_bella", "Bella", "female", "default", "Default", "DF", false);
-            AddDiscoveredKokoroVoice("af_sarah", "Sarah", "female", "default", "Default", "DF", false);
-            AddDiscoveredKokoroVoice("am_adam", "Adam", "male", "default", "Default", "DF", false);
-            AddDiscoveredKokoroVoice("am_michael", "Michael", "male", "default", "Default", "DF", false);
-            AddDiscoveredKokoroVoice("am_onyx", "Onyx", "male", "default", "Default", "DF", false);
+            AddDiscoveredKokoroVoice("af_heart", "Heart", "female", "default", "Default", "DF", false, false);
+            AddDiscoveredKokoroVoice("af_bella", "Bella", "female", "default", "Default", "DF", false, false);
+            AddDiscoveredKokoroVoice("af_sarah", "Sarah", "female", "default", "Default", "DF", false, false);
+            AddDiscoveredKokoroVoice("am_adam", "Adam", "male", "default", "Default", "DF", false, false);
+            AddDiscoveredKokoroVoice("am_michael", "Michael", "male", "default", "Default", "DF", false, false);
+            AddDiscoveredKokoroVoice("am_onyx", "Onyx", "male", "default", "Default", "DF", false, false);
+            ScanPlayerVoices();
 
             try
             {
@@ -2798,7 +2881,7 @@ namespace ObenseuerTts
                                 Logger.LogWarning("Kokoro voice file is missing for " + voiceId + ": " + voicePath);
                                 continue;
                             }
-                            if (AddDiscoveredKokoroVoice(voiceId, string.IsNullOrEmpty(item.displayName) ? voiceId : item.displayName.Trim(), gender, packId, packName, shortCode, true))
+                            if (AddDiscoveredKokoroVoice(voiceId, string.IsNullOrEmpty(item.displayName) ? voiceId : item.displayName.Trim(), gender, packId, packName, shortCode, true, false))
                             {
                                 discoveredPack.VoiceIds.Add(voiceId);
                                 Logger.LogInfo("Discovered external Kokoro voice " + voiceId + " (" + gender + ") from '" + packName + "' at " + voicePath);
@@ -2817,7 +2900,7 @@ namespace ObenseuerTts
                         Logger.LogWarning("Ignoring unreadable Kokoro voice pack " + packDirectory + ": " + ex.Message);
                     }
                 }
-                Logger.LogInfo("Discovered " + (availableKokoroVoices.Count - BundledKokoroVoices.Length) + " external Kokoro voices.");
+                Logger.LogInfo("Discovered " + (installedNpcVoiceIds.Count - BundledKokoroVoices.Length) + " external Kokoro voices.");
             }
             catch (Exception ex)
             {
@@ -2826,13 +2909,14 @@ namespace ObenseuerTts
             ScanCharacterPresets();
         }
 
-        private bool AddDiscoveredKokoroVoice(string id, string displayName, string gender, string packId, string packName, string shortCode, bool external)
+        private bool AddDiscoveredKokoroVoice(string id, string displayName, string gender, string packId, string packName, string shortCode, bool external, bool playerOnly)
         {
             if (!installedKokoroVoiceIds.Add(id))
             {
                 if (external) Logger.LogWarning("Ignoring duplicate external Kokoro voice id: " + id);
                 return false;
             }
+            if (!playerOnly) installedNpcVoiceIds.Add(id);
             DiscoveredVoice voiceInfo = new DiscoveredVoice();
             voiceInfo.Id = id;
             voiceInfo.DisplayName = displayName;
@@ -2841,8 +2925,51 @@ namespace ObenseuerTts
             voiceInfo.PackName = packName;
             voiceInfo.ShortCode = shortCode;
             voiceInfo.External = external;
+            voiceInfo.PlayerOnly = playerOnly;
             availableKokoroVoices.Add(voiceInfo);
             return true;
+        }
+
+        private void ScanPlayerVoices()
+        {
+            string root = Path.Combine(GetObenVoiceRoot(), "PlayerVoices");
+            string manifestPath = Path.Combine(root, "manifest.json");
+            if (!File.Exists(manifestPath)) return;
+            try
+            {
+                VoicePackManifest manifest = VoicePackJson.Parse(File.ReadAllText(manifestPath, Encoding.UTF8));
+                string packId = manifest == null ? string.Empty : (manifest.id ?? string.Empty).Trim().ToLowerInvariant();
+                if (manifest == null || manifest.manifestVersion != 1 || manifest.voices == null ||
+                    !Regex.IsMatch(packId, "^[a-z0-9][a-z0-9_-]{0,63}$") ||
+                    !string.Equals((manifest.engine ?? string.Empty).Trim(), "kokoro", StringComparison.OrdinalIgnoreCase) ||
+                    !string.Equals((manifest.role ?? string.Empty).Trim(), "player", StringComparison.OrdinalIgnoreCase))
+                    throw new FormatException("Player voice manifest requires manifestVersion=1, engine=kokoro, role=player, and a valid id.");
+
+                string packName = string.IsNullOrEmpty(manifest.name) ? packId : manifest.name.Trim();
+                string shortCode = (manifest.shortCode ?? string.Empty).Trim();
+                if (!Regex.IsMatch(shortCode, "^[A-Za-z0-9]{1,8}$")) shortCode = "PV";
+                string fullRoot = Path.GetFullPath(root).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar;
+                foreach (VoicePackVoice item in manifest.voices)
+                {
+                    if (item == null) continue;
+                    string voiceId = (item.id ?? string.Empty).Trim().ToLowerInvariant();
+                    string gender = NormalizeGender(item.gender);
+                    string voicePath = Path.GetFullPath(Path.Combine(root, item.file ?? string.Empty));
+                    if (!Regex.IsMatch(voiceId, "^[a-z][a-z0-9_]{0,63}$") || !IsKnownGender(gender) ||
+                        !voicePath.StartsWith(fullRoot, StringComparison.OrdinalIgnoreCase) ||
+                        !string.Equals(Path.GetExtension(voicePath), ".pt", StringComparison.OrdinalIgnoreCase) || !File.Exists(voicePath))
+                    {
+                        Logger.LogWarning("Ignoring invalid or missing player voice: " + voiceId);
+                        continue;
+                    }
+                    AddDiscoveredKokoroVoice(voiceId, string.IsNullOrEmpty(item.displayName) ? voiceId : item.displayName.Trim(),
+                        gender, packId, packName, shortCode, false, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning("Ignoring player voices: " + ex.Message);
+            }
         }
 
         private void ScanNpcPresets(string packDirectory, DiscoveredVoicePack pack)

@@ -44,4 +44,16 @@ notices. The optional British voice pack's two unmodified files match Kokoro-82M
 Stalburg Voices Vol. 1 contains modified Kokoro-compatible tensors and ships
 its Apache-2.0 text, NOTICE, generator source and per-file provenance record.
 
-This repository contains no third-party model or voice weights.
+Core's Rowan and Mara player-only tensors are seeded procedural derivatives
+created from all 20 documented Stalburg voice tensors, which are themselves
+modified Kokoro-82M style tensors. Core retains the Apache-2.0 text, a
+modification notice, output and contributing-source hashes, the pinned
+Kokoro-82M revision, and the upstream acknowledgements inherited through the
+Stalburg provenance chain. The original player-voice generation program was
+not supplied, so exact regeneration is not claimed. The release does not
+describe Rowan or Mara as independently trained voices or as clones of a real
+person.
+
+Except for the two release-bound player-voice tensors under
+`data/player-voices`, this repository contains no third-party model or voice
+weights.

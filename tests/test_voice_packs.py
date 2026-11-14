@@ -80,6 +80,29 @@ def main():
             assert set(found) == {"af_primary", "bf_test", "bm_test"}
             assert found["af_primary"]["pack_id"] == "primary-pack"
 
+            player_root = root / "ObenVoice" / "PlayerVoices"
+            player_root.mkdir(parents=True)
+            (player_root / "af_player.pt").write_bytes(b"player")
+            (player_root / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "manifestVersion": 1,
+                        "id": "core-player-voices",
+                        "name": "Player Voices",
+                        "engine": "kokoro",
+                        "role": "player",
+                        "voices": [
+                            {"id": "af_player", "displayName": "Player", "gender": "female", "file": "af_player.pt"}
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            player_voices = engines.discover_player_voices("kokoro")
+            assert set(player_voices) == {"af_player"}
+            assert player_voices["af_player"]["role"] == "player"
+            assert "af_player" in engines.get_available_voices()
+
             for pack_name in ("z-pack", "a-pack"):
                 duplicate_pack = root / "voice-packs" / "kokoro" / pack_name
                 duplicate_voices = duplicate_pack / "voices"

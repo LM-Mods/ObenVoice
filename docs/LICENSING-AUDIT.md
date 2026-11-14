@@ -1,6 +1,6 @@
 # ObenVoice licensing and redistribution audit
 
-**Audit date:** 11 November 2026
+**Audit date:** 14 November 2026
 
 **Scope:** public source repository, Core distribution and optional add-ons
 
@@ -12,6 +12,7 @@
 |---|---|---|
 | Public GitHub source | **PASS** | MIT with `Copyright (c) 2026 LM-Mods` is approved; separate third-party and data terms are present. |
 | Core GitHub Release | **SOURCE EVIDENCE PASS; LIVE LINK UPDATE PENDING** | The frozen v1.0.2-beta.1 archive passed integrity, notice and privacy checks and gameplay testing on BepInEx 6 and BepInEx 5.4.23.6. GPL/LGPL source locations are version-pinned. Absolute links are prepared in the repository release description, but still require a separately approved edit to the live GitHub release; continued source availability must then be maintained. |
+| Core v1.0.3-beta.1 candidate | **PASS FOR PRIVATE RELEASE PREPARATION** | Rowan and Mara retain the Apache-2.0 licence, derivative modification notice, exact hashes and the documented Stalburg/Kokoro provenance chain. Exact regeneration is not claimed because their generation program was not supplied. Final publication remains subject to owner approval. |
 | Core Nexus Mods release | **PASS WITH UPLOAD-TIME CHECKS** | Core is prepared; Nexus scanning and the AI-Generated Content classification remain upload-time actions. |
 | British voice pack v1.0.1 | **PASS** | Both unmodified files match the pinned Apache-2.0 Kokoro revision; attribution and licence accompany the pack. |
 | Stalburg Voices Vol. 1 v1.0.1 | **PASS** | The 20 derivative tensors have per-file source/output provenance, generator source, Apache-2.0 text and upstream dataset acknowledgements. |
@@ -40,7 +41,7 @@ MIT licence.
 
 | Component | Version/revision | Licence | Evidence and treatment |
 |---|---|---|---|
-| Original ObenVoice material | v1.0.2-beta.1 source | MIT | Root licence approved for LM-Mods |
+| Original ObenVoice material | v1.0.3-beta.1 source | MIT | Root licence approved for LM-Mods |
 | `characters.json` | 292 game-registry records | CC BY-SA 4.0 compilation terms | Includes 282 game-scanned records, two records flagged for game-scan review and eight game test/placeholder entries; provenance and data boundaries are in `data/LICENSE.md` |
 | Obenseuer Modding Framework API | 0.12.1 reference | MIT | Referenced for integration; framework and game assemblies are not bundled |
 | Python embedded runtime | 3.12.10 | PSF and bundled component terms | Complete runtime licence file retained |
@@ -61,6 +62,7 @@ MIT licence.
 | British `bf_emma` | Kokoro revision `f3ff357…` | Apache-2.0 | Unmodified; SHA-256 `D0A423DEABF4A52B4F49318C51742C54E21BB89BBBE9A12141E7758DDB5DA701` |
 | British `bm_george` | Kokoro revision `f3ff357…` | Apache-2.0 | Unmodified; SHA-256 `F1BC812213DC59774769E5C80004B13EEB79BD78130B11B2D7F934542DAB811B` |
 | Stalburg Voices Vol. 1 | 20 v1.0.1 derivative tensors | Apache-2.0 upstream declaration; source-dataset attribution retained | Output and source-anchor hashes, transformation parameters and generator source are recorded in the pack's `PROVENANCE.json`, `NOTICE.txt` and `GENERATOR.py` |
+| Rowan and Mara player voices | v1.0.3-beta.1 Core derivatives | Apache-2.0 inherited through the documented Stalburg/Kokoro chain | Two seeded procedural style tensors derived from all 20 Stalburg tensors; output and contributor hashes, pinned upstream anchors, modification notice and inherited acknowledgements are retained. The generation program was not supplied, so exact regeneration and independent training are not claimed. |
 
 The complete Python package/version inventory is in
 `docs/RUNTIME-DEPENDENCIES.md`. Package metadata and collected licence files
@@ -117,6 +119,11 @@ A clean source rebuild reproduced those exact DLL bytes. The frozen DLL passed
 gameplay testing on BepInEx 6 and BepInEx 5.4.23.6, including NPC/player
 dialogue, F8/F9 functionality, backend operation and clean shutdown.
 
+For v1.0.3-beta.1, the project owner reports gameplay approval of the combined
+Random Voices and dedicated-player-voice candidate on both supported loaders.
+The final candidate must still pass its recorded archive, path, user-data and
+privacy checks before publication.
+
 ## Optional voice packs
 
 The British voice files match the pinned Kokoro revision and retain the
@@ -145,9 +152,9 @@ checks and are not recorded as passed here.
 ## Final assessment
 
 Core v1.0.2-beta.1, British Voices v1.0.1 and Stalburg Voices Vol. 1 v1.0.1
-were published on 11 November 2026. The frozen DLL passed both supported
-loaders, and the packages passed the recorded licence, privacy, install and
-upgrade checks. The remaining compliance-maintenance action is to apply the
-prepared absolute documentation and corresponding-source links to the live
-Core release description, then maintain those source locations while the
-binary remains distributed.
+were published on 11 November 2026. The proposed v1.0.3-beta.1 replacement
+Core adds the approved Random Voices system and Rowan/Mara player voices.
+Redistribution is supportable on the recorded Apache-2.0 provenance and notice
+treatment, with the explicit reproducibility limitation above. This is not a
+legal certification. Publication remains blocked until the owner separately
+approves the prepared source and verified release candidate.

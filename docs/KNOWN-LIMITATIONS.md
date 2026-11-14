@@ -1,7 +1,10 @@
 # Known limitations
 
-- One shared plugin DLL targets BepInEx 5 and BepInEx 6. The v1.0.2-beta.1 DLL
-  passed gameplay testing on BepInEx 6 and BepInEx 5.4.23.6.
+- One shared plugin DLL targets BepInEx 5 and BepInEx 6. The project owner
+  reports gameplay approval of the v1.0.3-beta.1 development candidate on
+  BepInEx 6 and BepInEx 5.4.23.6.
+- Unidentified `???` dialogue speakers can share one remembered assignment
+  because the game does not always expose a distinct usable identity for them.
 - Synthetic pronunciation and emotional delivery vary by voice and line.
 - Very short hesitation sounds such as `Hmh`, `Ahhh`, `Hmm`, `Um` and `Urgh?`
   can sound unnatural or occasionally be skipped.

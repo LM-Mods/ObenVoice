@@ -20,11 +20,11 @@ installing ObenVoice.
 4. Do not replace BepInEx or ObenseuerCore with files from unrelated packages.
 5. Start the game normally. The packaged backend may take a short time to load.
 
-Core includes Kokoro, six default voices and a bundled Python 3.12 runtime.
-Players do not install Python separately and do not need an API key or cloud
-speech service. ObenVoice launches only its packaged runtime and communicates
-with it over the local loopback interface; it does not install Python
-system-wide.
+Core includes Kokoro, six normal default voices, the Rowan and Mara
+player-only voices and a bundled Python 3.12 runtime. Players do not install
+Python separately and do not need an API key or cloud speech service.
+ObenVoice launches only its packaged runtime and communicates with it over the
+local loopback interface; it does not install Python system-wide.
 
 Optional voice packs are separate ZIPs. Extract a pack into the same main game
 folder after Core, then restart the game so its manifest, voices and casting

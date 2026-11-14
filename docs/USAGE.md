@@ -2,9 +2,8 @@
 
 ## F8 settings
 
-F8 opens the main settings window. Its five tabs are **General**, **Voice
-Packs**, **NPC Voices**, **Pronunciation** and **Advanced**. Settings save
-automatically.
+F8 opens the main settings window. Its four tabs are **General**, **NPC
+Voices**, **Pronunciation** and **Advanced**. Settings save automatically.
 
 ### General
 
@@ -17,30 +16,24 @@ automatically.
   audio.
 - Change the F8 and F9 hotkeys.
 
-### Voice Packs
-
-For Kokoro, **Default** uses the built-in voices, **All Voices** combines the
-built-ins with installed packs, a named pack limits the automatic pools to
-that pack, and **Custom** keeps individual female and male selections. Explicit
-NPC Overrides and preset assignments may still request any compatible
-installed voice. Restart the game after installing or removing a pack.
-
-Optional engines expose only the pack controls their add-on supports. Treat
-third-party add-ons as untrusted until their source, dependencies, privacy
-behaviour and licence have been reviewed.
-
 ### NPC Voices
 
-Choose a discovered casting preset or open **Overrides...** to edit personal
-per-NPC voice, speed and tone records. Resolution priority is personal
-Override, selected preset, saved automatic voice, then a new automatic voice.
-**Reset to Default** in the Overrides editor removes only that NPC's personal
-record; it does not change a preset.
+The installed-voices summary is automatic; voice packs no longer require a
+separate source selector. Choose a discovered JSON configuration from **NPC
+Casting**, choose **Random Voices**, or open **Overrides...** to edit personal
+per-NPC voice, speed and pitch records.
 
-The optional **Automatic variation controls** expose separate speed-minimum,
-speed-maximum, tone-minimum and tone-maximum rows. Their Reset buttons restore
-the individual setting defaults. The unknown-speaker prompt can also be
-enabled or disabled here.
+Normal casting configurations keep their established assignments, with a
+personal Override taking priority. In Random Voices mode, an existing valid
+Override is reused. If none exists, ObenVoice selects an installed
+NPC-compatible voice using the character's known gender, creates subtle speed
+and pitch variation, saves the assignment immediately to
+`ObenVoice\UserData\npc-voice-overrides.json`, and reuses it in later
+conversations and game sessions. Random means assign once, not on every line.
+
+Rowan and Mara never appear in NPC candidate pools, casting assignments or the
+Overrides voice selector. Restart the game after installing or removing a
+voice pack or casting configuration.
 
 ### Pronunciation
 
@@ -62,7 +55,10 @@ engine.
 
 ## F9 player voice
 
-F9 opens the player-response voice, speed and tone controls. Player dialogue is optional and speaks only the response the player confirms.
+F9 opens the player-response voice, speed and tone controls. Player dialogue
+is optional and speaks only the response the player confirms. Rowan (male) and
+Mara (female) are dedicated player voices; compatible normal installed voices
+remain selectable for the player as well.
 
 ## Pronunciation replacements
 

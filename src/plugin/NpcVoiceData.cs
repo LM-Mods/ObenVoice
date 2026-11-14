@@ -108,6 +108,11 @@ namespace ObenseuerTts
             return Find(gameCharacterId, speakerId, rawName, identity, false);
         }
 
+        internal NpcVoiceEntry FindAny(string gameCharacterId, string speakerId, string rawName, NpcIdentityRecord identity)
+        {
+            return Find(gameCharacterId, speakerId, rawName, identity, null);
+        }
+
         internal NpcVoiceEntry FindAutomatic(string gameCharacterId, string speakerId, string rawName, NpcIdentityRecord identity)
         {
             return Find(gameCharacterId, speakerId, rawName, identity, true);

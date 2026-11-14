@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.3-beta.1 — 14 November 2026
+
+- Unified F8 voice-pack discovery and NPC casting into the simplified four-tab
+  interface while preserving existing configuration and add-on compatibility.
+- Added persistent **Random Voices** casting: missing NPC assignments are
+  gender-matched, saved once to the existing Overrides JSON and remain editable.
+- Added Rowan and Mara as dedicated player-only voices in F9 while retaining
+  player access to all compatible normal installed voices.
+- Prevented player-only voices from entering NPC casting, Overrides, Random
+  Voices or fallback pools.
+- Preserved the existing BepInEx 5/6 shared-DLL architecture.
+
 ## v1.0.2-beta.1 — 11 November 2026
 
 - Expanded the local NPC identity database to 292 game-registry records,

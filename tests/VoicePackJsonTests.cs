@@ -17,9 +17,11 @@ internal static class VoicePackJsonTests
         if (manifest.shortCode != "BR") throw new Exception("British short code was not parsed");
         VoicePackManifest legacyManifest = VoicePackJson.Parse("{\"manifestVersion\":1,\"id\":\"legacy\",\"name\":\"Legacy\",\"engine\":\"kokoro\",\"voices\":[]}");
         if (legacyManifest.shortCode != string.Empty) throw new Exception("older manifest without shortCode lost compatibility");
+        VoicePackManifest playerManifest = VoicePackJson.Parse(File.ReadAllText(Path.Combine("data", "player-voices", "manifest.json")));
+        if (playerManifest.role != "player" || playerManifest.voices.Length != 2) throw new Exception("player-only manifest role was not parsed");
         string[] names = new string[] { "z-pack", "A-pack", "a-pack" };
         Array.Sort(names, VoicePackOrdering.CompareNames);
         if (string.Join(",", names) != "A-pack,a-pack,z-pack") throw new Exception("deterministic pack ordering failed");
-        Console.WriteLine("voice-pack manifest JSON test passed with two nested voices");
+        Console.WriteLine("voice-pack and player-only manifest JSON tests passed");
     }
 }

@@ -43,6 +43,7 @@ internal static class NpcDataTests
         NpcVoiceOverridesDocument automaticDocument = NpcVoiceOverridesDocument.Parse("{\"version\":1,\"overrides\":[{\"speakerId\":\"dialogue:7\",\"displayName\":\"Unknown NPC\",\"voice\":\"am_test\",\"speed\":0.95,\"pitch\":0.2,\"automatic\":true,\"ignore\":false}]}");
         NpcVoiceEntry automaticEntry = automaticDocument.Overrides[0];
         Expect(automaticEntry.Automatic && automaticEntry.SpeakerId == "dialogue:7", "loads automatic assignment in the shared overrides document");
+        Expect(automaticDocument.FindAny(string.Empty, "dialogue:7", "Unknown NPC", null) == automaticEntry, "Random Voices reuses a legacy saved assignment without rewriting it");
         Expect(automaticDocument.FindAutomatic(string.Empty, "dialogue:7", "Unknown NPC", null) == automaticEntry, "reuses automatic unknown-speaker assignment by reliable speaker ID");
         Expect(NpcVoiceOverridesDocument.Parse(automaticDocument.ToJson()).Overrides[0].Automatic, "round-trips automatic assignment marker");
         bool duplicateRejected = false;
@@ -80,6 +81,7 @@ internal static class NpcDataTests
         Expect(preset.Find(string.Empty, "Agnes Takala", alias.Record).Voice == "af_test", "matches preset by canonical internal name");
         Expect(overrides.Find(string.Empty, "Agnes Takala", alias.Record).Voice == "af_test", "explicit override resolves for same NPC");
         NpcVoiceEntry overrideEntry = overrides.Find(string.Empty, "Agnes Takala", alias.Record);
+        Expect(overrides.FindAny(string.Empty, string.Empty, "Agnes Takala", alias.Record) == overrideEntry, "Random Voices reuses an existing assignment without categories");
         NpcVoiceEntry presetEntry = preset.Find(string.Empty, "Agnes Takala", alias.Record);
         Expect(presetEntry.HasSpeed && presetEntry.HasPitch && Math.Abs(presetEntry.Speed - 1.15f) < 0.001f && Math.Abs(presetEntry.Pitch + 0.4f) < 0.001f, "preset schema preserves per-NPC speed and pitch");
         Expect(NpcVoiceResolutionPriority.Resolve(overrideEntry, presetEntry, automaticEntry) == NpcVoiceResolutionLayer.Override, "override wins over preset and automatic choice");
